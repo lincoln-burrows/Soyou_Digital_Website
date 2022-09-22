@@ -6,7 +6,6 @@ import "../../App.css";
 import downwardArrow from "../assets/downwardArrow.png";
 import upwardArrow from "../assets/upwardArrow.png";
 import { useState, useEffect, useRef } from 'react'
-import { createBrowserHistory } from 'history';
 import hamburger from '../assets/hamburger.png';
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
