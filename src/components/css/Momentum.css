@@ -1,0 +1,26 @@
+.momentumTitle{
+    font-size: 31px;
+    padding-top:50px
+}
+
+.longButton1{
+    padding-right:50px;
+}
+
+.firstRow{
+    font-size: 20px;
+}
+
+.secondRow{
+    font-size: 30px;
+}
+
+.downwardArrow{
+  position:relative;
+  bottom :-30px;
+}
+
+.upwardArrow{
+    position:relative;
+    top: 20px;
+  }
