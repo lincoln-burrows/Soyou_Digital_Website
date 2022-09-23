@@ -60,13 +60,9 @@ class MomentumGraph extends Component {
     const res = [];
     for (let i in data) {
       let item = data[i][arg];
-      if (arg === "date") {
+      if (arg === "time") {
         let i =
-          item.toString().slice(0, 4) +
-          "-" +
-          item.toString().slice(6, 8) +
-          "-" +
-          item.toString().slice(10,12);
+          "'" + item.toString().slice(2, 10);
         res.push(i);
       } else {
         res.push(parseFloat(data[i][arg]));
@@ -80,15 +76,14 @@ class MomentumGraph extends Component {
   };
 
   render() {
-    const dates = this.extractDataToList("date", this.state.data);
-    const bit_price = this.extractDataToList("opening_price", this.state.data);
-    const bitPlus = this.extractDataToList("terminal_price", this.state.data2);
+    const dates = this.extractDataToList("time", this.state.data);
+    const momentum_algo = this.extractDataToList("momentum_algo", this.state.data);
+    const btc_usdt = this.extractDataToList("btc_usdt", this.state.data2);
     
     const data = {
       tooltip: {
         trigger: "axis",
-        axisPointer: {type: "cross"}
-        
+        axisPointer: {type: "cross"},
       },
       toolbox: {
         feature: {
@@ -97,7 +92,10 @@ class MomentumGraph extends Component {
       }
       ,
       legend: {
-        data: ["Momentum Algorithm", "BTC_USDT Hodl"]
+        data: ["Momentum Algorithm", "BTC_USDT Hodl"],
+        itemStyle: {
+          borderType:"solid"
+        }
       },
       grid: {
         left: "3%",
@@ -134,17 +132,17 @@ class MomentumGraph extends Component {
           name: "Momentum Algorithm",
           type: "line",
           smooth: true,
-          data: bit_price,
+          data: momentum_algo,
           symbol: "none",
-          color: "#0000ff"
+          color: "#000000"
         },
         {
           name: "BTC_USDT Hodl",
           type: "line",
           smooth: true,
-          data: bitPlus,
+          data: btc_usdt,
           symbol: "none",
-          color: "#FF4500"
+          color: "#b2b2b2"
         }
       ]
     };

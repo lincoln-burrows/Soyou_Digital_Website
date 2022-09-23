@@ -34,12 +34,12 @@ const Momentum2 = (props) => {
                 <Col lg="6" md="8" className="align-self-center text-center">
         <div className="momentumTitle"> Momentum Algorithm</div>
         <br></br>
-        <Button size="sm" variant="success" children="Profit" className="longButton1"/>
-       <Button size="sm" variant="success" children="Information" className="longButton2"/>
-       <Button3 size="sm" variant="success" children="ALL" /> 
-       <Button3 size="sm" variant="success" children="1Y" /> 
-       <Button3 size="sm" variant="success" children="6M" /> 
-       <Button3 size="sm" variant="success" children="3M" /> 
+        <Button size="sm" variant="success" children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" className="longButton1"/>
+       <Button size="sm" variant="success" children="Information" buttonIndex="2" actionName="MOMENTUM_INFO" className="longButton2"/>
+       <Button3 size="sm" variant="success" children="ALL" buttonIndex="1" actionName="MOMENTUM_ALL"/> 
+       <Button3 size="sm" variant="success" children="1Y" buttonIndex="2" actionName="MOMENTUM_1Y"/> 
+       <Button3 size="sm" variant="success" children="6M" buttonIndex="3" actionName="MOMENTUM_6M"/> 
+       <Button3 size="sm" variant="success" children="3M" buttonIndex="4"actionName="MOMENTUM_3M"/> 
        <br></br><br></br>
         <MomentumGraph />
           <br></br>

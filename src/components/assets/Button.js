@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 
 const SIZES = {
   sm: css`
@@ -36,15 +37,17 @@ const VARIANTS = {
   `
 };
 
-function Button({ disabled, size, variant, children }) {
+function Button({ disabled, size, variant, children, buttonIndex, actionName }) {
   const sizeStyle = SIZES[size];
   const variantStyle = VARIANTS[variant];
+  const dispatch = useDispatch();
 
   return (
     <StyledButton
       disabled={disabled}
       sizeStyle={sizeStyle}
       variantStyle={variantStyle}
+      onClick={()=>{dispatch({type:{actionName}});}}
     >
       {children}
     </StyledButton>

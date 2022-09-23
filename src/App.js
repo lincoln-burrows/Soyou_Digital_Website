@@ -99,7 +99,9 @@ function App() {
             behavior: "smooth",
           });
           setScrollIndex(4);
-        } else if(scrollTop >= pageHeight && scrollTop < pageHeight * 4) {
+        } else 
+        // if(scrollTop >= pageHeight && scrollTop < pageHeight * 4) 
+        {
           //현재 4페이지
           console.log("현재 4페이지, down");
           outerDivRef.current.scrollTo({
@@ -180,13 +182,13 @@ function App() {
 
       {/* <Contact /> */}
       <MainPage pageDown={pageDown} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
-      {/* <div className="divider"></div> */}
+      <div className="divider"></div>
       {/* <TogglePage toggleNav={toggleNav}/> */}
-      {/* <div className="divider"></div> */}
+      <div className="divider"></div>
       <Momentum2 pageUp={pageUp} pageDown={pageDown} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
-      {/* <div className="divider"></div> */}
+      <div className="divider"></div>
       <StableOnly pageUp={pageUp} pageDown={pageDown} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
-      {/* <div className="divider"></div> */}
+      <div className="divider"></div>
       <Contact pageUp={pageUp} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
       
     </div>

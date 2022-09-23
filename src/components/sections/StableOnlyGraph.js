@@ -60,13 +60,9 @@ class StableOnlyGraph extends Component {
     const res = [];
     for (let i in data) {
       let item = data[i][arg];
-      if (arg === "date") {
+      if (arg === "time") {
         let i =
-          item.toString().slice(0, 4) +
-          "-" +
-          item.toString().slice(6, 8) +
-          "-" +
-          item.toString().slice(10,12);
+          "'" + item.toString().slice(2, 10);
         res.push(i);
       } else {
         res.push(parseFloat(data[i][arg]));
@@ -80,9 +76,9 @@ class StableOnlyGraph extends Component {
   };
 
   render() {
-    const dates = this.extractDataToList("date", this.state.data);
-    const bit_price = this.extractDataToList("opening_price", this.state.data);
-    const bitPlus = this.extractDataToList("terminal_price", this.state.data2);
+    const dates = this.extractDataToList("time", this.state.data);
+    const bit_price = this.extractDataToList("momentum_algo", this.state.data);
+    const bitPlus = this.extractDataToList("btc_usdt", this.state.data2);
     
     const data = {
       tooltip: {
