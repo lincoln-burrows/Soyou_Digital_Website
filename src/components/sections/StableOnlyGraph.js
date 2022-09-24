@@ -30,7 +30,8 @@ class StableOnlyGraph extends Component {
 
 
   getUsData = async () => {
-    const api = "http://localhost:8080/graphData2";
+    // const api = "http://localhost:8080/graphData2";
+    const api = "http://kagomepizza-ragtime.shop/graphData2";
     const data = await axios
       .get(api)
       .then((res) => {
@@ -43,7 +44,8 @@ class StableOnlyGraph extends Component {
   };
 
   getUsData2 = async () => {
-    const api = "http://localhost:8080/graphData3";
+    // const api = "http://localhost:8080/graphData3";
+    const api = "http://kagomepizza-ragtime.shop/graphData3";
     const data2 = await axios
       .get(api)
       .then((res) => {
