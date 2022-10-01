@@ -34,7 +34,7 @@ const Momentum2 = (props) => {
     // console.log("출력위한데이터2?", momentumIndexAll[0]);
 
     useEffect(() => {
-      dispatch(momentumAction.getMomentumGraph("MOMENTUM3M"));
+      dispatch(momentumAction.getMomentumGraph());
     }, []);
     
 
@@ -48,10 +48,10 @@ const Momentum2 = (props) => {
         <Button size="sm" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
        <Button size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="MOMENTUM_INFO" />
        <span className={momentumUpperButton == "2" ? 'hide info' : 'info'}>
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL"/> 
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y"/> 
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M"/> 
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M"/> 
+       <Button3 size="sm" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUM_ALL"/> 
+       <Button3 size="sm" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM_1Y"/> 
+       <Button3 size="sm" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM_6M"/> 
+       <Button3 size="sm" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4"actionName="MOMENTUM_3M"/> 
        <br></br><br></br>
         <MomentumGraph />
           <br></br>

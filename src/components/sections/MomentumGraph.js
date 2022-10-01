@@ -12,54 +12,18 @@ import downwardArrow from "../assets/downwardArrow.png";
 import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import Momentum from "./Momentum";
-
+import { connect } from "react-redux";
 
 class MomentumGraph extends Component {
   constructor(props) {
     super(props);
-    // this.pageDown = this.pageDown.bind(this);
-    console.log("??",this.props)
+    
     this.state = {
-      data: {},
-      data2: {},
-      graph: []
+      // data2: {},
     };
-    this.getUsData();
-    this.getUsData2();
   }
 
-
-  getUsData = async () => {
-    // const api = "http://localhost:8080/graphData2";
-    const api = "http://kagomepizza-ragtime.shop/graphData2";
-
-    const data = await axios
-      .get(api)
-      .then((res) => {
-        return res.data;
-      })
-      .catch((err) => console.log(err));
-    this.setState({ data: data });
-    console.log("data?", data)
-    return data;
-  };
-
-  getUsData2 = async () => {
-    // const api = "http://localhost:8080/graphData3";
-    const api = "http://kagomepizza-ragtime.shop/graphData3";
-    const data2 = await axios
-      .get(api)
-      .then((res) => {
-        return res.data;
-      })
-      .catch((err) => console.log(err));
-    this.setState({ data2: data2 });
-    console.log("data2?", data2)
-    return data2;
-  };
-
   extractDataToList = (arg, data) => {
-    // const data = this.state.data;
     const res = [];
     for (let i in data) {
       let item = data[i][arg];
@@ -75,13 +39,16 @@ class MomentumGraph extends Component {
   };
 
   componentDidMount = () => {
-    document.title = "Covid USA";
+    document.title = "SOYOU CRYPTO";
+    
   };
 
   render() {
-    const dates = this.extractDataToList("time", this.state.data);
-    const momentum_algo = this.extractDataToList("momentum_algo", this.state.data);
-    const btc_usdt = this.extractDataToList("btc_usdt", this.state.data2);
+    const { momentumData } = this.props.momentumData;
+    console.log("??2",momentumData)
+    const dates = this.extractDataToList("time", momentumData);
+    const momentum_algo = this.extractDataToList("cum_return_ma", momentumData);
+    const btc_usdt = this.extractDataToList("cum_return_btc", momentumData);
     
     const data = {
       tooltip: {
@@ -166,4 +133,8 @@ class MomentumGraph extends Component {
   }
 }
 
-export default MomentumGraph;
+const mapStateToProps = (state) => ({
+  momentumData : state.momentumData
+});
+
+export default connect(mapStateToProps)(MomentumGraph);

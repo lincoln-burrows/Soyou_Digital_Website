@@ -24,3 +24,14 @@
     position:relative;
     top: 20px;
   }
+
+.hide.info{
+    display: none;
+}
+
+.info{
+}
+
+.infoText{
+    text-align: left;
+}

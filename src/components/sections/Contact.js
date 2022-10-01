@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Contact = (props) => {
     const dispatch = useDispatch();
-    const isModalOn = useSelector((state) => state.modalOn);
    
     //커밋 테스트
   const modalNavStep1 = (targetPage) =>{

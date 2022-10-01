@@ -13,7 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 const MainPage = (props) => {
     const dispatch = useDispatch();
-    const isModalOn = useSelector((state) => state.modalOn);
 
     
     const modalNavStep1 = (targetPage) =>{

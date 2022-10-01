@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const ToggleModal = (props) => {
 
-    const isModalOn = useSelector((state) => state.modalOn);
+    const { isModalOn } = useSelector((state) => state.legacy);
     const dispatch = useDispatch();
     const modalNavStep2 = (targetPage) =>{
         props.modalNavStep1(targetPage);

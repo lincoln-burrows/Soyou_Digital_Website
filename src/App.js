@@ -16,6 +16,7 @@ import upwardArrow from "./components/assets/upwardArrow.png";
 import Momentum2 from "./components/sections/Momentum2";
 import ToggleModal from "./components/sections/ToggleModal";
 import { useDispatch, useSelector } from "react-redux";
+import { momentumAction } from "./redux/actions/momentumAction";
 
 var hist = createBrowserHistory();
 const DIVIDER_HEIGHT = 5;
@@ -56,7 +57,7 @@ function App() {
     setScrollIndex(parseInt(targetPage)+1);
   }
 
-  const isModalOn = useSelector((state) => state.modalOn);
+  const isModalOn = useSelector((state) => state.legacy);
 
   useEffect(() => {
     const wheelHandler = (e) => {
@@ -171,10 +172,14 @@ function App() {
         }
       }
     };
+        
     const outerDivRefCurrent = outerDivRef.current;
     outerDivRefCurrent.addEventListener("wheel", wheelHandler);
+    // outerDivRefCurrent.addEventListener("scroll", wheelHandler);
     return () => {
       outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
+      // outerDivRefCurrent.removeEventListener("scroll", wheelHandler);
+
     };
   }, []);
   return (

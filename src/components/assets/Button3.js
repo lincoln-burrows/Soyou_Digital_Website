@@ -1,4 +1,7 @@
 import styled, { css } from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { momentumAction } from "../../redux/actions/momentumAction";
+
 
 const SIZES = {
   sm: css`
@@ -24,27 +27,33 @@ const VARIANTS = {
     --button-bg-color: #C0C0C0;
     --button-hover-bg-color: #000000;
   `,
-  error: css`
-    --button-color: #ffffff;
-    --button-bg-color: #dc3545;
-    --button-hover-bg-color: #c82333;
-  `,
-  warning: css`
-    --button-color: #212529;
-    --button-bg-color: #ffc107;
-    --button-hover-bg-color: #e0a800;
-  `
+  default: css`
+  --button-color: #ffffff;
+  --button-bg-color: #C0C0C0;
+
+`,
+  defaultActive: css`
+  --button-color: #ffffff;
+  --button-bg-color: #000000;
+
+`
 };
 
-function Button3({ disabled, size, variant, children }) {
+function Button3({ disabled, size, variant, children, actionName }) {
   const sizeStyle = SIZES[size];
   const variantStyle = VARIANTS[variant];
+  const dispatch = useDispatch();
+
 
   return (
     <StyledButton
       disabled={disabled}
       sizeStyle={sizeStyle}
       variantStyle={variantStyle}
+      onClick={()=>{
+        dispatch({type:actionName});
+        dispatch(momentumAction.getMomentumGraph(actionName));
+    }}
     >
       {children}
     </StyledButton>
@@ -66,17 +75,6 @@ const StyledButton = styled.button`
   background: var(--button-bg-color, #0d6efd);
   width:186px;
 
-  &:active,
-  &:hover,
-  &:focus {
-    background: var(--button-hover-bg-color, #025ce2);
-  }
-
-  &:disabled {
-    cursor: default;
-    opacity: 0.5;
-    background: var(--button-bg-color, #025ce2);
-  }
 `;
 
 export default Button3;

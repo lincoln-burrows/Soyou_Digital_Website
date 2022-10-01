@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const SIZES = {
   sm: css`
-    --button-font-size: 2.3rem;
+    --button-font-size: 1.2rem;
     --button-padding: 4px 12px;
     --button-radius: 20px;
     
@@ -25,7 +25,6 @@ const VARIANTS = {
   success: css`
     --button-color: #ffffff;
     --button-bg-color: #000000;
-    --button-hover-bg-color: #c0c0c0;
   
   `,
   default: css`
@@ -40,7 +39,7 @@ const VARIANTS = {
   `
 };
 
-const ToggleMenu = (props) =>{
+const InfoRFSButton = (props) =>{
   const dispatch = useDispatch();
   const sizeStyle = SIZES[props.size];
   const variantStyle = VARIANTS[props.variant];
@@ -50,7 +49,7 @@ const ToggleMenu = (props) =>{
       // disabled="active"
       sizeStyle={sizeStyle}
       variantStyle={variantStyle}
-      onClick={()=>{props.modalNavStep2(props.targetPage); dispatch({type:"SET_MODAL_OFF"});}}
+      onClick={()=>{props.modalNavStep1(props.targetPage);}}
     >
       {props.children}
     </StyledButton>
@@ -61,10 +60,7 @@ const StyledButton = styled.button`
   ${(p) => p.sizeStyle}
   ${(p) => p.variantStyle}
 
-  margin: 7px 15px 7px 15px;
-  text-align: right;
-  font-weight: bold;
-  float: right;
+  margin: 7px 14px 7px 14px;
   border: none;
   cursor: pointer;
   font-family: "Noto Sans KR", sans-serif;
@@ -74,18 +70,6 @@ const StyledButton = styled.button`
   color: var(--button-color, #ffffff);
   background: var(--button-bg-color, #0d6efd);
   width:400px;
-
-  &:active,
-  &:hover,
-  &:focus {
-    background: var(--button-hover-bg-color, #000000);
-  }
-
-  &:disabled {
-    cursor: default;
-    opacity: 0.5;
-    background: var(--button-bg-color, #000000);
-  }
 `;
 
-export default ToggleMenu;
+export default InfoRFSButton;
