@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL:"https://kagomepizza-ragtime.shop",
+    // baseURL:"https://kagomepizza-ragtime.shop",
+    baseURL:"http://localhost:8080",
     headers:{"Content-Type":"application/json"}
 })
 
@@ -20,7 +21,7 @@ api.interceptors.request.use(function (config) {
 api.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    console.log("get resonse", response)
+    console.log("get response", response)
     return response;
   }, function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger

@@ -4,19 +4,13 @@ import Dots from "./Dots";
 
 import "./App.css";
 // import "./index.css";
-import Momentum from "./components/sections/Momentum";
 import { createBrowserHistory } from "history";
 import { Route, Switch, HashRouter } from "react-router-dom";
 import MainPage from "./components/sections/MainPage";
-import TogglePage from "./components/sections/TogglePage";
 import StableOnly from "./components/sections/StableOnly";
 import Contact from "./components/sections/Contact";
-import downwardArrow from "./components/assets/upwardArrow.png";
-import upwardArrow from "./components/assets/upwardArrow.png";
 import Momentum2 from "./components/sections/Momentum2";
-import ToggleModal from "./components/sections/ToggleModal";
 import { useDispatch, useSelector } from "react-redux";
-import { momentumAction } from "./redux/actions/momentumAction";
 
 var hist = createBrowserHistory();
 const DIVIDER_HEIGHT = 5;

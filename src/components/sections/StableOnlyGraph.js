@@ -1,68 +1,27 @@
 import React, { Component } from "react";
 
 import echarts from "echarts";
-import ReactEcharts from "echarts-for-react";
+import ReactEcharts2 from "echarts-for-react";
 import axios from "axios";
 import { Container, Row, Col } from 'reactstrap';
 import "../../App.css";
 import "../css/Momentum.css";
-import Button from "../assets/Button.js";
-import Button3 from "../assets/Button3";
-import downwardArrow from "../assets/downwardArrow.png";
-import upwardArrow from "../assets/upwardArrow.png";
-import App from "../../App";
-import Momentum from "./Momentum";
-
+import { connect } from "react-redux";
 
 class StableOnlyGraph extends Component {
   constructor(props) {
     super(props);
-    // this.pageDown = this.pageDown.bind(this);
-    console.log("??",this.props)
+    
     this.state = {
-      data: {},
-      data2: {},
-      graph: []
+      // data2: {},
     };
-    this.getUsData();
-    this.getUsData2();
   }
 
-
-  getUsData = async () => {
-    const api = "http://localhost:8080/graphData2";
-    // const api = "http://kagomepizza-ragtime.shop/graphData2";
-    const data = await axios
-      .get(api)
-      .then((res) => {
-        return res.data;
-      })
-      .catch((err) => console.log(err));
-    this.setState({ data: data });
-    console.log("data?", data)
-    return data;
-  };
-
-  getUsData2 = async () => {
-    const api = "http://localhost:8080/graphData3";
-    // const api = "http://kagomepizza-ragtime.shop/graphData3";
-    const data2 = await axios
-      .get(api)
-      .then((res) => {
-        return res.data;
-      })
-      .catch((err) => console.log(err));
-    this.setState({ data2: data2 });
-    console.log("data2?", data2)
-    return data2;
-  };
-
   extractDataToList = (arg, data) => {
-    // const data = this.state.data;
     const res = [];
     for (let i in data) {
       let item = data[i][arg];
-      if (arg === "time") {
+      if (arg === "datetime") {
         let i =
           "'" + item.toString().slice(2, 10);
         res.push(i);
@@ -75,18 +34,19 @@ class StableOnlyGraph extends Component {
 
   componentDidMount = () => {
     document.title = "SOYOU CRYPTO";
+    
   };
 
   render() {
-    const dates = this.extractDataToList("time", this.state.data);
-    const bit_price = this.extractDataToList("momentum_algo", this.state.data);
-    const bitPlus = this.extractDataToList("btc_usdt", this.state.data2);
+    const { stableData } = this.props.stableData;
+    console.log("??3",stableData)
+    const dates = this.extractDataToList("datetime", stableData);
+    const momentum_algo = this.extractDataToList("cum_return_ma", stableData);
     
     const data = {
       tooltip: {
         trigger: "axis",
-        axisPointer: {type: "cross"}
-        
+        axisPointer: {type: "cross"},
       },
       toolbox: {
         feature: {
@@ -95,7 +55,10 @@ class StableOnlyGraph extends Component {
       }
       ,
       legend: {
-        data: ["Momentum Algorithm", "BTC_USDT Hodl"]
+        data: ["Stable Only"],
+        itemStyle: {
+          borderType:"solid"
+        }
       },
       grid: {
         left: "3%",
@@ -129,27 +92,27 @@ class StableOnlyGraph extends Component {
       },
       series: [
         {
-          name: "Momentum Algorithm",
+          name: "Stable Only",
           type: "line",
           smooth: true,
-          data: bit_price,
+          data: momentum_algo,
           symbol: "none",
-          color: "#0000ff"
+          color: "#000000"
         },
-        {
-          name: "BTC_USDT Hodl",
-          type: "line",
-          smooth: true,
-          data: bitPlus,
-          symbol: "none",
-          color: "#FF4500"
-        }
+        // {
+        //   name: "BTC_USDT Hodl",
+        //   type: "line",
+        //   smooth: true,
+        //   data: btc_usdt,
+        //   symbol: "none",
+        //   color: "#b2b2b2"
+        // }
       ]
     };
     return (
       
       <div>
-        <ReactEcharts 
+        <ReactEcharts2 
           style={{
             height: "400%",
             width: "100%"
@@ -163,4 +126,8 @@ class StableOnlyGraph extends Component {
   }
 }
 
-export default StableOnlyGraph;
+const mapStateToProps = (state) => ({
+  stableData : state.stableData
+});
+
+export default connect(mapStateToProps)(StableOnlyGraph);

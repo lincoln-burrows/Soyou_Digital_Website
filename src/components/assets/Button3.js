@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { momentumAction } from "../../redux/actions/momentumAction";
-
+import { stableAction } from "../../redux/actions/stableAction";
 
 const SIZES = {
   sm: css`
@@ -52,7 +52,9 @@ function Button3({ disabled, size, variant, children, actionName }) {
       variantStyle={variantStyle}
       onClick={()=>{
         dispatch({type:actionName});
-        dispatch(momentumAction.getMomentumGraph(actionName));
+        {actionName.includes("MOMENTUM") ? 
+        dispatch(momentumAction.getMomentumGraph(actionName))
+        : dispatch(stableAction.getStableGraph(actionName))}
     }}
     >
       {children}

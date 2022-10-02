@@ -34,7 +34,7 @@ const Momentum2 = (props) => {
     // console.log("출력위한데이터2?", momentumIndexAll[0]);
 
     useEffect(() => {
-      dispatch(momentumAction.getMomentumGraph("MOMENTUM3M"));
+      dispatch(momentumAction.getMomentumGraph("MOMENTUMALL"));
     }, []);
     
 

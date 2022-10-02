@@ -11,7 +11,6 @@ import Button3 from "../assets/Button3";
 import downwardArrow from "../assets/downwardArrow.png";
 import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
-import Momentum from "./Momentum";
 import { connect } from "react-redux";
 
 class MomentumGraph extends Component {
@@ -39,7 +38,7 @@ class MomentumGraph extends Component {
   };
 
   componentDidMount = () => {
-    document.title = "SOYOU CRYPTO";
+    document.title = "SOYOU CRYPTO1";
     
   };
 
@@ -126,7 +125,7 @@ class MomentumGraph extends Component {
             
           }}
           option={data}
-          className="test"/>
+          className="test2"/>
       </div>
       
     );
