@@ -38,7 +38,7 @@ class MomentumGraph extends Component {
   };
 
   componentDidMount = () => {
-    document.title = "SOYOU CRYPTO1";
+    document.title = "SOYOU CRYPT";
     
   };
 
@@ -62,14 +62,19 @@ class MomentumGraph extends Component {
       ,
       legend: {
         data: ["Momentum Algorithm", "BTC_USDT Hodl"],
+        textStyle: {
+          fontSize: 16
+        },
         itemStyle: {
-          borderType:"solid"
+          borderType:"solid",
+          
         }
       },
       grid: {
-        left: "3%",
+        left: "1%",
         right: "4%",
         bottom: "3%",
+        top: "10%",
         containLabel: true
       },
       xAxis: {
@@ -84,7 +89,8 @@ class MomentumGraph extends Component {
         // },
         axisLabel: {
           color: "gray",
-          fontWeight: "bold",
+          // fontWeight: "bold",
+          fontSize:16,
           rotate: 0,
           interval: 60
         }
@@ -93,7 +99,9 @@ class MomentumGraph extends Component {
         type: "value",
         axisLabel: {
           color: "gray",
-          inside: false
+          inside: false,
+          fontSize:16,
+
         },
       },
       series: [
@@ -120,12 +128,15 @@ class MomentumGraph extends Component {
       <div>
         <ReactEcharts 
           style={{
-            height: "400%",
-            width: "100%"
+            height: "350%",
+            // height: "369px",
+            // 369
+            // width: "100%"
+            width: "900px"
             
           }}
           option={data}
-          className="test2"/>
+          />
       </div>
       
     );

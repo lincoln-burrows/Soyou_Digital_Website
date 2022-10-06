@@ -70,7 +70,7 @@ function App() {
           //현재 1페이지
           console.log("현재 1페이지, down", outerDivRef.current);
           outerDivRef.current.scrollTo({
-            top: pageHeight + DIVIDER_HEIGHT,
+            top: pageHeight + DIVIDER_HEIGHT*2,
             left: 0,
             behavior: "smooth",
           });

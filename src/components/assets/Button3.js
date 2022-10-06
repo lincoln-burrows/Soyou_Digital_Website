@@ -4,20 +4,23 @@ import { momentumAction } from "../../redux/actions/momentumAction";
 import { stableAction } from "../../redux/actions/stableAction";
 
 const SIZES = {
-  sm: css`
-    --button-font-size: 1.2rem;
-    --button-padding: 4px 12px;
-    --button-radius: 20px;
+  left: css`
+    --button-font-size: 18.2pt;
+    --button-padding: 6px 0px 6px 0px;
+    --button-radius: 25px;
+    margin: 0px 1.8% 3.5% 0px;
   `,
-  md: css`
-    --button-font-size: 1rem;
-    --button-padding: 4px 12px;
-    --button-radius: 8px;
+  middle: css`
+    --button-font-size: 18.2pt;
+    --button-padding: 6px 0px 6px 0px;
+    --button-radius: 25px;
+    margin: 0px 1.8% 0px 1.8%;
   `,
-  lg: css`
-    --button-font-size: 1.25rem;
-    --button-padding: 16px 20px;
-    --button-radius: 12px;
+  right: css`
+    --button-font-size: 18.2pt;
+    --button-padding: 6px 0px 6px 0px;
+    --button-radius: 25px;
+    margin: 0px 0px 0px 1.8%;
   `
 };
 
@@ -66,16 +69,16 @@ const StyledButton = styled.button`
   ${(p) => p.sizeStyle}
   ${(p) => p.variantStyle}
 
-  margin: 7px 14px 7px 14px;
+  
   border: none;
   cursor: pointer;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: var(--button-font-size, 1rem);
-  padding: var(--button-padding, 12px 16px);
-  border-radius: var(--button-radius, 8px);
+  font-family: "noto-sans-kr-medium";
+  font-size: var(--button-font-size,);
+  padding: var(--button-padding, );
+  border-radius: var(--button-radius,);
   color: var(--button-color, #ffffff);
   background: var(--button-bg-color, #0d6efd);
-  width:186px;
+  width:22.3%
 
 `;
 

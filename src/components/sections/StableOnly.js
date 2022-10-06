@@ -4,7 +4,6 @@ import echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
 import axios from "axios";
 import { Container, Row, Col } from 'reactstrap';
-import "../../App.css";
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
@@ -16,6 +15,7 @@ import hamburger from '../assets/hamburger.png';
 import { useState } from 'react'
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
+import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { stableAction } from "../../redux/actions/stableAction";
 
@@ -27,6 +27,7 @@ const StableOnly = (props) => {
     
   const modalNavStep1 = (targetPage) =>{
         props.toggleNav(targetPage);
+        console.log("sfsdf");
     }
 
     useEffect(() => {
@@ -35,74 +36,68 @@ const StableOnly = (props) => {
     
 
   return (
-    <div className="momentumPage">
-       <img src={upwardArrow} className="upwardArrow" onClick={()=>{props.pageUp(2);}}></img>
-            <Row className="justify-content-center">
-                <Col lg="6" md="8" className="align-self-center text-center">
-        <div className="momentumTitle">Stablecoin Only</div>
-        <br></br>
-        <Button size="sm" variant={"default" + (stableUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="STABLE_PROFIT" />
-       <Button size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="STABLE_INFO" />
+    <div className="containerHG">
+      <header >
+      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(2);}}></img>
+      </header>
+      <section className="content">
+          <nav>
+            
+          </nav>
+          <aside>
+          </aside>
+          <main>
+            <div className="text1">Stablecoin Only</div>
+        <Button size="left" variant={"default" + (stableUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="STABLE_PROFIT" />
+       <Button size="right" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="STABLE_INFO" />
        <span className={stableUpperButton == "2" ? 'hide info' : 'info'}>
-       <Button3 size="sm" variant={"default" + (stableLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="STABLEALL"/> 
-       <Button3 size="sm" variant={"default" + (stableLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="STABLE1Y"/> 
-       <Button3 size="sm" variant={"default" + (stableLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="STABLE6M"/> 
-       <Button3 size="sm" variant={"default" + (stableLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="STABLE3M"/> 
-       <br></br><br></br>
+       <Button3 size="left" variant={"default" + (stableLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="STABLEALL"/> 
+       <Button3 size="middle" variant={"default" + (stableLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="STABLE1Y"/> 
+       <Button3 size="middle" variant={"default" + (stableLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="STABLE6M"/> 
+       <Button3 size="right" variant={"default" + (stableLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="STABLE3M"/> 
         <StableOnlyGraph />
-          <br></br>
-          <Row className="firstRow">
-            <Col lg="3" className="align-self-center text-center">
-             Cum. Return 
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-             Daily Avg.
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-             Daily Sharp
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-             MDD
-            </Col>
-          </Row>
-          <Row className="secondRow">
-            <Col lg="3" className="align-self-center text-center">
-             {stableIndex && stableIndex.cumReturn}&nbsp;%
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-            {stableIndex && stableIndex.dailyAvg}&nbsp;%
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-            {stableIndex && stableIndex.dailySharp}
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-            &nbsp;{stableIndex && stableIndex.mdd}&nbsp;% 
-            </Col>
-          </Row>
+        <div className="indexContainer">
+        <div className="index">Cum. Return</div>
+        <div className="index">Daily Avg.</div>
+        <div className="index">Daily Sharp</div>
+        <div className="index">MDD</div>
+        </div>
+        <div className="indexValueContainer">
+        <div className="index">{stableIndex && stableIndex.cumReturn}&nbsp;%</div>
+        <div className="index">{stableIndex && stableIndex.dailyAvg}&nbsp;%</div>
+        <div className="index">{stableIndex && stableIndex.dailySharp}</div>
+        <div className="index">&nbsp;{stableIndex && stableIndex.mdd}&nbsp;%</div>
+        </div>
+        </span>
+        
+        <div className={stableUpperButton == "1" ? 'hide info' : 'info'}>
 
-          </span>
-          <div className={stableUpperButton == "1" ? 'hide info' : 'info'}>
-
-              <br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br><br></br>
               <div className="infoText">
-              <li >To be updatated</li>
-              <br></br>
-              <li >To be updatated</li>
-              <br></br>
-              <li >To be updatated</li>          
+              <li >To be updated</li>
+              
+              <li >To be updated</li>
+              
+              <li >To be updated</li>          
               </div>
-              <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
               <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
               </div>
-          
-          
-          </Col>
-        </Row>
         
-        <img src={downwardArrow} className="downwardArrow" onClick={()=>{props.pageDown(3);}}></img>
-        <div className="hamburgerGraph"><img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/></div>
-        <ToggleModal modalNavStep1={modalNavStep1}/>
-      </div>
+          </main>
+          <aside>
+          <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+          <ToggleModal modalNavStep1={modalNavStep1}/>
+          </aside>
+          <nav>
+            
+          </nav>
+      </section>
+      <footer>
+      <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
+      </footer>
+    </div>
+    
   )
 }
 

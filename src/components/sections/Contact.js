@@ -22,7 +22,7 @@ const Contact = (props) => {
             <Container>
                 <Row className="justify-content-center">
                     <Col lg="6" md="8" className="align-self-center text-center">
-                    <img src={upwardArrow} className="contactUpwardArrow" onClick={()=>{props.pageUp(3);}}></img>
+                    <img src={upwardArrow} width="45.5" height="35.5" className="contactUpwardArrow" onClick={()=>{props.pageUp(3);}}></img>
                     <br></br><br></br><br></br><br></br>
                     <h4 className='contactTitle'>Requests for Service</h4>
                         <h1 className='contactSubTitle'>soyou_crypto@gmail.com</h1>
@@ -51,7 +51,7 @@ const Contact = (props) => {
             <Container>
                 <Row className="justify-content-center">
                     <Col lg="6" md="8" className="align-self-center text-center">
-                    <img src={upwardArrow} className="contactUpwardArrowq" onClick={()=>{props.pageUp(3);}}></img>
+                    <img src={upwardArrow} width="45.5" height="35.5" className="contactUpwardArrowq" onClick={()=>{props.pageUp(3);}}></img>
                     <br></br><br></br><br></br><br></br>
                     <h4 className='contactTitleq'>Requests for Service</h4>
                         <h1 className='contactSubTitleq'>soyou_crypto@gmail.com</h1>

@@ -40,7 +40,7 @@ const MainPage = (props) => {
                                 <img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}></img>
                                 </div>
                             <ToggleModal modalNavStep1={modalNavStep1}/>
-                            <img src={downwardArrow} className="mainDownwardArrow" onClick={()=>{props.pageDown(1);}}></img>
+                            <img src={downwardArrow} width="45.5" height="35.5" className="mainDownwardArrow" onClick={()=>{props.pageDown(1);}}></img>
                             
                         </Col>
                     </Row>
@@ -70,7 +70,7 @@ const MainPage = (props) => {
                                 <img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}></img>
                                 </div>
                             <ToggleModal modalNavStep1={modalNavStep1}/>
-                            <img src={downwardArrow} className="mainDownwardArrowq" onClick={()=>{props.pageDown(1);}}></img>
+                            <img src={downwardArrow} width="45.5" height="35.5" className="mainDownwardArrowq" onClick={()=>{props.pageDown(1);}}></img>
                         
                     </Col>
                 </Row>

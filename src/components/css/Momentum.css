@@ -15,15 +15,15 @@
     font-size: 30px;
 }
 
-.downwardArrow{
+/* .downwardArrow{
   position:relative;
-  bottom :-30px;
+  align-items: center;
 }
 
 .upwardArrow{
     position:relative;
-    top: 20px;
-  }
+    align-items: center;
+  } */
 
 .hide.info{
     display: none;
@@ -35,3 +35,149 @@
 .infoText{
     text-align: left;
 }
+
+
+.containerHG{
+    display:flex;
+    flex-direction: column;
+    /* height:865px; */
+}
+
+header{
+    /* border: 1px solid gray; */
+    height: 13vh;
+    /* height: 150px; */
+    align-self: center;
+    
+}
+
+.upwardArrow {
+    position:relative;
+    top:50px;
+}
+
+footer {
+    /* border:1px solid gray; */
+    height: 13vh;
+    /* height: 150px; */
+    align-self: center;
+    /* transform: translate(-50%, -50%); */
+    
+}
+
+.downwardArrow {
+    position:relative;
+    bottom:-30px;
+}
+
+.content {
+    display: flex;
+    height:74vh;
+    /* height:600px; */
+    
+}
+
+.content nav {
+    /* border:1px solid gray;   */
+    flex: 2.435;
+    /* width: 108px; */
+}
+
+.content aside {
+    /* border:1px solid gray;   */
+    flex: 5.5;
+    /* width: 300px; */
+    text-align: right;
+    align-self: flex-end;
+}
+
+nav, aside {
+    /* flex-basis: 150px; */
+    /* flex-shrink: 1; */
+}
+
+.content main {
+    /* border: 1px solid gray; */
+    flex: 18;
+    flex-shrink: 0;
+    /* width: 982px; */
+    align-items: flex-start;
+}
+
+.text1{
+    font-size: 31.2pt;
+    /* font-size: 31.2px; */
+    text-align: center;
+    font-family: 'noto-sans-kr-bold';
+    position:relative;
+    top:-15px;
+    
+
+}
+
+.indexContainer {
+display: flex;
+flex-direction: row;
+margin: 1.9% 0px 1.9% 0px;
+text-align: center;
+font-size: 18.2pt;
+font-family: 'noto-sans-kr-regular';
+}
+
+.indexValueContainer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-size: 31.2pt; 
+    font-family: 'noto-sans-kr-regular';
+
+    }
+
+.index {
+    /* background-color: powderblue; */
+    /* border: 1px solid gray; */
+    flex: 1;
+}
+
+.infoText {
+font-size: 18.2pt;
+font-family: 'noto-sans-kr-light';
+line-height: 2;
+padding-left: 3%;
+}
+
+  @font-face {
+    font-family: 'testItalic';
+    src: url('https://cdn.jsdelivr.net/npm/@canvas-fonts/times-new-roman-italic@1.0.4/Times New Roman Italic.ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'noto-sans-kr-regular';
+    src: url('../assets/fonts/NotoSansKR-Regular.otf');
+    font-style: normal;
+    font-display: swap;
+  }  
+
+  @font-face {
+    font-family: 'noto-sans-kr-bold';
+    src: url('../assets/fonts/NotoSansKR-Bold.otf');
+    font-style: normal;
+    font-display: swap;
+  }  
+
+  @font-face {
+    font-family: 'noto-sans-kr-medium';
+    src: url('../assets/fonts/NotoSansKR-Medium.otf');
+    font-style: normal;
+    font-display: swap;
+  }  
+
+  @font-face {
+    font-family: 'noto-sans-kr-light';
+    src: url('../assets/fonts/NotoSansKR-Light.otf');
+    font-style: normal;
+    font-display: swap;
+  }  

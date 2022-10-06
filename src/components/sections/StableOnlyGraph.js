@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 
 import echarts from "echarts";
-import ReactEcharts2 from "echarts-for-react";
+import ReactEcharts from "echarts-for-react";
 import axios from "axios";
 import { Container, Row, Col } from 'reactstrap';
 import "../../App.css";
 import "../css/Momentum.css";
+import Button from "../assets/Button.js";
+import Button3 from "../assets/Button3";
+import downwardArrow from "../assets/downwardArrow.png";
+import upwardArrow from "../assets/upwardArrow.png";
+import App from "../../App";
 import { connect } from "react-redux";
 
 class StableOnlyGraph extends Component {
@@ -39,9 +44,9 @@ class StableOnlyGraph extends Component {
 
   render() {
     const { stableData } = this.props.stableData;
-    console.log("??3",stableData)
-    const dates = this.extractDataToList("datetime", stableData);
-    const momentum_algo = this.extractDataToList("cum_return_ma", stableData);
+    console.log("??2",stableData)
+    const dates = this.extractDataToList("time", stableData);
+    const stableOnly = this.extractDataToList("cum_return_ma", stableData);
     
     const data = {
       tooltip: {
@@ -56,14 +61,19 @@ class StableOnlyGraph extends Component {
       ,
       legend: {
         data: ["Stable Only"],
+        textStyle: {
+          fontSize: 16
+        },
         itemStyle: {
-          borderType:"solid"
+          borderType:"solid",
+          
         }
       },
       grid: {
-        left: "3%",
+        left: "1%",
         right: "4%",
         bottom: "3%",
+        top: "10%",
         containLabel: true
       },
       xAxis: {
@@ -78,7 +88,8 @@ class StableOnlyGraph extends Component {
         // },
         axisLabel: {
           color: "gray",
-          fontWeight: "bold",
+          // fontWeight: "bold",
+          fontSize:16,
           rotate: 0,
           interval: 60
         }
@@ -87,7 +98,9 @@ class StableOnlyGraph extends Component {
         type: "value",
         axisLabel: {
           color: "gray",
-          inside: false
+          inside: false,
+          fontSize:16,
+
         },
       },
       series: [
@@ -95,31 +108,26 @@ class StableOnlyGraph extends Component {
           name: "Stable Only",
           type: "line",
           smooth: true,
-          data: momentum_algo,
+          data: stableOnly,
           symbol: "none",
           color: "#000000"
         },
-        // {
-        //   name: "BTC_USDT Hodl",
-        //   type: "line",
-        //   smooth: true,
-        //   data: btc_usdt,
-        //   symbol: "none",
-        //   color: "#b2b2b2"
-        // }
       ]
     };
     return (
       
       <div>
-        <ReactEcharts2 
+        <ReactEcharts 
           style={{
-            height: "400%",
-            width: "100%"
+            height: "350%",
+            // height: "369px",
+            // 369
+            // width: "100%"
+            width: "900px"
             
           }}
           option={data}
-          className="test"/>
+          />
       </div>
       
     );

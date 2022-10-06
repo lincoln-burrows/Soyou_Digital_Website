@@ -4,7 +4,6 @@ import echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
 import axios from "axios";
 import { Container, Row, Col } from 'reactstrap';
-import "../../App.css";
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
@@ -30,8 +29,6 @@ const Momentum2 = (props) => {
         props.toggleNav(targetPage);
         console.log("sfsdf");
     }
-    // console.log("출력위한데이터?", momentumIndex);
-    // console.log("출력위한데이터2?", momentumIndexAll[0]);
 
     useEffect(() => {
       dispatch(momentumAction.getMomentumGraph("MOMENTUMALL"));
@@ -39,74 +36,68 @@ const Momentum2 = (props) => {
     
 
   return (
-    <div className="momentumPage">
-       <img src={upwardArrow} className="upwardArrow" onClick={()=>{props.pageUp(1);}}></img>
-            <Row className="justify-content-center">
-                <Col lg="6" md="8" className="align-self-center text-center">
-        <div className="momentumTitle"> Momentum Algorithm</div>
-        <br></br>
-        <Button size="sm" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
-       <Button size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="MOMENTUM_INFO" />
+    <div className="containerHG">
+      <header >
+      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
+      </header>
+      <section className="content">
+          <nav>
+            
+          </nav>
+          <aside>
+          </aside>
+          <main>
+            <div className="text1"> Momentum Algorithm</div>
+        <Button size="left" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
+       <Button size="right" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="MOMENTUM_INFO" />
        <span className={momentumUpperButton == "2" ? 'hide info' : 'info'}>
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL"/> 
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y"/> 
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M"/> 
-       <Button3 size="sm" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M"/> 
-       <br></br><br></br>
+       <Button3 size="left" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL"/> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y"/> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M"/> 
+       <Button3 size="right" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M"/> 
         <MomentumGraph />
-          <br></br>
-          <Row className="firstRow">
-            <Col lg="3" className="align-self-center text-center">
-             Cum. Return 
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-             Daily Avg.
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-             Daily Sharp
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-             MDD
-            </Col>
-          </Row>
-          <Row className="secondRow">
-            <Col lg="3" className="align-self-center text-center">
-             {momentumIndex && momentumIndex.cumReturn}&nbsp;%
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-            {momentumIndex && momentumIndex.dailyAvg}&nbsp;%
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-            {momentumIndex && momentumIndex.dailySharp}
-            </Col>
-            <Col lg="3" className="align-self-center text-center">
-            &nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;% 
-            </Col>
-          </Row>
+        <div className="indexContainer">
+        <div className="index">Cum. Return</div>
+        <div className="index">Daily Avg.</div>
+        <div className="index">Daily Sharp</div>
+        <div className="index">MDD</div>
+        </div>
+        <div className="indexValueContainer">
+        <div className="index">{momentumIndex && momentumIndex.cumReturn}&nbsp;%</div>
+        <div className="index">{momentumIndex && momentumIndex.dailyAvg}&nbsp;%</div>
+        <div className="index">{momentumIndex && momentumIndex.dailySharp}</div>
+        <div className="index">&nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;%</div>
+        </div>
+        </span>
+        
+        <div className={momentumUpperButton == "1" ? 'hide info' : 'info'}>
 
-          </span>
-          <div className={momentumUpperButton == "1" ? 'hide info' : 'info'}>
-
-              <br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br><br></br>
               <div className="infoText">
-              <li >To be updatated</li>
-              <br></br>
-              <li >To be updatated</li>
-              <br></br>
-              <li >To be updatated</li>          
+              <li >To be updated</li>
+              
+              <li >To be updated</li>
+              
+              <li >To be updated</li>          
               </div>
-              <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
               <InfoRFSButton size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
               </div>
-          
-          
-          </Col>
-        </Row>
         
-        <img src={downwardArrow} className="downwardArrow" onClick={()=>{props.pageDown(2);}}></img>
-        <div className="hamburgerGraph"><img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/></div>
-        <ToggleModal modalNavStep1={modalNavStep1}/>
-      </div>
+          </main>
+          <aside>
+          <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+          <ToggleModal modalNavStep1={modalNavStep1}/>
+          </aside>
+          <nav>
+            
+          </nav>
+      </section>
+      <footer>
+      <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
+      </footer>
+    </div>
+    
   )
 }
 
