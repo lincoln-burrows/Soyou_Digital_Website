@@ -2,11 +2,13 @@ import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Container, Row, Col } from 'reactstrap';
 import "../../App.css";
+import "../css/Contact.css";
 import hamburger from '../assets/hamburger.png';
 import upwardArrow from "../assets/upwardArrow.png";
 import { useState } from 'react'
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
+import { lineHeight } from '@mui/system';
 
 const Contact = (props) => {
     const dispatch = useDispatch();
@@ -18,61 +20,78 @@ const Contact = (props) => {
 
     if(props.scrollIndex == 4){
     return (
-        <div className="contactPage">
-            <Container>
-                <Row className="justify-content-center">
-                    <Col lg="6" md="8" className="align-self-center text-center">
-                    <img src={upwardArrow} width="45.5" height="35.5" className="contactUpwardArrow" onClick={()=>{props.pageUp(3);}}></img>
-                    <br></br><br></br><br></br><br></br>
-                    <h4 className='contactTitle'>Requests for Service</h4>
-                        <h1 className='contactSubTitle'>soyou_crypto@gmail.com</h1>
-                        
-                        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                        <div className='contactPassage'>
-                        <span className="contactPassage1">[ Track Record ]</span>
-                        <br></br><br></br>
-                        <li className="contactPassage2">May '22 : Selected for angel package by Seoul Center for Creative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Economy & Innovation</li>
-                        <br></br>
-                        <li className="contactPassage3">Oct '22 : Momentum algorithm ver1.0 launched</li>
-                        <br></br>
-                        <li className="contactPassage4">Oct '22 : Stable only ver1.0 launched</li>
+        <div className="containerHG">
+      <header >
+      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
+      </header>
+      <section className="content">
+          <nav>
+            
+          </nav>
+          <aside>
+          </aside>
+          <main>
+              <div className='contactTitle'>
+          <div>Requests for Service</div>
+                        <div className='contactSubTitle'>soyou_crypto@gmail.com</div>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
-            <div className="hamburgerContact">
-                <img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/></div>
-                <ToggleModal modalNavStep1={modalNavStep1} />    
-        </div>
+                        
+                        <div className='contactPassage'>
+                        <div className="contactPassage1">[ Track Record ]</div>
+                        <div className="contactPassage2">&bull; &nbsp;&nbsp;&nbsp;&nbsp;May '22 : Selected for angel package by Seoul Center for Creative Economy & Innovation</div>
+                        <div className="contactPassage3">&bull; &nbsp;&nbsp;&nbsp;&nbsp;Oct '22 : Momentum algorithm ver1.0 launched</div>
+                        <div className="contactPassage4">&bull; &nbsp;&nbsp;&nbsp;&nbsp;Oct '22 : Stable only ver1.0 launched
+                        </div>
+                        </div>
+          </main>
+          <aside>
+          <img className='hamburgerContact' width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+          <ToggleModal modalNavStep1={modalNavStep1}/>
+          </aside>
+          <nav>
+            
+          </nav>
+      </section>
+      <footer>
+      </footer>
+    </div>
     );
 } else {
     return (
-        <div className="contactPageq">
-            <Container>
-                <Row className="justify-content-center">
-                    <Col lg="6" md="8" className="align-self-center text-center">
-                    <img src={upwardArrow} width="45.5" height="35.5" className="contactUpwardArrowq" onClick={()=>{props.pageUp(3);}}></img>
-                    <br></br><br></br><br></br><br></br>
-                    <h4 className='contactTitleq'>Requests for Service</h4>
-                        <h1 className='contactSubTitleq'>soyou_crypto@gmail.com</h1>
-                        
-                        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                        <div className='contactPassage'>
-                        <span className="contactPassage1q">[ Track Record ]</span>
-                        <br></br><br></br>
-                        <li className="contactPassage2q">May '22 : Selected for angel package by Seoul Center for Creative &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Economy & Innovation</li>
-                        <br></br>
-                        <li className="contactPassage3q">Oct '22 : Momentum algorithm ver1.0 launched</li>
-                        <br></br>
-                        <li className="contactPassage4q">Oct '22 : Stable only ver1.0 launched</li>
+        <div className="containerHG">
+      <header >
+      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
+      </header>
+      <section className="content">
+          <nav>
+            
+          </nav>
+          <aside>
+          </aside>
+          <main>
+              <div className='contactTitleT'>
+          <div>Requests for Service</div>
+                        <div className='contactSubTitleT'>soyou_crypto@gmail.com</div>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
-            <div className="hamburgerContactq2">
-            <img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/></div>
-                <ToggleModal modalNavStep1={modalNavStep1} />  
-        </div>
+                        
+                        <div className='contactPassageT'>
+                        <div className="contactPassage1T">[ Track Record ]</div>
+                        <div className="contactPassage2T">&bull; &nbsp;&nbsp;&nbsp;&nbsp;May '22 : Selected for angel package by Seoul Center for Creative Economy & Innovation</div>
+                        <div className="contactPassage3T">&bull; &nbsp;&nbsp;&nbsp;&nbsp;Oct '22 : Momentum algorithm ver1.0 launched</div>
+                        <div className="contactPassage4T">&bull; &nbsp;&nbsp;&nbsp;&nbsp;Oct '22 : Stable only ver1.0 launched</div>
+                        </div>
+          </main>
+          <aside>
+          <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+          <ToggleModal modalNavStep1={modalNavStep1}/>
+          </aside>
+          <nav>
+            
+          </nav>
+      </section>
+      <footer>
+      </footer>
+    </div>
         
     );
 }

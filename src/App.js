@@ -1,15 +1,11 @@
 import { useState, useEffect, useRef, forwardRef } from "react";
-
-import Dots from "./Dots";
-
 import "./App.css";
-// import "./index.css";
 import { createBrowserHistory } from "history";
 import { Route, Switch, HashRouter } from "react-router-dom";
 import MainPage from "./components/sections/MainPage";
 import StableOnly from "./components/sections/StableOnly";
 import Contact from "./components/sections/Contact";
-import Momentum2 from "./components/sections/Momentum2";
+import Momentum from "./components/sections/Momentum";
 import { useDispatch, useSelector } from "react-redux";
 
 var hist = createBrowserHistory();
@@ -44,7 +40,7 @@ function App() {
   const toggleNav = (targetPage) => {
     console.log("toggleNav 작동");
     outerDivRef.current.scrollTo({
-      top: pageHeight*(targetPage) + DIVIDER_HEIGHT,
+      top: pageHeight*(targetPage) + DIVIDER_HEIGHT*(targetPage),
       left: 0,
       behavior: "smooth",
     });
@@ -70,7 +66,7 @@ function App() {
           //현재 1페이지
           console.log("현재 1페이지, down", outerDivRef.current);
           outerDivRef.current.scrollTo({
-            top: pageHeight + DIVIDER_HEIGHT*2,
+            top: pageHeight + DIVIDER_HEIGHT *1,
             left: 0,
             behavior: "smooth",
           });
@@ -140,7 +136,7 @@ function App() {
           //현재 3페이지
           console.log("현재 3페이지, up");
           outerDivRef.current.scrollTo({
-            top: pageHeight + DIVIDER_HEIGHT,
+            top: pageHeight + DIVIDER_HEIGHT*1,
             left: 0,
             behavior: "smooth",
           });
@@ -149,7 +145,7 @@ function App() {
           //현재 4페이지
           console.log("현재 4페이지, up");
           outerDivRef.current.scrollTo({
-            top: pageHeight*2 + DIVIDER_HEIGHT,
+            top: pageHeight*2 + DIVIDER_HEIGHT*2,
             left: 0,
             behavior: "smooth",
           });
@@ -158,7 +154,7 @@ function App() {
           // 현재 5페이지
           console.log("현재 5페이지, up");
           outerDivRef.current.scrollTo({
-            top: pageHeight*3 + DIVIDER_HEIGHT,
+            top: pageHeight*3 + DIVIDER_HEIGHT*3,
             left: 0,
             behavior: "smooth",
           });
@@ -179,12 +175,9 @@ function App() {
   return (
     <div ref={outerDivRef} className="outer">
 
-      {/* <Contact /> */}
       <MainPage pageDown={pageDown} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
       <div className="divider"></div>
-      {/* <TogglePage toggleNav={toggleNav}/> */}
-      <div className="divider"></div>
-      <Momentum2 pageUp={pageUp} pageDown={pageDown} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
+      <Momentum pageUp={pageUp} pageDown={pageDown} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
       <div className="divider"></div>
       <StableOnly pageUp={pageUp} pageDown={pageDown} scrollIndex={scrollIndex} toggleNav={toggleNav}/>
       <div className="divider"></div>

@@ -39,225 +39,9 @@ body {
   background-color: #ffffff;
 }
 
-/* 기존파일 css */
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.ani-Trial {
-  width: 100vw;
-  height: 100vh;
-  background: skyblue;
-  margin: 0;
-}
-
-.ani-Trial2 {
-  width: 100vw;
-  height: 100vh;
-  background: lightseagreen;
-  margin: 0;
-}
-
-.ani-Trial3 {
-  width: 100vw;
-  height: 100vh;
-  /* background: url(https://www.starbucks.co.kr/common/img/main/fav_prod_bg_new.jpg) fixed; */
-  background: skyblue;
-  margin: 0;
-}
-
-.grid {
-  /* display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px; */
-  padding-left: 100px;
-  padding-right: 100px;
-}
-
-.mainPage {
-  height: 100vh;
-  align-items: center;
-  position:relative;
-  padding-top:300px;  
-}
-
-.mainTitle{
-  font-size: 78px;
-}
-
-.mainSubTitle{
-  font-size: 31px;
-}
-
-.mainDescription1{
-  font-size: 21px;
-  color: silver;
-}
-
-.mainDescription2{
-  font-size: 21px;
-  color: silver;
-}
-
-.mainDescription3{
-  font-size: 21px;
-  color: silver;
-}
-
-.mainPageq {
-  height: 100vh;
-  align-items: center;
-  position:relative;
-  padding-top:300px;
-  z-index: 0;
-
-}
-
-.mainTitleq{
-  font-size: 78px;
-}
-
-.mainSubTitleq{
-  font-size: 31px;
-}
-
-.mainDescription1q{
-  font-size: 21px;
-  color: silver;
-}
-
-.mainDescription2q{
-  font-size: 21px;
-  color: silver;
-}
-
-.mainDescription3q{
-  font-size: 21px;
-  color: silver;
-}
-
-.hamburgerMainq{
-  position: relative;
-  text-align: right;
-  bottom: -150px;
-  padding-left:1000px;
-}
-
-.mainDownwardArrowq{
-  position:relative;
-  bottom : -150px;
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .mainUpper{
-    animation: bannerAppear 1.6s ease-out;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .mainDescription1{
-    animation: description1Appear 2s ease-out;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .mainDescription2{
-    animation: description1Appear 2.3s ease-out;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .mainDescription3{
-    animation: description1Appear 3.0s ease-out;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .mainDownwardArrow{
-    animation: description1Appear 3.8s ease-out;
-  }
-  .hamburgerMain{
-    animation: description1Appear 3.9s ease-out;
-  }
-}
-
-/* @media (prefers-reduced-motion: no-preference){
-  .mainSubTitle{
-  animation: bannerAppear 3s linear;
-  }
-} */
 
 .static-slider-head {
   height:100vh;
-}
-
-.togglePage {
-  height: 100vh;
-  /* width:100vw; */
-  /* display: flex; */
-  /* 상하 위치 */
-  /* align-items : flex-end;  */
-  /* font-size: 100px;*/
-  color : white;
-  /* background-color: rgb(34, 32, 32); */
-  background-color: #000000;
-  padding-left: 55%;
-  padding-top: 27%;
-  text-align: right; 
-}
-
-.test22{
-  text-align: center;
-  padding-left:100px;
-}
-/* .togglePageCol1 {
-  text-align: right;
-
-  
-} */
-
-.momentumPage{
-  height: 100vh;
-  /* 상하 위치 */
-  align-items : center; 
-  text-align: center;
-  /* justify-content: center;  */
-  z-index: 1;
 }
 
 .momentumGraph{
@@ -275,43 +59,6 @@ body {
   text-align: center;
 }
 
-
-@keyframes bannerAppear {
-  0% { margin-top:100px; opacity: 0%; }
-  40% {opacity:0%}
-   /* 10% { margin-top:100px; opacity: 10%; } */
-  /* 20% { margin-top:100px; opacity: 20%; } */
-  /* 30% { margin-top:100px; opacity: 10%; } */
-  /* 40% { margin-top:100px; opacity: 40%; } */
-  /* 50% { margin-top:100px; opacity:50% }  */
-  70% { margin-top:100px; opacity:100% }
-  /* 70% { margin-top:100px; opacity: 60%;}
-  80% { margin-top:100px; opacity: 100%;}
-  90% { margin-top:100px; opacity: 100%;} */
-  100% { margin-top : 0px; }
-}
-
-@keyframes description1Appear {
-  0% { opacity: 0%; }
-  74% {opacity:0%}
-  100% { opacity: 100% }
-}
-
-@keyframes description2Appear {
-  0% { opacity: 0%; }
-  100% { opacity: 100% }
-}
-
-@keyframes description3Appear {
-  0% { opacity: 0%; }
-  100% { opacity: 100% }
-}
-
-.mainDownwardArrow{
-  position:relative;
-  bottom : -150px;
-}
-
 .toggleMenu{
   float:right;
   text-align: right;
@@ -320,104 +67,72 @@ body {
   
 }
 
-.hamburgerMain{
-  position: relative;
+/* 공통 레이아웃 */
+.containerHG{
+  display:flex;
+  flex-direction: column;
+  position: ;
+  /* height:865px; */
+}
+
+header{
+  /* border: 1px solid gray; */
+  height: 13.16vh;
+  /* height: 150px; */
+  align-self: center;
+  
+}
+
+.upwardArrow {
+  position:relative;
+  top:50px;
+}
+
+footer {
+  /* border:1px solid gray; */
+  height: 13.16vh;
+  align-self: center;
+}
+
+.downwardArrow {
+  position:relative;
+  bottom:-30px;
+}
+
+.content {
+  display: flex;
+  height:73.68vh;
+  /* height:600px; */
+  
+}
+
+.content nav {
+  /* border:1px solid gray;   */
+  flex: 2.435;
+  /* width: 108px; */
+}
+
+.content aside {
+  /* border:1px solid gray;   */
+  flex: 5.5;
+  /* width: 300px; */
   text-align: right;
-  bottom: -150px;
-  padding-left:1000px;
+  align-self: flex-end;
 }
 
-.hamburgerGraph{
-  position: relative;
-  text-align: right;
-  bottom: 100px;
-  padding-left:0px;
-  padding-right:150px;
+nav, aside {
+  /* flex-basis: 150px; */
+  /* flex-shrink: 1; */
 }
 
-.hamburgerContact{
-  position: relative;
-  text-align: right;
-  bottom: 0px;
-  padding-left:0px;
+.content main {
+  /* border: 1px solid gray; */
+  flex: 18;
+  flex-shrink: 0;
+  /* width: 982px; */
+  align-items: flex-start;
 }
+/* 공통 레이아웃 종료 */
 
-.contactPage {
-  height: 100vh;
-  /* align-items: center; */
-  position:relative;
-  /* top:32%;   */
-}
 
-.contactUpwardArrow{
-  position:relative;
-  top:30px;
-}
-
-.contactPassage{
-  text-align: left;
-  font-size: 20px;
-}
-
-.hamburgerContact{
-  position:relative;
-  padding-right:170px;
-  bottom:-100px;
-}
-
-.contactPageq {
-  height: 100vh;
-  /* align-items: center; */
-  position:relative;
-  /* top:32%;   */
-}
-
-.contactUpwardArrowq{
-  position:relative;
-  top:30px;
-}
-
-.contactPassageq{
-  text-align: left;
-}
-
-.hamburgerContactq2{
-  position:relative;
-  /* padding-right:-100px; */
-  padding-left:1550px;
-  bottom:-100px;
-  /* position:relative;
-  padding-right:170px;
-  bottom:-100px; */
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .contactTitle{
-    animation: description1Appear 1.0s ease-out;
-
-  }
-  .contactSubTitle{
-    animation: description1Appear 1.2s ease-out;
-
-  }
-  .contactPassage1{
-    animation: description1Appear 1.5s ease-out;
-
-  }
-  .contactPassage2{
-    animation: description1Appear 1.8s ease-out;
-
-  }
-  .contactPassage3{
-    animation: description1Appear 2.2s ease-out;
-
-  }
-  .contactPassage4{
-    animation: description1Appear 2.6s ease-out;
-
-   }
-  .hamburgerContact{
-    animation: description1Appear 2.9s ease-out;
-  }
-}
 

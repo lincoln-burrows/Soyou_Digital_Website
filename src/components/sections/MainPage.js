@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Container, Row, Col } from 'reactstrap';
-import styled, { keyframes } from "styled-components";
+import "../css/MainPage.css";
 import "../../App.css";
 import downwardArrow from "../assets/downwardArrow.png";
 import upwardArrow from "../assets/upwardArrow.png";
@@ -22,60 +22,75 @@ const MainPage = (props) => {
 
     if(props.scrollIndex == 1){
         return (
-            <div className="mainPage">
-                <Container>
-                    <Row className="justify-content-center">
-                        <Col lg="6" md="8" className="align-self-center text-center">
-                            <div className = "mainUpper">
-                            <h1 className="mainTitle">SOYOU CRYPTO</h1>
-                            <h4 className="mainSubTitle">Crypto Asset Management Labs</h4>
-                            </div>
-                            <br></br>
-                            <br></br>
-                            <h4 className="mainDescription1">Crypto asset management for all</h4>
-                            <h4 className="mainDescription2">More capital income for all</h4>
-                            <h4 className="mainDescription3">More freedom for all</h4>
-                            
-                            <div className="hamburgerMain">
-                                <img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}></img>
-                                </div>
-                            <ToggleModal modalNavStep1={modalNavStep1}/>
-                            <img src={downwardArrow} width="45.5" height="35.5" className="mainDownwardArrow" onClick={()=>{props.pageDown(1);}}></img>
-                            
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-            
+            <div><ToggleModal modalNavStep1={modalNavStep1}/>
+            <div className="containerHG">
+      <header >
+      </header>
+      <section className="content">
+          <nav className='test'>
+          {/* ------------- */}
+          </nav>
+          <aside>
+          </aside>
+          <main>
+              <div className='mainUpper'>
+          <div className="mainTitle">SOYOU CRYPTO</div>
+          <h4 className="mainSubTitle">Crypto Asset Management Labs</h4>
+          </div>
+          <br></br>
+          <div className="mainDescription1">Crypto asset management for all</div>
+          <div className="mainDescription2">More capital income for all</div>
+          <div className="mainDescription3">More freedom for all</div>
+          </main>
+          <aside>
+          <img className="hamburger" width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+          
+          </aside>
+          <nav >
+          </nav>
+      </section>
+      <footer>
+      <img className="mainDownwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
+      </footer>
+    </div>
+    </div>
         );
     } 
     else {
 
         return (
-        <div className="mainPageq">
-            <Container>
-                <Row className="justify-content-center">
-                    <Col lg="6" md="8" className="align-self-center text-center">
-                        <div className = "mainUpperq">
-                        <h1 className="mainTitleq">SOYOU CRYPTO</h1>
-                        <h4 className="mainSubTitleq">Crypto Asset Management Labs</h4>
-                        </div>
-                        <br></br>
-                        <br></br>
-                        <h4 className="mainDescription1q">Crypto asset management for all</h4>
-                        <h4 className="mainDescription2q">More capital income for all</h4>
-                        <h4 className="mainDescription3q">More freedom for all</h4>
-                        
-                        <div className="hamburgerMainq">
-                                <img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}></img>
-                                </div>
-                            <ToggleModal modalNavStep1={modalNavStep1}/>
-                            <img src={downwardArrow} width="45.5" height="35.5" className="mainDownwardArrowq" onClick={()=>{props.pageDown(1);}}></img>
-                        
-                    </Col>
-                </Row>
-            </Container>
-        </div>
+            <div><ToggleModal modalNavStep1={modalNavStep1}/>
+            <div className="containerHG">
+      <header >
+      </header>
+      <section className="content">
+          <nav className='test'>
+          
+          </nav>
+          <aside>
+          </aside>
+          <main>
+              <div className='mainUpperT'>
+          <div className="mainTitleT">SOYOU CRYPTO</div>
+          <h4 className="mainSubTitleT">Crypto Asset Management Labs</h4>
+          </div>
+          <br></br>
+          <div className="mainDescription1T">Crypto asset management for all</div>
+          <div className="mainDescription2T">More capital income for all</div>
+          <div className="mainDescription3T">More freedom for all</div>
+          </main>
+          <aside>
+          <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+          
+          </aside>
+          <nav >
+          </nav>
+      </section>
+      <footer>
+      <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
+      </footer>
+    </div>
+    </div>
 
     ); }
         

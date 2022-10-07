@@ -1,0 +1,283 @@
+ /* 공통 페이지 레이아웃 */
+
+body {
+  margin: 0;
+  overflow-y: hidden;
+}
+
+.mainUpper {
+  line-height: 120px;
+}
+
+.mainTitle{
+  font-size: 104px;
+  /* font-size: 96px; */
+  /* ppt fontsize x 1.3 x 4/3 = px */
+  padding-top: 176px;
+  text-align: center;
+  font-family: 'noto-sans-kr-bold';
+}
+
+.mainSubTitle{
+  font-size: 31.2pt;
+  text-align: center;
+  font-family: 'noto-sans-kr-bold';
+  
+}
+
+.mainDescription1{
+  font-size: 20.8pt;
+  font-family: 'noto-sans-kr-light';
+  color: silver;
+  text-align: center;
+
+}
+
+.mainDescription2{
+  font-size: 20.8pt;
+  font-family: 'noto-sans-kr-light';
+  color: silver;
+  text-align: center;
+
+}
+
+.mainDescription3{
+  font-size: 20.8pt;
+  font-family: 'noto-sans-kr-light';
+  color: silver;
+  text-align: center;
+
+}
+
+.mainDownwardArrow {
+  position:relative;
+  bottom:-30px;
+}
+
+.mainUpperT {
+  line-height: 120px;
+}
+
+.mainTitleT{
+  font-size: 104px;
+  /* font-size: 96px; */
+  /* ppt fontsize x 1.3 x 4/3 = px */
+  padding-top: 176px;
+  text-align: center;
+  font-family: 'noto-sans-kr-bold';
+}
+
+.mainSubTitleT{
+  font-size: 31.2pt;
+  text-align: center;
+  font-family: 'noto-sans-kr-bold';
+  
+}
+
+.mainDescription1T{
+  font-size: 20.8pt;
+  font-family: 'noto-sans-kr-light';
+  color: silver;
+  text-align: center;
+
+}
+
+.mainDescription2T{
+  font-size: 20.8pt;
+  font-family: 'noto-sans-kr-light';
+  color: silver;
+  text-align: center;
+
+}
+
+.mainDescription3T{
+  font-size: 20.8pt;
+  font-family: 'noto-sans-kr-light';
+  color: silver;
+  text-align: center;
+
+}
+
+
+.test {
+  padding-top: 319px;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .mainUpper{
+    animation: bannerAppear 1.8s ease-out;
+  }
+}  
+
+@media (prefers-reduced-motion: no-preference){
+  .mainDescription1{
+    animation: description1Appear 1.4s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .mainDescription2{
+    animation: description1Appear 1.9s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .mainDescription3{
+    animation: description1Appear 2.4s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .mainDownwardArrow{
+    animation: description1Appear 2.9s ease-out;
+  }
+  .hamburger{
+    animation: description1Appear 3.0s ease-out;
+}
+}
+
+@keyframes bannerAppear {
+  0% { margin-top:91px; opacity: 0%; }
+  30% {margin-top:91px; opacity:0%}
+  70% { margin-top:91px; opacity:100% }
+  100% { margin-top : 0px; }
+}
+
+@keyframes description1Appear {
+  0% { opacity: 0%; }        
+  90% { opacity: 0%; }
+  100% { opacity: 100% }
+}
+
+@keyframes description2Appear {
+  0% { opacity: 0%; }
+  73% { opacity: 0%; }
+  100% { opacity: 100% }                 
+}
+
+@keyframes description3Appear {
+  0% { opacity: 0%; }
+  79% { opacity: 0%; }
+  100% { opacity: 100% }
+}
+
+@keyframes descriptionHamburgerAppear {
+  0% { opacity: 0%; }
+  100% { opacity: 100% }
+}
+
+/* @media (max-width: 800px) {
+  .mainPage {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    position:relative;
+    padding-top:200px;  
+    
+  }
+  
+  .mainTitle{
+    font-size: 78px;
+  }
+  
+  .mainSubTitle{
+    font-size: 31px;
+  }
+  
+  .mainDescription1{
+    font-size: 21px;
+    color: silver;
+  }
+  
+  .mainDescription2{
+    font-size: 21px;
+    color: silver;
+  }
+  
+  .mainDescription3{
+    font-size: 21px;
+    color: silver;
+  }
+  
+  .mainPageq {
+    height: 100vh;
+    align-items: center;
+    position:relative;
+    padding-top:200px;
+    z-index: 0;
+  
+  }
+  
+  .mainTitleq{
+    font-size: 78px;
+  }
+  
+  .mainSubTitleq{
+    font-size: 31px;
+  }
+  
+  .mainDescription1q{
+    font-size: 21px;
+    color: silver;
+  }
+  
+  .mainDescription2q{
+    font-size: 21px;
+    color: silver;
+  }
+  
+  .mainDescription3q{
+    font-size: 21px;
+    color: silver;
+  }
+  
+  .hamburgerMainq{
+    position: relative;
+    text-align: right;
+    bottom: -150px;
+    /* padding-left:1000px; 
+  }
+  
+  .mainDownwardArrowq{
+    position:relative;
+    bottom : -150px;
+  }
+  
+} */
+
+@font-face {
+  font-family: 'testItalic';
+  src: url('https://cdn.jsdelivr.net/npm/@canvas-fonts/times-new-roman-italic@1.0.4/Times New Roman Italic.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'noto-sans-kr-regular';
+  src: url('../assets/fonts/NotoSansKR-Regular.otf');
+  font-style: normal;
+  font-display: swap;
+}  
+
+@font-face {
+  font-family: 'noto-sans-kr-bold';
+  src: url('../assets/fonts/NotoSansKR-Bold.otf');
+  font-style: normal;
+  font-display: swap;
+}  
+
+@font-face {
+  font-family: 'noto-sans-kr-medium';
+  src: url('../assets/fonts/NotoSansKR-Medium.otf');
+  font-style: normal;
+  font-display: swap;
+}  
+
+@font-face {
+  font-family: 'noto-sans-kr-light';
+  src: url('../assets/fonts/NotoSansKR-Light.otf');
+  font-style: normal;
+  font-display: swap;
+}  

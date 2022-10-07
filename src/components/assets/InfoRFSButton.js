@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 const SIZES = {
   sm: css`
-    --button-font-size: 1.2rem;
-    --button-padding: 4px 12px;
-    --button-radius: 20px;
-    
+  --button-font-size: 20.8pt;
+  --button-padding: 4px 0px 4px 0px;
+  --button-radius: 25px;
   `,
   md: css`
     --button-font-size: 1rem;
@@ -60,16 +59,16 @@ const StyledButton = styled.button`
   ${(p) => p.sizeStyle}
   ${(p) => p.variantStyle}
 
-  margin: 7px 14px 7px 14px;
+
   border: none;
   cursor: pointer;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: var(--button-font-size, 1rem);
-  padding: var(--button-padding, 12px 16px);
-  border-radius: var(--button-radius, 8px);
+  font-family: "noto-sans-kr-medium", sans-serif;
+  font-size: var(--button-font-size,);
+  padding: var(--button-padding, );
+  border-radius: var(--button-radius, );
   color: var(--button-color, #ffffff);
   background: var(--button-bg-color, #0d6efd);
-  width:400px;
+  width:100%;
 `;
 
 export default InfoRFSButton;

@@ -19,7 +19,7 @@ import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { momentumAction } from "../../redux/actions/momentumAction";
 
-const Momentum2 = (props) => {
+const Momentum = (props) => {
 
   const dispatch = useDispatch();
   const { momentumLowerButton, momentumUpperButton } = useSelector((state) => state.legacy);
@@ -101,4 +101,4 @@ const Momentum2 = (props) => {
   )
 }
 
-export default Momentum2
+export default Momentum

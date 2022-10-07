@@ -45,7 +45,7 @@ class StableOnlyGraph extends Component {
   render() {
     const { stableData } = this.props.stableData;
     console.log("??2",stableData)
-    const dates = this.extractDataToList("time", stableData);
+    const dates = this.extractDataToList("datetime", stableData);
     const stableOnly = this.extractDataToList("cum_return_ma", stableData);
     
     const data = {

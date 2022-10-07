@@ -16,7 +16,7 @@
 
 .togglePage2.openModal {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   /* 팝업이 열릴때 스르륵 열리는 효과 */
   animation: modal-bg-show 1s;
 }
@@ -53,13 +53,33 @@
   color : white;
   /* background-color: rgb(34, 32, 32); */
   background-color: #000000;
-  padding-left: 55%;
+  /* padding-left: 55%;
   padding-top: 20%;
-  text-align: right; 
+  text-align: right;  */
   z-index: 99;
 }
 
 .close{
   color:white;
   background-color: white;
+}
+
+.containerHG2 {
+  width: 100vw;
+}
+
+.content item {
+  /* border: 1px solid gray; */
+  flex: 18;
+  flex-shrink: 0;
+  /* width: 982px; */
+  align-items: flex-end;
+  padding-top: 250px;
+  position: relative;
+  right: -4%;
+  line-height: 90px;
+}
+
+.test {
+  padding-top: 319px;
 }
