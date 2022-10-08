@@ -2,8 +2,10 @@ const initialState = {
   isModalOn: false,
   momentumUpperButton:"1",
   momentumLowerButton:"1",
+  momentumAnimationConst:"3",
   stableUpperButton:"1",
-  stableLowerButton:"1"
+  stableLowerButton:"1",
+  stableAnimationConst:"3",
 };
 
 const legacyReducer = (state = initialState, action) => {
@@ -25,6 +27,10 @@ const legacyReducer = (state = initialState, action) => {
       return { ...state, momentumLowerButton: "3" };
     case "MOMENTUM3M":
       return { ...state, momentumLowerButton: "4" };
+    case "MOMENTUMANICONSTACTIVE":
+      return { ...state, momentumAnimationConst: "1" };
+    case "MOMENTUMANICONSTINACTIVE":
+      return { ...state, momentumAnimationConst: "2" };    
     case "STABLE_PROFIT":
       return { ...state, stableUpperButton: "1"};
     case "STABLE_INFO":
@@ -37,6 +43,10 @@ const legacyReducer = (state = initialState, action) => {
       return { ...state, stableLowerButton: "3" };
     case "STABLE3M":
       return { ...state, stableLowerButton: "4" };
+    // case "STABLEANICONSTRESET":
+    //     return { ...state, stableAnimationConst: "1" };
+    // case "STABLEANICONSTSTOP":
+    //     return { ...state, stableAnimationConst: "2" };     
     default:
       return {...state};
   }

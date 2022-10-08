@@ -96,6 +96,7 @@
 @media (prefers-reduced-motion: no-preference){
   .contactPassage1{
     animation: contactPassage1Appear 1.5s ease-out;
+    /* animation-delay: 2s; */
 
   }
 }

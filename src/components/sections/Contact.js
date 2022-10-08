@@ -22,7 +22,7 @@ const Contact = (props) => {
     return (
         <div className="containerHG">
       <header >
-      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
+      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(3);}}></img>
       </header>
       <section className="content">
           <nav>

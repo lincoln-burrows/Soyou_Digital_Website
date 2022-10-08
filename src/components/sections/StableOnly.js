@@ -47,10 +47,10 @@ const StableOnly = (props) => {
           <aside>
           </aside>
           <main>
-            <div className="text1">Stablecoin Only</div>
+            <div className="momentumTitle">Stablecoin Only</div>
         <Button size="left" variant={"default" + (stableUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="STABLE_PROFIT" />
        <Button size="right" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="STABLE_INFO" />
-       <span className={stableUpperButton == "2" ? 'hide info' : 'info'}>
+       <span className={stableUpperButton == "2" ? 'hide below' : 'below'}>
        <Button3 size="left" variant={"default" + (stableLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="STABLEALL"/> 
        <Button3 size="middle" variant={"default" + (stableLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="STABLE1Y"/> 
        <Button3 size="middle" variant={"default" + (stableLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="STABLE6M"/> 
@@ -70,7 +70,7 @@ const StableOnly = (props) => {
         </div>
         </span>
         
-        <div className={stableUpperButton == "1" ? 'hide info' : 'info'}>
+        <div className={stableUpperButton == "1" ? 'hide below' : 'below'}>
 
               <br></br><br></br><br></br><br></br>
               <div className="infoText">

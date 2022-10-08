@@ -38,7 +38,7 @@ class MomentumGraph extends Component {
   };
 
   componentDidMount = () => {
-    document.title = "SOYOU CRYPT";
+    document.title = "SOYOU CRYPTO";
     
   };
 
@@ -77,6 +77,8 @@ class MomentumGraph extends Component {
         top: "10%",
         containLabel: true
       },
+      notMerge:true
+      ,
       xAxis: {
         type: "category",
         data: dates,
@@ -101,7 +103,7 @@ class MomentumGraph extends Component {
           color: "gray",
           inside: false,
           fontSize:16,
-
+          formatter: value => value*100 + ' %'
         },
       },
       series: [
@@ -111,7 +113,13 @@ class MomentumGraph extends Component {
           smooth: true,
           data: momentum_algo,
           symbol: "none",
-          color: "#000000"
+          color: "#000000",
+          lineStyle:{
+            normal: {width: 4},
+          },
+          tooltip: {
+            valueFormatter: value => Math.round(value*10000)/100 +' %'
+          },
         },
         {
           name: "BTC_USDT Hodl",
@@ -119,8 +127,15 @@ class MomentumGraph extends Component {
           smooth: true,
           data: btc_usdt,
           symbol: "none",
-          color: "#b2b2b2"
-        }
+          color: "#b2b2b2",
+          lineStyle:{
+            normal: {width: 3},
+          },
+          tooltip: {
+            valueFormatter: value => Math.round(value*10000)/100 +' %'
+          },
+        },
+        
       ]
     };
     return (

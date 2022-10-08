@@ -12,6 +12,8 @@ import downwardArrow from "../assets/downwardArrow.png";
 import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import { connect } from "react-redux";
+import moment from "moment";
+import Moment from "react-moment";
 
 class StableOnlyGraph extends Component {
   constructor(props) {
@@ -78,15 +80,13 @@ class StableOnlyGraph extends Component {
       },
       xAxis: {
         type: "category",
+        // type: "time",
         data: dates,
         show: true,
-        // axisPointer: {
-        //     show:true,
-        //     label:{
-        //       show:false
-        //     }
-        // },
         axisLabel: {
+          // formatter: axisValue => {
+          //   return moment(axisValue).format("YYYY-MM-DD 00:00");
+          // },
           color: "gray",
           // fontWeight: "bold",
           fontSize:16,
@@ -100,6 +100,7 @@ class StableOnlyGraph extends Component {
           color: "gray",
           inside: false,
           fontSize:16,
+          formatter: value => value*100 + ' %'
 
         },
       },
@@ -107,10 +108,20 @@ class StableOnlyGraph extends Component {
         {
           name: "Stable Only",
           type: "line",
+          lineStyle:{
+            normal: {width: 4},
+          },
           smooth: true,
           data: stableOnly,
           symbol: "none",
-          color: "#000000"
+          color: "#000000",
+          tooltip: {
+            valueFormatter: value => Math.round(value*10000)/100 +' %'
+          },
+            
+              
+            
+          
         },
       ]
     };

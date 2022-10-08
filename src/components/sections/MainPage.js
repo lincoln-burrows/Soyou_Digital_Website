@@ -50,7 +50,7 @@ const MainPage = (props) => {
           </nav>
       </section>
       <footer>
-      <img className="mainDownwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
+      <img className="mainDownwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(1);}}></img>
       </footer>
     </div>
     </div>
