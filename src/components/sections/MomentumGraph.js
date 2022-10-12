@@ -143,8 +143,8 @@ class MomentumGraph extends Component {
       <div>
         <ReactEcharts 
           style={{
-            height: "350%",
-            // height: "369px",
+            // height: "350%",
+            height: "369px",
             // 369
             // width: "100%"
             width: "900px"

@@ -18,8 +18,56 @@ import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { stableAction } from "../../redux/actions/stableAction";
+import styled from 'styled-components'
 
 const StableOnly = (props) => {
+
+  // 공통 CSS
+  const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+  height : ${props.pageHeight}px;
+  `;
+
+  const Header = styled.div`
+  border: 1px solid gray;
+  height : ${(props.pageHeight)*0.1316}px;
+  align-self: center;
+  `;
+
+  const Footer = styled.div`
+  border:1px solid gray;
+  height : ${(props.pageHeight)*0.1316}px;
+  align-self: center;
+  `;
+
+  const Section = styled.div`
+  display: flex;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+
+  const Nav = styled.div`
+  border:1px solid gray;  
+  height : ${(props.pageHeight)*0.7368}px;
+  flex: 2.435;
+  `;
+
+  const Aside = styled.div`
+  border:1px solid gray;  
+  flex: 5.5;
+  text-align: right;
+  align-self: flex-end;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+
+  const Main = styled.div`
+  border: 1px solid gray;
+  flex: 18;
+  flex-shrink: 0;
+  align-items: flex-start;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+// 공통 CSS 끝
 
   const dispatch = useDispatch();
   const { stableLowerButton, stableUpperButton } = useSelector((state) => state.legacy);
@@ -36,17 +84,17 @@ const StableOnly = (props) => {
     
 
   return (
-    <div className="containerHG">
-      <header >
-      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(2);}}></img>
-      </header>
-      <section className="content">
-          <nav>
+    <Container>
+      <Header >
+      
+      </Header>
+      <Section className="content">
+          <Nav>
             
-          </nav>
-          <aside>
-          </aside>
-          <main>
+          </Nav>
+          <Aside>
+          </Aside>
+          <Main>
             <div className="momentumTitle">Stablecoin Only</div>
         <Button size="left" variant={"default" + (stableUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="STABLE_PROFIT" />
        <Button size="right" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="STABLE_INFO" />
@@ -84,19 +132,19 @@ const StableOnly = (props) => {
               <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
               </div>
         
-          </main>
-          <aside>
+          </Main>
+          <Aside>
           <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
           <ToggleModal modalNavStep1={modalNavStep1}/>
-          </aside>
-          <nav>
+          </Aside>
+          <Nav>
             
-          </nav>
-      </section>
-      <footer>
-      <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
-      </footer>
-    </div>
+          </Nav>
+      </Section>
+      <Footer>
+      
+      </Footer>
+    </Container>
     
   )
 }

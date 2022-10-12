@@ -9,30 +9,87 @@ import { useState, useEffect, useRef } from 'react'
 import hamburger from '../assets/hamburger.png';
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
+import Box from '@mui/material/Box';
+import styled from 'styled-components'
 
 
 const MainPage = (props) => {
     const dispatch = useDispatch();
-
+    console.log("props?", props.pageHeight)
     
     const modalNavStep1 = (targetPage) =>{
         props.toggleNav(targetPage);
     }
-   
 
-    if(props.scrollIndex == 1){
+//    let headerHeight = props.pageHeight*0.1316;
+
+// 공통 CSS
+    const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+  height : ${props.pageHeight}px;
+  `;
+
+  const Header = styled.div`
+  border: 1px solid gray;
+  height : ${(props.pageHeight)*0.1316}px;
+  align-self: center;
+  `;
+
+  const Footer = styled.div`
+  border:1px solid gray;
+  height : ${(props.pageHeight)*0.1316}px;
+  align-self: center;
+  `;
+
+  const Section = styled.div`
+  display: flex;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+
+  const Nav = styled.div`
+  border:1px solid gray;  
+  height : ${(props.pageHeight)*0.7368}px;
+  flex: 2.435;
+  `;
+
+  const Aside = styled.div`
+  border:1px solid gray;  
+  flex: 5.5;
+  text-align: right;
+  align-self: flex-end;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+
+  const Main = styled.div`
+  border: 1px solid gray;
+  flex: 18;
+  flex-shrink: 0;
+  align-items: flex-start;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+// 공통 CSS 끝
+
+//   useEffect(() => {
+//     window.addEventListener('resize', console.log("작동중", props.pageHeight));
+//     return () => {
+//       window.removeEventListener('resize', console.log("작동중"));
+//     }
+//   }, [props]);
+
+    // if(props.scrollIndex == 1){
         return (
             <div><ToggleModal modalNavStep1={modalNavStep1}/>
-            <div className="containerHG">
-      <header >
-      </header>
-      <section className="content">
-          <nav className='test'>
+            <Container>
+      <Header >
+      </Header>
+      <Section>
+          <Nav>
           {/* ------------- */}
-          </nav>
-          <aside>
-          </aside>
-          <main>
+          </Nav>
+          <Aside>
+          </Aside>
+          <Main>
               <div className='mainUpper'>
           <div className="mainTitle">SOYOU CRYPTO</div>
           <h4 className="mainSubTitle">Crypto Asset Management Labs</h4>
@@ -41,60 +98,59 @@ const MainPage = (props) => {
           <div className="mainDescription1">Crypto asset management for all</div>
           <div className="mainDescription2">More capital income for all</div>
           <div className="mainDescription3">More freedom for all</div>
-          </main>
-          <aside>
+          </Main>
+          <Aside>
           <img className="hamburger" width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
           
-          </aside>
-          <nav >
-          </nav>
-      </section>
-      <footer>
-      <img className="mainDownwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(1);}}></img>
-      </footer>
-    </div>
+          </Aside>
+          <Nav >
+          </Nav>
+      </Section>
+      <Footer>
+      </Footer>
+    </Container>
     </div>
         );
     } 
-    else {
+    // else {
 
-        return (
-            <div><ToggleModal modalNavStep1={modalNavStep1}/>
-            <div className="containerHG">
-      <header >
-      </header>
-      <section className="content">
-          <nav className='test'>
+    //     return (
+    //         <div><ToggleModal modalNavStep1={modalNavStep1}/>
+    //         <div className="containerHG">
+    //   <header >
+    //   </header>
+    //   <section className="content">
+    //       <nav className='test'>
           
-          </nav>
-          <aside>
-          </aside>
-          <main>
-              <div className='mainUpperT'>
-          <div className="mainTitleT">SOYOU CRYPTO</div>
-          <h4 className="mainSubTitleT">Crypto Asset Management Labs</h4>
-          </div>
-          <br></br>
-          <div className="mainDescription1T">Crypto asset management for all</div>
-          <div className="mainDescription2T">More capital income for all</div>
-          <div className="mainDescription3T">More freedom for all</div>
-          </main>
-          <aside>
-          <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+    //       </nav>
+    //       <aside>
+    //       </aside>
+    //       <main>
+    //           <div className='mainUpperT'>
+    //       <div className="mainTitleT">SOYOU CRYPTO</div>
+    //       <h4 className="mainSubTitleT">Crypto Asset Management Labs</h4>
+    //       </div>
+    //       <br></br>
+    //       <div className="mainDescription1T">Crypto asset management for all</div>
+    //       <div className="mainDescription2T">More capital income for all</div>
+    //       <div className="mainDescription3T">More freedom for all</div>
+    //       </main>
+    //       <aside>
+    //       <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
           
-          </aside>
-          <nav >
-          </nav>
-      </section>
-      <footer>
-      <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
-      </footer>
-    </div>
-    </div>
+    //       </aside>
+    //       <nav >
+    //       </nav>
+    //   </section>
+    //   <footer>
+      
+    //   </footer>
+    // </div>
+    // </div>
 
-    ); }
+    // ); }
         
-}
+// }
     
 
 

@@ -18,8 +18,57 @@ import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { momentumAction } from "../../redux/actions/momentumAction";
+import styled from 'styled-components'
 
 const Momentum = (props) => {
+
+  // 공통 CSS
+  const Container = styled.div`
+  display:flex;
+  flex-direction: column;
+  height : ${props.pageHeight}px;
+  `;
+
+  const Header = styled.div`
+  border: 1px solid gray;
+  height : ${(props.pageHeight)*0.1316}px;
+  align-self: center;
+  `;
+
+  const Footer = styled.div`
+  border:1px solid gray;
+  height : ${(props.pageHeight)*0.1316}px;
+  align-self: center;
+  `;
+
+  const Section = styled.div`
+  display: flex;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+
+  const Nav = styled.div`
+  border:1px solid gray;  
+  height : ${(props.pageHeight)*0.7368}px;
+  flex: 2.435;
+  `;
+
+  const Aside = styled.div`
+  border:1px solid gray;  
+  flex: 5.5;
+  text-align: right;
+  align-self: flex-end;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+
+  const Main = styled.div`
+  border: 1px solid gray;
+  flex: 18;
+  flex-shrink: 0;
+  align-items: flex-start;
+  height : ${(props.pageHeight)*0.7368}px;
+  `;
+// 공통 CSS 끝
+
 
   const dispatch = useDispatch();
   const { momentumLowerButton, momentumUpperButton, momentumAnimationConst } = useSelector((state) => state.legacy);
@@ -36,20 +85,19 @@ const Momentum = (props) => {
     // if(props.scrollIndex == "2" && momentumAnimationConst == 1){
     //   dispatch({type:"MOMENTUMANICONSTINACTIVE"}); 
     // console.log("inactive로 변경")
-    if(props.scrollIndex == "2" ){
-       console.log("inactive로 변경")
+    // if(props.scrollIndex == "2" ){
+    //    console.log("inactive로 변경")
   return (
-    <div className="containerHG">
-      <header >
-      <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
-      </header>
-      <section className="content">
-          <nav>
+    <Container>
+      <Header >
+      </Header>
+      <Section>
+          <Nav>
             
-          </nav>
-          <aside>
-          </aside>
-          <main>
+          </Nav>
+          <Aside>
+          </Aside>
+          <Main>
             <div className="momentumTitle"> Momentum Algorithm</div>
             <div className="upperButtons">
         <Button size="left" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
@@ -157,78 +205,76 @@ const Momentum = (props) => {
               <InfoRFSButton size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
               </div>
         
-          </main>
-          <aside>
+          </Main>
+          <Aside>
           <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
           <ToggleModal modalNavStep1={modalNavStep1}/>
-          </aside>
-          <nav>
+          </Aside>
+          <Nav>
             
-          </nav>
-      </section>
-      <footer>
-      <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
-      </footer>
-    </div>
+          </Nav>
+      </Section>
+      <Footer>
+      </Footer>
+    </Container>
     
   )
 }
-     else {
-      // dispatch({type:"MOMENTUMANICONSTACTIVE"});
-      // console.log("active로 변경"); 
-      return (
-        <div className="containerHG">
-          <header >
-          <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
-          </header>
-          <section className="content">
-              <nav>
+    //  else {
+    //   // dispatch({type:"MOMENTUMANICONSTACTIVE"});
+    //   // console.log("active로 변경"); 
+    //   return (
+    //     <div className="containerHG">
+    //       <header >
+          
+    //       </header>
+    //       <section className="content">
+    //           <nav>
                 
-              </nav>
-              <aside>
-              </aside>
-              <main>
-                <div className="momentumTitle"> Momentum Algorithm</div>
-            <Button size="left" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
-           <Button size="right" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="MOMENTUM_INFO" />
-           <span className={momentumUpperButton == "2" ? 'hide info' : 'info'}>
-           <Button3 size="left" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL"/> 
-           <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y"/> 
-           <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M"/> 
-           <Button3 size="right" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M"/> 
-           <div className="graphAnimation2">
-            <MomentumGraph />
+    //           </nav>
+    //           <aside>
+    //           </aside>
+    //           <main>
+    //             <div className="momentumTitle"> Momentum Algorithm</div>
+    //         <Button size="left" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
+    //        <Button size="right" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="MOMENTUM_INFO" />
+    //        <span className={momentumUpperButton == "2" ? 'hide info' : 'info'}>
+    //        <Button3 size="left" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL"/> 
+    //        <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y"/> 
+    //        <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M"/> 
+    //        <Button3 size="right" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M"/> 
+    //        <div className="graphAnimation2">
+    //         <MomentumGraph />
             
-            <div className="indexContainer">
-            <div className="index">Cum. Return</div>
-            <div className="index">Daily Avg.</div>
-            <div className="index">Daily Sharp</div>
-            <div className="index">MDD</div>
-            </div>
-            <div className="indexValueContainer">
-            <div className="index">{momentumIndex && momentumIndex.cumReturn}&nbsp;%</div>
-            <div className="index">{momentumIndex && momentumIndex.dailyAvg}&nbsp;%</div>
-            <div className="index">{momentumIndex && momentumIndex.dailySharp}</div>
-            <div className="index">&nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;%</div>
-            </div>
-            </div>
-            </span>  
-              </main>
-              <aside>
-              <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
-              <ToggleModal modalNavStep1={modalNavStep1}/>
-              </aside>
-              <nav>
+    //         <div className="indexContainer">
+    //         <div className="index">Cum. Return</div>
+    //         <div className="index">Daily Avg.</div>
+    //         <div className="index">Daily Sharp</div>
+    //         <div className="index">MDD</div>
+    //         </div>
+    //         <div className="indexValueContainer">
+    //         <div className="index">{momentumIndex && momentumIndex.cumReturn}&nbsp;%</div>
+    //         <div className="index">{momentumIndex && momentumIndex.dailyAvg}&nbsp;%</div>
+    //         <div className="index">{momentumIndex && momentumIndex.dailySharp}</div>
+    //         <div className="index">&nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;%</div>
+    //         </div>
+    //         </div>
+    //         </span>  
+    //           </main>
+    //           <aside>
+    //           <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
+    //           <ToggleModal modalNavStep1={modalNavStep1}/>
+    //           </aside>
+    //           <nav>
                 
-              </nav>
-          </section>
-          <footer>
-          <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
-          </footer>
-        </div>
+    //           </nav>
+    //       </section>
+    //       <footer>
+    //       </footer>
+    //     </div>
         
-      )}
-} 
+    //   )}
+// } 
       // else if (momentumLowerButton == "3" ) {
     //     return (
     //       <div className="containerHG">
