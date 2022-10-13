@@ -62,6 +62,9 @@ const StableOnly = (props) => {
   flex: 2.435;
   float:inherit;
   overflow:hidden;
+  @media(max-width:1023px){
+    flex:0
+}
   `;
 
   const Aside = styled.div`
@@ -72,6 +75,9 @@ const StableOnly = (props) => {
   height : ${(pageHeight)*0.7368}px;
   float:inherit;
   overflow:hidden;
+  @media(max-width:1023px){
+    flex:0
+}
   `;
 
   const Main = styled.div`
@@ -82,6 +88,10 @@ const StableOnly = (props) => {
   height : ${(pageHeight)*0.7368}px;
   float:inherit;
   overflow:hidden;
+
+  @media(max-width:1023px){
+      flex:1
+  }
   `;
 // 공통 CSS 끝
 

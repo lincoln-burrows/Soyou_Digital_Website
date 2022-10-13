@@ -30,7 +30,7 @@ const Contact = (props) => {
   `;
 
   const Header = styled.div`
-  border: 1px solid gray;
+
   height : ${(pageHeight)*0.1316}px;
   align-self: center;
   float:inherit;
@@ -38,7 +38,7 @@ const Contact = (props) => {
   `;
 
   const Footer = styled.div`
-  border:1px solid gray;
+
   height : ${(pageHeight)*0.1316}px;
   align-self: center;
   float:inherit;
@@ -53,31 +53,41 @@ const Contact = (props) => {
   `;
 
   const Nav = styled.div`
-  border:1px solid gray;  
+
   height : ${(pageHeight)*0.7368}px;
   flex: 2.435;
   float:inherit;
   overflow:hidden;
+  @media(max-width:1023px){
+    flex:0
+}
   `;
 
   const Aside = styled.div`
-  border:1px solid gray;  
+
   flex: 5.5;
   text-align: right;
   align-self: flex-end;
   height : ${(pageHeight)*0.7368}px;
   float:inherit;
   overflow:hidden;
+  @media(max-width:1023px){
+    flex:0
+}
   `;
 
   const Main = styled.div`
-  border: 1px solid gray;
+
   flex: 18;
   flex-shrink: 0;
   align-items: flex-start;
   height : ${(pageHeight)*0.7368}px;
   float:inherit;
   overflow:hidden;
+
+  @media(max-width:1023px){
+      flex:1
+  }
   `;
 // 공통 CSS 끝
 
