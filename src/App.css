@@ -176,7 +176,7 @@ nav, aside {
 @media all and (min-width:768px) and (max-width:1023px) { 
   /* 공통 레이아웃 */
 .content {
-  background-color: yellow;
+  /* background-color: yellow; */
   flex:1;
 }
 
@@ -195,7 +195,7 @@ nav, aside {
 @media all and (min-width:480px) and (max-width:767px) {
   /* 공통 레이아웃 */
 .content {
-  background-color: cyan;
+  /* background-color: cyan; */
   flex:1;
 }
 
@@ -214,7 +214,7 @@ nav, aside {
 @media all and (max-width:479px) {
   /* 공통 레이아웃 */
 .content {
-  background-color: pink;
+  /* background-color: pink; */
   flex:1;
   height:80vh;
 }
@@ -259,6 +259,6 @@ footer {
   
   .content {
     height:640.28px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
   }
 }
