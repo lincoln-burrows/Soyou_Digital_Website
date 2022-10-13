@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 var hist = createBrowserHistory();
 const DIVIDER_HEIGHT = 5;
-let pageHeight = 800;
+let pageHeight = 400;
 
 function App() {
   const outerDivRef = useRef();
@@ -18,9 +18,12 @@ function App() {
   const dispatch = useDispatch();
 
 const handleResize = () => {
-    pageHeight = (window.innerHeight);
+    let currentHeight = (window.innerHeight);
     setScrollIndex(pageHeight);
-    dispatch({type:"PAGEHEIGHT"});
+    if (currentHeight >= pageHeight) {
+      pageHeight = currentHeight;
+    }
+    // dispatch({type:"PAGEHEIGHT"});
 }
 
   const toggleNav = (targetPage) => {

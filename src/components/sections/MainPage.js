@@ -15,6 +15,8 @@ import styled from 'styled-components'
 
 const MainPage = (props) => {
     const dispatch = useDispatch();
+    const pageHeight = props.pageHeight;
+
     console.log("props?", props.pageHeight)
     
     const modalNavStep1 = (targetPage) =>{
@@ -23,34 +25,44 @@ const MainPage = (props) => {
 
 //    let headerHeight = props.pageHeight*0.1316;
 
-// 공통 CSS
-    const Container = styled.div`
+/// 공통 CSS
+  const Container = styled.div`
   display:flex;
   flex-direction: column;
-  height : ${props.pageHeight}px;
+  height : ${pageHeight}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Header = styled.div`
   border: 1px solid gray;
-  height : ${(props.pageHeight)*0.1316}px;
+  height : ${(pageHeight)*0.1316}px;
   align-self: center;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Footer = styled.div`
   border:1px solid gray;
-  height : ${(props.pageHeight)*0.1316}px;
+  height : ${(pageHeight)*0.1316}px;
   align-self: center;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Section = styled.div`
   display: flex;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Nav = styled.div`
   border:1px solid gray;  
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
   flex: 2.435;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Aside = styled.div`
@@ -58,7 +70,9 @@ const MainPage = (props) => {
   flex: 5.5;
   text-align: right;
   align-self: flex-end;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Main = styled.div`
@@ -66,7 +80,9 @@ const MainPage = (props) => {
   flex: 18;
   flex-shrink: 0;
   align-items: flex-start;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 // 공통 CSS 끝
 
@@ -100,7 +116,6 @@ const MainPage = (props) => {
           <div className="mainDescription3">More freedom for all</div>
           </Main>
           <Aside>
-          <img className="hamburger" width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
           
           </Aside>
           <Nav >

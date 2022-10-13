@@ -22,34 +22,46 @@ import styled from 'styled-components'
 
 const Momentum = (props) => {
 
+  const pageHeight = props.pageHeight;
+
   // 공통 CSS
   const Container = styled.div`
   display:flex;
   flex-direction: column;
-  height : ${props.pageHeight}px;
+  height : ${pageHeight}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Header = styled.div`
   border: 1px solid gray;
-  height : ${(props.pageHeight)*0.1316}px;
+  height : ${(pageHeight)*0.1316}px;
   align-self: center;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Footer = styled.div`
   border:1px solid gray;
-  height : ${(props.pageHeight)*0.1316}px;
+  height : ${(pageHeight)*0.1316}px;
   align-self: center;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Section = styled.div`
   display: flex;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Nav = styled.div`
   border:1px solid gray;  
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
   flex: 2.435;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Aside = styled.div`
@@ -57,7 +69,9 @@ const Momentum = (props) => {
   flex: 5.5;
   text-align: right;
   align-self: flex-end;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Main = styled.div`
@@ -65,7 +79,9 @@ const Momentum = (props) => {
   flex: 18;
   flex-shrink: 0;
   align-items: flex-start;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 // 공통 CSS 끝
 
@@ -74,6 +90,7 @@ const Momentum = (props) => {
   const { momentumLowerButton, momentumUpperButton, momentumAnimationConst } = useSelector((state) => state.legacy);
   const { momentumData, momentumIndex } = useSelector((state) => state.momentumData);
   
+
   const modalNavStep1 = (targetPage) =>{
         props.toggleNav(targetPage);
     }
@@ -207,7 +224,6 @@ const Momentum = (props) => {
         
           </Main>
           <Aside>
-          <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
           <ToggleModal modalNavStep1={modalNavStep1}/>
           </Aside>
           <Nav>

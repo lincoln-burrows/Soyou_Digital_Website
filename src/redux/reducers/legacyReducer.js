@@ -44,8 +44,8 @@ const legacyReducer = (state = initialState, action) => {
       return { ...state, stableLowerButton: "3" };
     case "STABLE3M":
       return { ...state, stableLowerButton: "4" }; 
-    case "PAGEHEIGHT":
-      return { ...state, pageHeight:window.innerHeight}; 
+    // case "PAGEHEIGHT":
+    //   return { ...state, pageHeight:window.innerHeight}; 
     default:
       return {...state};
   }

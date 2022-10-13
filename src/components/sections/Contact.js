@@ -13,6 +13,7 @@ import styled from 'styled-components'
 
 const Contact = (props) => {
     const dispatch = useDispatch();
+    const pageHeight = props.pageHeight;
    
     //커밋 테스트
   const modalNavStep1 = (targetPage) =>{
@@ -23,29 +24,29 @@ const Contact = (props) => {
   const Container = styled.div`
   display:flex;
   flex-direction: column;
-  height : ${props.pageHeight}px;
+  height : ${pageHeight}px;
   `;
 
   const Header = styled.div`
   border: 1px solid gray;
-  height : ${(props.pageHeight)*0.1316}px;
+  height : ${(pageHeight)*0.1316}px;
   align-self: center;
   `;
 
   const Footer = styled.div`
   border:1px solid gray;
-  height : ${(props.pageHeight)*0.1316}px;
+  height : ${(pageHeight)*0.1316}px;
   align-self: center;
   `;
 
   const Section = styled.div`
   display: flex;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
   `;
 
   const Nav = styled.div`
   border:1px solid gray;  
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
   flex: 2.435;
   `;
 
@@ -54,7 +55,7 @@ const Contact = (props) => {
   flex: 5.5;
   text-align: right;
   align-self: flex-end;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
   `;
 
   const Main = styled.div`
@@ -62,7 +63,7 @@ const Contact = (props) => {
   flex: 18;
   flex-shrink: 0;
   align-items: flex-start;
-  height : ${(props.pageHeight)*0.7368}px;
+  height : ${(pageHeight)*0.7368}px;
   `;
 // 공통 CSS 끝
 
@@ -93,7 +94,6 @@ const Contact = (props) => {
                         </div>
           </Main>
           <Aside>
-          <img className='hamburgerContact' width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/>
           <ToggleModal modalNavStep1={modalNavStep1}/>
           </Aside>
           <Nav>
