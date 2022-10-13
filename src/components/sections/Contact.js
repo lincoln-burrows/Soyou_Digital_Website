@@ -20,34 +20,44 @@ const Contact = (props) => {
       props.toggleNav(targetPage);
   }
 
-  // 공통 CSS
+  //// 공통 CSS
   const Container = styled.div`
   display:flex;
   flex-direction: column;
   height : ${pageHeight}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Header = styled.div`
   border: 1px solid gray;
   height : ${(pageHeight)*0.1316}px;
   align-self: center;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Footer = styled.div`
   border:1px solid gray;
   height : ${(pageHeight)*0.1316}px;
   align-self: center;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Section = styled.div`
   display: flex;
   height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Nav = styled.div`
   border:1px solid gray;  
   height : ${(pageHeight)*0.7368}px;
   flex: 2.435;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Aside = styled.div`
@@ -56,6 +66,8 @@ const Contact = (props) => {
   text-align: right;
   align-self: flex-end;
   height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 
   const Main = styled.div`
@@ -64,6 +76,8 @@ const Contact = (props) => {
   flex-shrink: 0;
   align-items: flex-start;
   height : ${(pageHeight)*0.7368}px;
+  float:inherit;
+  overflow:hidden;
   `;
 // 공통 CSS 끝
 

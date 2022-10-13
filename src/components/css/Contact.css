@@ -84,9 +84,9 @@
   .contactTitle{
     animation: contactDescriptionAppear 1.0s ease-out;
     /* animation: bannerAppear 1.0s ease-out; */
-
   }
 }
+
 @media (prefers-reduced-motion: no-preference){
   .contactSubTitle{
     animation: contactDescriptionAppear 1.0s ease-out;
@@ -200,4 +200,4 @@
   src: url('../assets/fonts/NotoSansKR-Light.otf');
   font-style: normal;
   font-display: swap;
-}  
+}    
