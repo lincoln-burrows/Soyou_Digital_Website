@@ -7,8 +7,6 @@ import { Container, Row, Col } from 'reactstrap';
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
-import downwardArrow from "../assets/downwardArrow.png";
-import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import StableOnlyGraph from "./StableOnlyGraph";
 import hamburger from '../assets/hamburger.png';
@@ -18,82 +16,8 @@ import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { stableAction } from "../../redux/actions/stableAction";
-import styled from 'styled-components'
 
 const StableOnly = (props) => {
-
-  const pageHeight = props.pageHeight;
-
-  // 공통 CSS
-  const Container = styled.div`
-  display:flex;
-  flex-direction: column;
-  height : ${pageHeight}px;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Header = styled.div`
-  border: 1px solid gray;
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Footer = styled.div`
-  border:1px solid gray;
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Section = styled.div`
-  display: flex;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Nav = styled.div`
-  border:1px solid gray;  
-  height : ${(pageHeight)*0.7368}px;
-  flex: 2.435;
-  float:inherit;
-  overflow:hidden;
-  @media(max-width:1023px){
-    flex:0
-}
-  `;
-
-  const Aside = styled.div`
-  border:1px solid gray;  
-  flex: 5.5;
-  text-align: right;
-  align-self: flex-end;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-  @media(max-width:1023px){
-    flex:0
-}
-  `;
-
-  const Main = styled.div`
-  border: 1px solid gray;
-  flex: 18;
-  flex-shrink: 0;
-  align-items: flex-start;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-
-  @media(max-width:1023px){
-      flex:1
-  }
-  `;
-// 공통 CSS 끝
 
   const dispatch = useDispatch();
   const { stableLowerButton, stableUpperButton } = useSelector((state) => state.legacy);
@@ -110,17 +34,17 @@ const StableOnly = (props) => {
     
 
   return (
-    <Container>
-      <Header >
+    <div className="containerHG">
+      <header >
       
-      </Header>
-      <Section className="content">
-          <Nav>
+      </header>
+      <section className="content">
+          <nav>
             
-          </Nav>
-          <Aside>
-          </Aside>
-          <Main>
+          </nav>
+          <aside>
+          </aside>
+          <main>
             <div className="momentumTitle">Stablecoin Only</div>
         <Button size="left" variant={"default" + (stableUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="STABLE_PROFIT" />
        <Button size="right" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="STABLE_INFO" />
@@ -158,18 +82,19 @@ const StableOnly = (props) => {
               <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
               </div>
         
-          </Main>
-          <Aside>
+          </main>
+          <aside>
+          {/* <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/> */}
           <ToggleModal modalNavStep1={modalNavStep1}/>
-          </Aside>
-          <Nav>
+          </aside>
+          <nav>
             
-          </Nav>
-      </Section>
-      <Footer>
+          </nav>
+      </section>
+      <footer>
       
-      </Footer>
-    </Container>
+      </footer>
+    </div>
     
   )
 }

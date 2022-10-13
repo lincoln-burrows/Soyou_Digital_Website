@@ -84,9 +84,9 @@
   .contactTitle{
     animation: contactDescriptionAppear 1.0s ease-out;
     /* animation: bannerAppear 1.0s ease-out; */
+
   }
 }
-
 @media (prefers-reduced-motion: no-preference){
   .contactSubTitle{
     animation: contactDescriptionAppear 1.0s ease-out;
@@ -200,5 +200,50 @@
   src: url('../assets/fonts/NotoSansKR-Light.otf');
   font-style: normal;
   font-display: swap;
-}    
+}  
 
+@media all and (max-width:767px)  {
+
+  .contactTitle {
+    font-size: 21.3px;
+    line-height:40px;
+    padding-bottom:60px;
+  }
+  
+  .contactSubTitle {
+    text-align: center;
+    font-family: 'noto-sans-kr-bold';
+    font-size: 32px;
+    /* width: 90vw; */
+    word-break: break-all;
+  }
+  
+  .contactPassage{
+    text-align: left;
+    font-size: 18.6px;
+    font-family: 'noto-sans-kr-light';
+    text-indent: -90px;
+    padding-left: 100px;
+    line-height: 30px;
+  }
+  
+  .contactPassage1{
+    font-size: 21.3px;
+    font-family: 'noto-sans-kr-medium';
+    padding-bottom: 10px;
+  }
+  
+  .contactPassage2 {
+    padding-bottom: 10px;
+  
+  }
+  
+  .contactPassage3 {
+    padding-bottom: 10px;
+  }
+  
+  .contactPassage4 {
+    padding-bottom: 10px;
+  }
+  
+}

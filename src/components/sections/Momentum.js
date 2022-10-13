@@ -7,8 +7,6 @@ import { Container, Row, Col } from 'reactstrap';
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
-import downwardArrow from "../assets/downwardArrow.png";
-import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import MomentumGraph from "./MomentumGraph";
 import hamburger from '../assets/hamburger.png';
@@ -18,89 +16,13 @@ import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { momentumAction } from "../../redux/actions/momentumAction";
-import styled from 'styled-components'
 
 const Momentum = (props) => {
-
-  const pageHeight = props.pageHeight;
-
-  // 공통 CSS
-  const Container = styled.div`
-  display:flex;
-  flex-direction: column;
-  height : ${pageHeight}px;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Header = styled.div`
-  border: 1px solid gray;
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Footer = styled.div`
-  border:1px solid gray;
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Section = styled.div`
-  display: flex;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Nav = styled.div`
-  border:1px solid gray;  
-  height : ${(pageHeight)*0.7368}px;
-  flex: 2.435;
-  float:inherit;
-  overflow:hidden;
-  @media(max-width:1023px){
-    flex:0
-}
-  `;
-
-  const Aside = styled.div`
-  border:1px solid gray;  
-  flex: 5.5;
-  text-align: right;
-  align-self: flex-end;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-  @media(max-width:1023px){
-    flex:0
-}
-  `;
-
-  const Main = styled.div`
-  border: 1px solid gray;
-  flex: 18;
-  flex-shrink: 0;
-  align-items: flex-start;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-
-  @media(max-width:1023px){
-      flex:1
-  }
-  `;
-// 공통 CSS 끝
-
 
   const dispatch = useDispatch();
   const { momentumLowerButton, momentumUpperButton, momentumAnimationConst } = useSelector((state) => state.legacy);
   const { momentumData, momentumIndex } = useSelector((state) => state.momentumData);
   
-
   const modalNavStep1 = (targetPage) =>{
         props.toggleNav(targetPage);
     }
@@ -113,18 +35,19 @@ const Momentum = (props) => {
     //   dispatch({type:"MOMENTUMANICONSTINACTIVE"}); 
     // console.log("inactive로 변경")
     // if(props.scrollIndex == "2" ){
-    //    console.log("inactive로 변경")
+      //  console.log("inactive로 변경")
   return (
-    <Container>
-      <Header >
-      </Header>
-      <Section>
-          <Nav>
+    <div className="containerHG">
+      <header >
+      
+      </header>
+      <section className="content">
+          <nav>
             
-          </Nav>
-          <Aside>
-          </Aside>
-          <Main>
+          </nav>
+          <aside>
+          </aside>
+          <main>
             <div className="momentumTitle"> Momentum Algorithm</div>
             <div className="upperButtons">
         <Button size="left" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
@@ -232,17 +155,19 @@ const Momentum = (props) => {
               <InfoRFSButton size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
               </div>
         
-          </Main>
-          <Aside>
+          </main>
+          <aside>
+          {/* <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/> */}
           <ToggleModal modalNavStep1={modalNavStep1}/>
-          </Aside>
-          <Nav>
+          </aside>
+          <nav>
             
-          </Nav>
-      </Section>
-      <Footer>
-      </Footer>
-    </Container>
+          </nav>
+      </section>
+      <footer>
+      
+      </footer>
+    </div>
     
   )
 }
@@ -252,7 +177,7 @@ const Momentum = (props) => {
     //   return (
     //     <div className="containerHG">
     //       <header >
-          
+    //       <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
     //       </header>
     //       <section className="content">
     //           <nav>
@@ -296,11 +221,12 @@ const Momentum = (props) => {
     //           </nav>
     //       </section>
     //       <footer>
+    //       <img className="downwardArrow" width="45.5" height="35.5" src={downwardArrow} onClick={()=>{props.pageDown(2);}}></img>
     //       </footer>
     //     </div>
         
     //   )}
-// } 
+
       // else if (momentumLowerButton == "3" ) {
     //     return (
     //       <div className="containerHG">

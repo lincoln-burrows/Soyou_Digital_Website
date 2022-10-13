@@ -6,11 +6,10 @@ const initialState = {
   stableUpperButton:"1",
   stableLowerButton:"1",
   stableAnimationConst:"3",
-  pageHeight:"500",
 };
 
 const legacyReducer = (state = initialState, action) => {
-    // let {type, payload} = action;
+    console.log("action은 뭘까?", action);
   switch (action.type) {
     case "SET_MODAL_OFF":
       return { ...state, isModalOn: false };
@@ -43,9 +42,11 @@ const legacyReducer = (state = initialState, action) => {
     case "STABLE6M":
       return { ...state, stableLowerButton: "3" };
     case "STABLE3M":
-      return { ...state, stableLowerButton: "4" }; 
-    // case "PAGEHEIGHT":
-    //   return { ...state, pageHeight:window.innerHeight}; 
+      return { ...state, stableLowerButton: "4" };
+    // case "STABLEANICONSTRESET":
+    //     return { ...state, stableAnimationConst: "1" };
+    // case "STABLEANICONSTSTOP":
+    //     return { ...state, stableAnimationConst: "2" };     
     default:
       return {...state};
   }

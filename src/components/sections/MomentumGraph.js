@@ -8,8 +8,6 @@ import "../../App.css";
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
-import downwardArrow from "../assets/downwardArrow.png";
-import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import { connect } from "react-redux";
 
@@ -143,12 +141,11 @@ class MomentumGraph extends Component {
       <div>
         <ReactEcharts 
           style={{
-            // height: "350%",
-            height: "369px",
+            height: "300%",
+            // height: "200px",
             // 369
             width: "95%"
             // width: "900px"
-            
           }}
           option={data}
           />

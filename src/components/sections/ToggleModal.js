@@ -6,79 +6,27 @@ import ToggleMenu from '../assets/ToggleMenu';
 import hamburger from '../assets/hamburger.png';
 import { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components'
 
 const ToggleModal = (props) => {
 
-    const { pageHeight, isModalOn } = useSelector((state) => state.legacy);
-    
-    // 공통 CSS
-  const Container = styled.div`
-  display:flex;
-  flex-direction: column;
-  height : ${pageHeight}px;
-  width: 80vw;
-  `;
-
-  const Header = styled.div`
-  border: 1px solid gray;
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  `;
-
-  const Footer = styled.div`
-  border:1px solid gray;
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  `;
-
-  const Section = styled.div`
-  display: flex;
-  height : ${(pageHeight)*0.7368}px;
-  `;
-
-  const Nav = styled.div`
-  border:1px solid gray;  
-  height : ${(pageHeight)*0.7368}px;
-  flex: 2.435;
-  `;
-
-  const Aside = styled.div`
-  border:1px solid gray;  
-  flex: 5.5;
-  text-align: right;
-  align-self: flex-end;
-  height : ${(pageHeight)*0.7368}px;
-  `;
-
-  const Main = styled.div`
-  border: 1px solid gray;
-  flex: 18;
-  flex-shrink: 0;
-  align-items: flex-start;
-  height : ${(pageHeight)*0.7368}px;
-  `;
-// 공통 CSS 끝
-
-    
+    const { isModalOn } = useSelector((state) => state.legacy);
     const dispatch = useDispatch();
     const modalNavStep2 = (targetPage) =>{
         props.modalNavStep1(targetPage);
     }
-    console.log("pageHeight??", pageHeight)
 
         return (
             <div className={isModalOn ? 'openModal togglePage2' : 'togglePage2'}>
                 {isModalOn ? (
-                     <Container>
-                    <Header >
-                    </Header>
-                    <Section>
-                    <Nav>
+                     <div className="containerHG2">
+                    <header >
+                    </header>
+                    <section className="content">
+                    <nav className='test'>
                     {/* ------------- */}
-                    </Nav>
-                        <Aside>
-                        </Aside>
+                    </nav>
+                        <aside>
+                        </aside>
                         <item >
                         <Container >
                     
@@ -100,15 +48,15 @@ const ToggleModal = (props) => {
                     
                 </Container>
                         </item>
-                        <Aside>
+                        <aside>
                         <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_OFF"})} />
-                        </Aside>
-                        <Nav >
-                        </Nav>
-                    </Section>
-                    <Footer>
-                    </Footer>
-                  </Container> 
+                        </aside>
+                        <nav >
+                        </nav>
+                    </section>
+                    <footer>
+                    </footer>
+                  </div> 
                     
                 ) : null }
             </div>

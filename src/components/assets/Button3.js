@@ -9,18 +9,33 @@ const SIZES = {
     --button-padding: 6px 0px 6px 0px;
     --button-radius: 25px;
     margin: 0px 1.8% 3.5% 0px;
+
+    @media all and (max-width:767px) {
+      --button-font-size: 19px;
+      --button-padding: 3px 0px 3px 0px;
+    }
   `,
   middle: css`
     --button-font-size: 18.2pt;
     --button-padding: 6px 0px 6px 0px;
     --button-radius: 25px;
     margin: 0px 1.8% 0px 1.8%;
+
+    @media all and (max-width:767px) {
+      --button-font-size: 19px;
+      --button-padding: 3px 0px 3px 0px;
+    }
   `,
   right: css`
     --button-font-size: 18.2pt;
     --button-padding: 6px 0px 6px 0px;
     --button-radius: 25px;
     margin: 0px 0px 0px 1.8%;
+
+    @media all and (max-width:767px) {
+      --button-font-size: 19px;
+      --button-padding: 3px 0px 3px 0px;
+    }
   `
 };
 

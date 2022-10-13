@@ -4,106 +4,32 @@ import { Container, Row, Col } from 'reactstrap';
 import "../../App.css";
 import "../css/Contact.css";
 import hamburger from '../assets/hamburger.png';
-import upwardArrow from "../assets/upwardArrow.png";
 import { useState } from 'react'
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
 import { lineHeight } from '@mui/system';
-import styled from 'styled-components'
 
 const Contact = (props) => {
     const dispatch = useDispatch();
-    const pageHeight = props.pageHeight;
    
     //커밋 테스트
   const modalNavStep1 = (targetPage) =>{
       props.toggleNav(targetPage);
   }
 
-  //// 공통 CSS
-  const Container = styled.div`
-  display:flex;
-  flex-direction: column;
-  height : ${pageHeight}px;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Header = styled.div`
-
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Footer = styled.div`
-
-  height : ${(pageHeight)*0.1316}px;
-  align-self: center;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Section = styled.div`
-  display: flex;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-  `;
-
-  const Nav = styled.div`
-
-  height : ${(pageHeight)*0.7368}px;
-  flex: 2.435;
-  float:inherit;
-  overflow:hidden;
-  @media(max-width:1023px){
-    flex:0
-}
-  `;
-
-  const Aside = styled.div`
-
-  flex: 5.5;
-  text-align: right;
-  align-self: flex-end;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-  @media(max-width:1023px){
-    flex:0
-}
-  `;
-
-  const Main = styled.div`
-
-  flex: 18;
-  flex-shrink: 0;
-  align-items: flex-start;
-  height : ${(pageHeight)*0.7368}px;
-  float:inherit;
-  overflow:hidden;
-
-  @media(max-width:1023px){
-      flex:1
-  }
-  `;
-// 공통 CSS 끝
-
-    // if(props.scrollIndex == 4){
+    
     return (
-        <Container>
-      <Header >
-      
-      </Header>
-      <Section>
-          <Nav>
+        <div className="containerHG">
+      <header >
+    
+      </header>
+      <section className="content">
+          <nav>
             
-          </Nav>
-          <Aside>
-          </Aside>
-          <Main>
+          </nav>
+          <aside>
+          </aside>
+          <main>
               <div className='contactTitle'>
           <div>Requests for Service</div>
                         <div className='contactSubTitle'>soyou_crypto@gmail.com</div>
@@ -116,23 +42,25 @@ const Contact = (props) => {
                         <div className="contactPassage4">&bull; &nbsp;&nbsp;&nbsp;&nbsp;Oct '22 : Stable only ver1.0 launched
                         </div>
                         </div>
-          </Main>
-          <Aside>
+          </main>
+          <aside>
+          {/* <img className='hamburgerContact' width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/> */}
           <ToggleModal modalNavStep1={modalNavStep1}/>
-          </Aside>
-          <Nav>
+          </aside>
+          <nav>
             
-          </Nav>
-      </Section>
-      <Footer>
-      </Footer>
-    </Container>
+          </nav>
+      </section>
+      <footer>
+      </footer>
+    </div>
     );
-// } else {
+} 
+// else {
 //     return (
 //         <div className="containerHG">
 //       <header >
-    
+
 //       </header>
 //       <section className="content">
 //           <nav>
@@ -167,6 +95,6 @@ const Contact = (props) => {
         
 //     );
 // }
-}
+// }
 
 export default Contact;
