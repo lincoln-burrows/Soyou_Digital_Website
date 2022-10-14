@@ -22,7 +22,15 @@ const Momentum = (props) => {
   const dispatch = useDispatch();
   const { momentumLowerButton, momentumUpperButton, momentumAnimationConst } = useSelector((state) => state.legacy);
   const { momentumData, momentumIndex } = useSelector((state) => state.momentumData);
+  const [scrollIndex2, setScrollIndex2] = useState(0);
   
+  function tempFunc() {
+    setScrollIndex2(scrollIndex2+1);
+    console.log("scollindex값은?",scrollIndex2)
+  }
+  
+  
+
   const modalNavStep1 = (targetPage) =>{
         props.toggleNav(targetPage);
     }
@@ -30,6 +38,10 @@ const Momentum = (props) => {
     useEffect(() => {
       dispatch(momentumAction.getMomentumGraph("MOMENTUMALL"));
     }, []);
+
+    // useEffect(() => {
+      
+    // }, scrollIndex2);
 
     // if(props.scrollIndex == "2" && momentumAnimationConst == 1){
     //   dispatch({type:"MOMENTUMANICONSTINACTIVE"}); 
@@ -53,14 +65,15 @@ const Momentum = (props) => {
         <Button size="left" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
        <Button size="right" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="MOMENTUM_INFO" />
        </div>
+       <span className={momentumUpperButton == "2" ? 'hide below' : 'below'}>
        <div className="lowerButtons">
-       <Button3 size="left" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL"/> 
-       <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y"/> 
-       <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M"/> 
-       <Button3 size="right" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M"/> 
+       <Button3 size="left" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL" momentumLowerButton={scrollIndex2} /> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y" momentumLowerButton={scrollIndex2} /> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M" momentumLowerButton={scrollIndex2} /> 
+       <Button3 size="right" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M" momentumLowerButton={scrollIndex2} /> 
        </div>
        {/* 버튼 클릭에 따라 네개 바꿔치기1 */}
-       
+       </span>
        <span className={momentumUpperButton == "1" && momentumLowerButton == "1" ? 'below' : 'hide below'}>
        
         <div className="graphAnimation1">
@@ -151,7 +164,7 @@ const Momentum = (props) => {
               
               <li >To be updated</li>          
               </div>
-              <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <br></br><br></br><br></br><br></br>
               <InfoRFSButton size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
               </div>
         

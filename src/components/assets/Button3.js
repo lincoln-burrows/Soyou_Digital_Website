@@ -3,66 +3,124 @@ import { useDispatch, useSelector } from "react-redux";
 import { momentumAction } from "../../redux/actions/momentumAction";
 import { stableAction } from "../../redux/actions/stableAction";
 
-const SIZES = {
-  left: css`
-    --button-font-size: 18.2pt;
-    --button-padding: 6px 0px 6px 0px;
-    --button-radius: 25px;
-    margin: 0px 1.8% 3.5% 0px;
 
-    @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
-      --button-font-size: 19px;
-      --button-padding: 3px 0px 3px 0px;
-    }
-  `,
-  middle: css`
-    --button-font-size: 18.2pt;
-    --button-padding: 6px 0px 6px 0px;
-    --button-radius: 25px;
-    margin: 0px 1.8% 0px 1.8%;
+// const SIZES = {
+//   left: css`
+//     --button-font-size: ${momentumLowerButton}px;
+//     --button-padding: 6px 0px 6px 0px;
+//     --button-radius: 25px;
+//     margin: 0px 1.8% 3.5% 0px;
 
-    @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
-      --button-font-size: 19px;
-      --button-padding: 3px 0px 3px 0px;
-    }
-  `,
-  right: css`
-    --button-font-size: 18.2pt;
-    --button-padding: 6px 0px 6px 0px;
-    --button-radius: 25px;
-    margin: 0px 0px 0px 1.8%;
+//     @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
+//       --button-font-size: 19px;
+//       --button-padding: 3px 0px 3px 0px;
+//     }
+//   `,
+//   middle: css`
+//     --button-font-size: 18.2pt;
+//     --button-padding: 6px 0px 6px 0px;
+//     --button-radius: 25px;
+//     margin: 0px 1.8% 0px 1.8%;
 
-    @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
-      --button-font-size: 19px;
-      --button-padding: 3px 0px 3px 0px;
-    }
-  `
-};
+//     @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
+//       --button-font-size: 19px;
+//       --button-padding: 3px 0px 3px 0px;
+//     }
+//   `,
+//   right: css`
+//     --button-font-size: 18.2pt;
+//     --button-padding: 6px 0px 6px 0px;
+//     --button-radius: 25px;
+//     margin: 0px 0px 0px 1.8%;
 
-const VARIANTS = {
-  success: css`
+//     @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
+//       --button-font-size: 19px;
+//       --button-padding: 3px 0px 3px 0px;
+//     }
+//   `
+// };
+
+// const VARIANTS = {
+//   success: css`
+//     --button-color: #ffffff;
+//     --button-bg-color: #C0C0C0;
+//     --button-hover-bg-color: #000000;
+//   `,
+//   default: css`
+//   --button-color: #ffffff;
+//   --button-bg-color: #C0C0C0;
+
+// `,
+//   defaultActive: css`
+//   --button-color: #ffffff;
+//   --button-bg-color: #000000;
+
+// `
+// };
+
+function Button3({ disabled, size, variant, children, actionName, momentumLowerButton }) {
+  // const sizeStyle = SIZES[size];
+  // const variantStyle = VARIANTS[variant];
+  const dispatch = useDispatch();
+  
+  // const { momentumLowerButton } = useSelector((state) => state.legacy);
+  console.log(momentumLowerButton);
+
+  const SIZES = {
+    left: css`
+      --button-font-size: 18.2pt;
+      --button-padding: 6px 0px 6px 0px;
+      --button-radius: 25px;
+      margin: 0px 1.8% 3.5% 0px;
+  
+      @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
+        --button-font-size: 19px;
+        --button-padding: 3px 0px 3px 0px;
+      }
+    `,
+    middle: css`
+      --button-font-size: 18.2pt;
+      --button-padding: 6px 0px 6px 0px;
+      --button-radius: 25px;
+      margin: 0px 1.8% 0px 1.8%;
+  
+      @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
+        --button-font-size: 19px;
+        --button-padding: 3px 0px 3px 0px;
+      }
+    `,
+    right: css`
+      --button-font-size: 18.2pt;
+      --button-padding: 6px 0px 6px 0px;
+      --button-radius: 25px;
+      margin: 0px 0px 0px 1.8%;
+  
+      @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
+        --button-font-size: 19px;
+        --button-padding: 3px 0px 3px 0px;
+      }
+    `
+  };
+  
+  const VARIANTS = {
+    success: css`
+      --button-color: #ffffff;
+      --button-bg-color: #C0C0C0;
+      --button-hover-bg-color: #000000;
+    `,
+    default: css`
     --button-color: #ffffff;
     --button-bg-color: #C0C0C0;
-    --button-hover-bg-color: #000000;
+  
   `,
-  default: css`
-  --button-color: #ffffff;
-  --button-bg-color: #C0C0C0;
-
-`,
-  defaultActive: css`
-  --button-color: #ffffff;
-  --button-bg-color: #000000;
-
-`
-};
-
-function Button3({ disabled, size, variant, children, actionName }) {
+    defaultActive: css`
+    --button-color: #ffffff;
+    --button-bg-color: #000000;
+  
+  `
+  };
   const sizeStyle = SIZES[size];
   const variantStyle = VARIANTS[variant];
-  const dispatch = useDispatch();
-
-
   return (
     <StyledButton
       disabled={disabled}

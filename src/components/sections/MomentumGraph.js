@@ -10,6 +10,7 @@ import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
 import App from "../../App";
 import { connect } from "react-redux";
+import { useEffect } from "react";
 
 class MomentumGraph extends Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class MomentumGraph extends Component {
       // data2: {},
     };
   }
+
+  
 
   extractDataToList = (arg, data) => {
     const res = [];
@@ -42,11 +45,14 @@ class MomentumGraph extends Component {
 
   render() {
     const { momentumData } = this.props.momentumData;
-    console.log("??2",momentumData)
+    // const { momentumIndex } = this.props.momentumIndex;
+    console.log("??2", momentumData)
+    console.log("??3", this.props.momentumData.momentumIndex.cumReturn)
     const dates = this.extractDataToList("time", momentumData);
     const momentum_algo = this.extractDataToList("cum_return_ma", momentumData);
     const btc_usdt = this.extractDataToList("cum_return_btc", momentumData);
-    
+    let temp1 = this.props.momentumData.momentumIndex.cumReturn;
+    let temp2 = 0;
     const data = {
       tooltip: {
         trigger: "axis",
@@ -136,22 +142,33 @@ class MomentumGraph extends Component {
         
       ]
     };
+    // if(temp1 == 116){
     return (
-      
       <div>
         <ReactEcharts 
           style={{
             height: "300%",
-            // height: "200px",
-            // 369
             width: "95%"
-            // width: "900px"
           }}
           option={data}
           />
       </div>
       
     );
+  // } else {
+  //   return (
+  //     <div>
+  //       <ReactEcharts 
+  //         style={{
+  //           height: "300%",
+  //           width: "95%"
+  //         }}
+  //         option={data}
+  //         />
+  //     </div>
+      
+  //   );
+  // }
   }
 }
 

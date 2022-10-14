@@ -4,9 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 const SIZES = {
   sm: css`
-  --button-font-size: 20.8pt;
-  --button-padding: 4px 0px 4px 0px;
-  --button-radius: 25px;
+    --button-font-size: 20.8pt;
+    --button-padding: 4px 0px 4px 0px;
+    --button-radius: 25px;
+    margin: 0.5% 1.8% 1.9% 0px;
+    
+    @media all and (max-width:767px), (max-height:450px)and (max-width:1023px) {
+      --button-font-size: 19px;
+      --button-padding: 1px 0px 2px 0px;
+    }
   `,
   md: css`
     --button-font-size: 1rem;

@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 var hist = createBrowserHistory();
 const DIVIDER_HEIGHT = 5;
-const pageHeight = window.innerHeight;
+const pageHeight = 400;
 
 
 function App() {
@@ -48,6 +48,22 @@ function App() {
   }
 
   const isModalOn = useSelector((state) => state.legacy);
+
+  const handleResize = () => {
+    let currentHeight = (window.innerHeight);
+    setScrollIndex(currentHeight);
+    // if (currentHeight >= pageHeight) {
+    //   pageHeight = currentHeight;
+    // }
+    // dispatch({type:"PAGEHEIGHT"});
+}
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   // useEffect(() => {
   //   const wheelHandler = (e) => {
