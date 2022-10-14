@@ -185,7 +185,7 @@ padding-left: 3%;
 
   /* 디바이스 사이즈별 조정 */
   /* @media all and (min-width:480px) and (max-width:767px) { */
-    @media all and (max-width:767px) {
+    @media all and (max-width:767px), (max-height:450px) {
 
     .momentumTitle{
       font-size: 32px;

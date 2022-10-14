@@ -197,7 +197,7 @@ body {
 }  
 
 /* 모바일 가로, 테블릿 세로 (480 ~ 767px)*/ 
-@media all and (min-width:480px) and (max-width:767px) {
+@media all and (min-width:480px) and (max-width:767px), (max-height:450px) {
 
 .mainTitle{
   padding-top:60px;

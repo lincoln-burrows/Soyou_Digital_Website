@@ -21,22 +21,10 @@ body {
   font-size: 100px;
 }
 
-.bg-yellow {
-  background-color: #f7f6cf;
-}
-
-.bg-blue {
-  background-color: #b6d8f2;
-}
-
-.bg-pink {
-  background-color: #f4cfdf;
-}
-
 .divider {
   width: 100%;
   height: 5px;
-  background-color: #ffffff;
+  background-color: silver;
 }
 
 
@@ -153,24 +141,6 @@ nav, aside {
  
 }
 
-/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/ 
-@media all and (min-width:768px) and (max-width:1023px) { 
-  /* 공통 레이아웃 */
-.content {
-  background-color: red;
-  flex:1;
-}
-
-.content nav {
-  flex:0;
-}
-
-.content aside {
-  flex:0;
-}
-
-/* 공통 레이아웃 종료 */
-} 
 
 /* 테블릿 세로 (해상도 768px ~ 1023px)*/ 
 @media all and (min-width:768px) and (max-width:1023px) { 
@@ -192,7 +162,7 @@ nav, aside {
 } 
 
 /* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/ 
-@media all and (min-width:480px) and (max-width:767px) {
+@media all and (min-width:480px) and (max-width:767px), (max-height:450px) {
   /* 공통 레이아웃 */
 .content {
   /* background-color: cyan; */
