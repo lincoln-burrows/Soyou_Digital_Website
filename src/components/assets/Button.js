@@ -8,7 +8,7 @@ const SIZES = {
     --button-radius: 25px;
     margin: 0.5% 1.8% 1.9% 0px;
     
-    @media all and (max-width:767px), (max-height:450px) {
+    @media all and (max-width:767px), (max-height:450px)and (max-width:1023px) {
       --button-font-size: 19px;
       --button-padding: 1px 0px 2px 0px;
     }
@@ -19,7 +19,7 @@ const SIZES = {
     --button-radius: 25px;
     margin: 0px 0px 1.9% 1.8%;
     
-    @media all and (max-width:767px), (max-height:450px){
+    @media all and (max-width:767px), (max-height:450px)and (max-width:1023px){
       --button-font-size: 19px;
     }
   `,

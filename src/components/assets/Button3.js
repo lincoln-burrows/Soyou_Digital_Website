@@ -10,7 +10,7 @@ const SIZES = {
     --button-radius: 25px;
     margin: 0px 1.8% 3.5% 0px;
 
-    @media all and (max-width:767px), (max-height:450px) {
+    @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
       --button-font-size: 19px;
       --button-padding: 3px 0px 3px 0px;
     }
@@ -21,7 +21,7 @@ const SIZES = {
     --button-radius: 25px;
     margin: 0px 1.8% 0px 1.8%;
 
-    @media all and (max-width:767px), (max-height:450px) {
+    @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
       --button-font-size: 19px;
       --button-padding: 3px 0px 3px 0px;
     }
@@ -32,7 +32,7 @@ const SIZES = {
     --button-radius: 25px;
     margin: 0px 0px 0px 1.8%;
 
-    @media all and (max-width:767px), (max-height:450px) {
+    @media all and (max-width:767px), (max-height:450px) and (max-width:1023px){
       --button-font-size: 19px;
       --button-padding: 3px 0px 3px 0px;
     }
