@@ -18,9 +18,22 @@ const MainPage = (props) => {
     }
    
 
+    useEffect(() => {
+        WebFont.load({
+          custom: {
+            families: 'noto-sans-kr-bold',
+            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Bold.eot'],
+            families: 'noto-sans-kr-medium',
+            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Medium.eot'],
+          },
+        });
+      }, []);
+
+      
     // if(props.scrollIndex == 1){
         return (
-            <div><ToggleModal modalNavStep1={modalNavStep1}/>
+            <div>
+                <ToggleModal modalNavStep1={modalNavStep1}/>
             <div className="containerHG">
       <header >
       </header>
