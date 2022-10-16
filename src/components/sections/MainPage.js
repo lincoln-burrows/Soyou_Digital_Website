@@ -45,7 +45,7 @@ const MainPage = (props) => {
           </aside>
           <main>
               <div className='mainUpper'>
-          <div className="mainTitle">SOYOU CRYPTO2</div>
+          <div className="mainTitle">SOYOU CRYPTO3</div>
           <h4 className="mainSubTitle">Crypto Asset Management Labs</h4>
           </div>
           <br></br>
