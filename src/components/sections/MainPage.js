@@ -7,7 +7,7 @@ import { useState, useEffect, useRef } from 'react'
 import hamburger from '../assets/hamburger.png';
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
-
+import WebFont from 'webfontloader';
 
 const MainPage = (props) => {
     const dispatch = useDispatch();
@@ -22,9 +22,9 @@ const MainPage = (props) => {
         WebFont.load({
           custom: {
             families: 'noto-sans-kr-bold',
-            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Bold.eot'],
+            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Bold.woff2'],
             families: 'noto-sans-kr-medium',
-            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Medium.eot'],
+            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Medium.woff2'],
           },
         });
       }, []);
@@ -45,7 +45,7 @@ const MainPage = (props) => {
           </aside>
           <main>
               <div className='mainUpper'>
-          <div className="mainTitle">SOYOU CRYPTO</div>
+          <div className="mainTitle">SOYOU CRYPTO1</div>
           <h4 className="mainSubTitle">Crypto Asset Management Labs</h4>
           </div>
           <br></br>
