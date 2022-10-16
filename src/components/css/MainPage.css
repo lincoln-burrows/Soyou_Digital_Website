@@ -160,43 +160,7 @@ body {
   100% { opacity: 100% }
 }
 
-@font-face {
-  font-family: 'testItalic';
-  src: url('https://cdn.jsdelivr.net/npm/@canvas-fonts/times-new-roman-italic@1.0.4/Times New Roman Italic.ttf');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'noto-sans-kr-regular';
-  src: url('../assets/fonts/NotoSansKR-Regular.otf');
-  font-style: normal;
-  font-display: swap;
-}  
-
-@font-face {
-  font-family: 'noto-sans-kr-bold';
-  /* src: url('../assets/fonts/NotoSansKR-Bold.otf'); */
-  src: url('https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Bold.woff2');
-  font-style: normal;
-  font-display: swap;
-}  
-
-@font-face {
-  font-family: 'noto-sans-kr-medium';
-  /* src: url('../assets/fonts/NotoSansKR-Medium.otf'); */
-  src: url('https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Medium.woff2');
-  font-style: normal;
-  font-display: swap;
-}  
-
-@font-face {
-  font-family: 'noto-sans-kr-light';
-  src: url('../assets/fonts/NotoSansKR-Light.otf');
-  font-style: normal;
-  font-display: swap;
-}  
 
 /* 모바일 가로, 테블릿 세로 (480 ~ 767px)*/ 
 @media all and (min-width:480px) and (max-width:767px), (max-height:450px) and (max-width:1023px) {
