@@ -18,16 +18,16 @@ const MainPage = (props) => {
     }
    
 
-    useEffect(() => {
-        WebFont.load({
-          custom: {
-            families: 'noto-sans-kr-bold',
-            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Bold.woff2'],
-            families: 'noto-sans-kr-medium',
-            urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Medium.woff2'],
-          },
-        });
-      }, []);
+    // useEffect(() => {
+    //     WebFont.load({
+    //       custom: {
+    //         families: 'noto-sans-kr-bold',
+    //         urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Bold.woff2'],
+    //         families: 'noto-sans-kr-medium',
+    //         urls: ['https://cdn.jsdelivr.net/npm/noto-sans-kr-font@0.0.6/fonts/NotoSansKR-Medium.woff2'],
+    //       },
+    //     });
+    //   }, []);
 
       
     // if(props.scrollIndex == 1){
@@ -45,7 +45,7 @@ const MainPage = (props) => {
           </aside>
           <main>
               <div className='mainUpper'>
-          <div className="mainTitle">SOYOU CRYPTO1</div>
+          <div className="mainTitle">SOYOU CRYPTO2</div>
           <h4 className="mainSubTitle">Crypto Asset Management Labs</h4>
           </div>
           <br></br>

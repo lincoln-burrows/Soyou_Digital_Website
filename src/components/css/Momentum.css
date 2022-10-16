@@ -49,41 +49,6 @@ line-height: 2;
 padding-left: 3%;
 }
 
-  @font-face {
-    font-family: 'testItalic';
-    src: url('https://cdn.jsdelivr.net/npm/@canvas-fonts/times-new-roman-italic@1.0.4/Times New Roman Italic.ttf');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'noto-sans-kr-regular';
-    src: url('../assets/fonts/NotoSansKR-Regular.otf');
-    font-style: normal;
-    font-display: swap;
-  }  
-
-  @font-face {
-    font-family: 'noto-sans-kr-bold';
-    src: url('../assets/fonts/NotoSansKR-Bold.otf');
-    font-style: normal;
-    font-display: swap;
-  }  
-
-  @font-face {
-    font-family: 'noto-sans-kr-medium';
-    src: url('../assets/fonts/NotoSansKR-Medium.otf');
-    font-style: normal;
-    font-display: swap;
-  }  
-
-  @font-face {
-    font-family: 'noto-sans-kr-light';
-    src: url('../assets/fonts/NotoSansKR-Light.otf');
-    font-style: normal;
-    font-display: swap;
-  }  
 
   @media (prefers-reduced-motion: no-preference){
     .graphAnimation1{
