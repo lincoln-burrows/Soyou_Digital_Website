@@ -6,6 +6,7 @@ import ToggleMenu from '../assets/ToggleMenu';
 import hamburger from '../assets/hamburger.png';
 import { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import Header from '../assets/Header';
 
 const ToggleModal = (props) => {
 
@@ -89,6 +90,7 @@ const ToggleModal = (props) => {
                     </Row>
                     
                 </Container> */}
+                <img className='toggleModalHamburger' width="70" height="70" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_OFF"})} />
                 <table align='right'>
                     <tr><td><ToggleMenu size="sm" variant="success" children="Mission" className="toggleMenu" modalNavigate={modalNavigate} funcName="moveToMain" /></td></tr>
                     <tr><td><ToggleMenu size="sm" variant="success" children="Momentum Algorithm" className="toggleMenu"  modalNavigate={modalNavigate} funcName="moveToMomentum" /></td></tr>
@@ -98,7 +100,6 @@ const ToggleModal = (props) => {
                 </div>
                         </item>
                         <aside>
-                        <img width="80" height="80" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_OFF"})} />
                         </aside>
                         <nav >
                         </nav>

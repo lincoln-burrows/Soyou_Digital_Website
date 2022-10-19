@@ -7,7 +7,10 @@ const SIZES = {
     --button-font-size: 31.2pt;
     --button-padding: 4px 12px;
     --button-radius: 20px;
-    
+    @media (max-width:1023px){
+      --button-font-size: 29px;
+      --button-padding: 4px 0px;
+    }
   `,
   md: css`
     --button-font-size: 1rem;
@@ -75,7 +78,11 @@ const StyledButton = styled.button`
   color: var(--button-color);
   background: var(--button-bg-color);
   width:500px;
-
+  @media (max-width:1023px){
+    width:330px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
   &:active,
   &:hover,
   &:focus {
