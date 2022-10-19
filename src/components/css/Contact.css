@@ -1,44 +1,46 @@
-.contactTitle {
-  text-align: center;
-  font-family: 'noto-sans-kr-light';
-  font-size: 20.8pt;
-  line-height:50px;
-  padding-bottom:136px;
-}
 
-.contactSubTitle {
-  text-align: center;
-  font-family: 'noto-sans-kr-bold';
-  font-size: 31.2pt;
-}
-
-.contactPassage{
-  text-align: left;
-  font-size: 18.2pt;
-  font-family: 'noto-sans-kr-light';
-  text-indent: -130px;
-  padding-left: 160px;
-  line-height: 40px;
-}
-
-.contactPassage1{
-  font-size: 20.8pt;
-  font-family: 'noto-sans-kr-medium';
-  padding-bottom: 10px;
-}
-
-.contactPassage2 {
-  padding-bottom: 10px;
-
-}
-
-.contactPassage3 {
-  padding-bottom: 10px;
-}
-
-.contactPassage4 {
-  padding-bottom: 10px;
-}
+  .contactTitle {
+    font-size: 19px;
+    line-height:35px;
+    padding-bottom:140px;
+    text-align: center;
+  }
+  
+  .contactSubTitle {
+    text-align: center;
+    font-family: 'noto-sans-kr-bold';
+    font-size: 24px;
+    /* width: 90vw; */
+    word-break: break-all;
+  }
+  
+  .contactPassage{
+    text-align: left;
+    font-size: 17px;
+    font-family: 'noto-sans-kr-light';
+    text-indent: -90px;
+    padding-left: 100px;
+    line-height: 30px;
+  }
+  
+  .contactPassage1{
+    font-size: 19px;
+    font-family: 'noto-sans-kr-medium';
+    padding-bottom: 10px;
+  }
+  
+  .contactPassage2 {
+    padding-bottom: 10px;
+  
+  }
+  
+  .contactPassage3 {
+    padding-bottom: 10px;
+  }
+  
+  .contactPassage4 {
+    padding-bottom: 10px;
+  }
 
 .contactTitleT {
   text-align: center;
@@ -164,51 +166,4 @@
   0% { opacity: 0%; }
   83% {opacity:0%}
   100% { opacity: 100% }
-}
-
-
-@media all and (max-width:767px), (max-height:450px) {
-
-  .contactTitle {
-    font-size: 21.3px;
-    line-height:40px;
-    padding-bottom:60px;
-  }
-  
-  .contactSubTitle {
-    text-align: center;
-    font-family: 'noto-sans-kr-bold';
-    font-size: 32px;
-    /* width: 90vw; */
-    word-break: break-all;
-  }
-  
-  .contactPassage{
-    text-align: left;
-    font-size: 18.6px;
-    font-family: 'noto-sans-kr-light';
-    text-indent: -90px;
-    padding-left: 100px;
-    line-height: 30px;
-  }
-  
-  .contactPassage1{
-    font-size: 21.3px;
-    font-family: 'noto-sans-kr-medium';
-    padding-bottom: 10px;
-  }
-  
-  .contactPassage2 {
-    padding-bottom: 10px;
-  
-  }
-  
-  .contactPassage3 {
-    padding-bottom: 10px;
-  }
-  
-  .contactPassage4 {
-    padding-bottom: 10px;
-  }
-  
 }

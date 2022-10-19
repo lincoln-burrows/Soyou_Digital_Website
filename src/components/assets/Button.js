@@ -3,25 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 const SIZES = {
   left: css`
-    --button-font-size: 20.8pt;
+    --button-font-size: 19px;
     --button-padding: 4px 0px 4px 0px;
     --button-radius: 25px;
-    margin: 0.5% 1.8% 1.9% 0px;
-    
-    @media all and (max-width:767px), (max-height:450px)and (max-width:1023px) {
-      --button-font-size: 19px;
-      --button-padding: 1px 0px 2px 0px;
-    }
+    margin: 7px 7px 6px 0px;
   `,
   right: css`
-    --button-font-size: 20.8pt;
-    --button-padding: 1px 0px 2px 0px;
+    --button-font-size: 19px;
+    --button-padding: 4px 0px 4px 0px;
     --button-radius: 25px;
-    margin: 0px 0px 1.9% 1.8%;
-    
-    @media all and (max-width:767px), (max-height:450px)and (max-width:1023px){
-      --button-font-size: 19px;
-    }
+    margin: 7px 0px 6px 7px;
   `,
   
 };
@@ -49,7 +40,7 @@ const Button = (props) => {
   const dispatch = useDispatch();
   const disabled = props.disabled;
   const actionName = props.actionName;
- 
+  
 
   return (
     <StyledButton
@@ -76,7 +67,7 @@ const StyledButton = styled.button`
   border-radius: var(--button-radius,);
   color: var(--button-color, #ffffff);
   background: var(--button-bg-color, #0d6efd);
-  width:48.2%;
+  width:153px;
 
   
 `;

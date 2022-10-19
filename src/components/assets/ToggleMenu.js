@@ -25,7 +25,8 @@ const VARIANTS = {
   success: css`
     --button-color: #ffffff;
     --button-bg-color: #000000;
-    --button-hover-bg-color: #c0c0c0;
+    --button-hover-bg-color: #ffffff;
+    --button-hover-button-color: #000000;
   
   `,
   default: css`
@@ -50,7 +51,7 @@ const ToggleMenu = (props) =>{
       // disabled="active"
       sizeStyle={sizeStyle}
       variantStyle={variantStyle}
-      onClick={()=>{props.modalNavStep2(props.targetPage); dispatch({type:"SET_MODAL_OFF"});}}
+      onClick={()=>{props.modalNavigate(props.funcName); dispatch({type:"SET_ISOPEN_FALSE"});}}
     >
       {props.children}
     </StyledButton>
@@ -71,14 +72,15 @@ const StyledButton = styled.button`
   font-size: var(--button-font-size,);
   padding: var(--button-padding,);
   border-radius: var(--button-radius,);
-  color: var(--button-color, #ffffff);
-  background: var(--button-bg-color, #0d6efd);
+  color: var(--button-color);
+  background: var(--button-bg-color);
   width:500px;
 
   &:active,
   &:hover,
   &:focus {
-    background: var(--button-hover-bg-color, #000000);
+    background: var(--button-hover-bg-color);
+    color: var(--button-hover-button-color);
   }
 
   &:disabled {

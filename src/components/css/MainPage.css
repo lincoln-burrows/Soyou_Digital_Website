@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .mainUpper {
@@ -10,24 +10,24 @@ body {
 }
 
 .mainTitle{
-  font-size: 104px;
+  font-size: 40px;
+  /* line-height:70px; */
   /* font-size: 96px; */
   /* ppt fontsize x 1.3 x 4/3 = px */
-  /* padding-top: 27.5%; */
-  padding-top: 0px;
+  padding-top: 50px;
   text-align: center;
   font-family: 'noto-sans-kr-bold';
 }
 
 .mainSubTitle{
-  font-size: 31.2pt;
+  font-size: 29px;
   text-align: center;
   font-family: 'noto-sans-kr-bold';
   
 }
 
 .mainDescription1{
-  font-size: 20.8pt;
+  font-size: 21.3px;
   font-family: 'noto-sans-kr-light';
   color: silver;
   text-align: center;
@@ -35,7 +35,7 @@ body {
 }
 
 .mainDescription2{
-  font-size: 20.8pt;
+  font-size: 21.3px;
   font-family: 'noto-sans-kr-light';
   color: silver;
   text-align: center;
@@ -43,62 +43,16 @@ body {
 }
 
 .mainDescription3{
-  font-size: 20.8pt;
+  font-size: 21.3px;
   font-family: 'noto-sans-kr-light';
   color: silver;
   text-align: center;
 
 }
 
-
-.mainUpperT {
-  line-height: 120px;
-}
-
-.mainTitleT{
-  font-size: 104px;
-  /* font-size: 96px; */
-  /* ppt fontsize x 1.3 x 4/3 = px */
-  padding-top: 176px;
-  text-align: center;
-  font-family: 'noto-sans-kr-bold';
-}
-
-.mainSubTitleT{
-  font-size: 31.2pt;
-  text-align: center;
-  font-family: 'noto-sans-kr-bold';
-  
-}
-
-.mainDescription1T{
-  font-size: 20.8pt;
-  font-family: 'noto-sans-kr-light';
-  color: silver;
-  text-align: center;
-
-}
-
-.mainDescription2T{
-  font-size: 20.8pt;
-  font-family: 'noto-sans-kr-light';
-  color: silver;
-  text-align: center;
-
-}
-
-.mainDescription3T{
-  font-size: 20.8pt;
-  font-family: 'noto-sans-kr-light';
-  color: silver;
-  text-align: center;
-
-}
-
-
-.test {
-  padding-top: 319px;
-}
+/* .mainpageMain {
+  height: 400px;
+} */
 
 @media (prefers-reduced-motion: no-preference){
   .mainUpper{
@@ -125,6 +79,9 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference){
+  .mainDownwardArrow{
+    animation: description1Appear 2.9s ease-out;
+  }
   .hamburger{
     animation: description1Appear 3.0s ease-out;
 }
@@ -158,56 +115,4 @@ body {
 @keyframes descriptionHamburgerAppear {
   0% { opacity: 0%; }
   100% { opacity: 100% }
-}
-
-
-
-/* 모바일 가로, 테블릿 세로 (480 ~ 767px)*/ 
-@media all and (min-width:480px) and (max-width:767px), (max-height:450px) and (max-width:1023px) {
-
-.mainTitle{
-  padding-top:0px;
-  font-size: 70px;
-  /* line-height: 80px; */
-}
-
-.mainSubTitle{
-  font-size: 32px;
-}
-
-.mainDescription1{
-  font-size: 21px;
-}
-
-.mainDescription2{
-  font-size: 21px;
-}
-
-.mainDescription3{
-  font-size: 21px;
-}
-}
-/* 모바일 세로, 테블릿 세로 (해상도 ~ 479px)*/ 
-@media all and (max-width:479px) {
-
-  .mainTitle{
-    font-size: 22vw;
-    padding-top:0px;
-  }
-  
-  .mainSubTitle{
-    font-size: 8vw;
-  }
-  
-  .mainDescription1{
-    font-size: 6vw;
-  }
-  
-  .mainDescription2{
-    font-size: 6vw;
-  }
-  
-  .mainDescription3{
-    font-size: 6vw;
-  }
 }

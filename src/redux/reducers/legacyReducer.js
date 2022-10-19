@@ -1,5 +1,6 @@
 const initialState = {
   isModalOn: false,
+  isOpen: false,
   momentumUpperButton:"1",
   momentumLowerButton:"1",
   momentumAnimationConst:"3",
@@ -14,7 +15,11 @@ const legacyReducer = (state = initialState, action) => {
     case "SET_MODAL_OFF":
       return { ...state, isModalOn: false };
     case "SET_MODAL_ON":
-      return { ...state, isModalOn: true };
+      return { ...state, isModalOn: true, isOpen: true };
+    case "SET_ISOPEN_TRUE":
+      return { ...state, isOpen: true };       
+    case "SET_ISOPEN_FALSE":
+      return { ...state, isOpen: false };       
     case "MOMENTUM_PROFIT":
       return { ...state, momentumUpperButton: "1"};
     case "MOMENTUM_INFO":

@@ -8,9 +8,10 @@ import "../../App.css";
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
+import downwardArrow from "../assets/downwardArrow.png";
+import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import { connect } from "react-redux";
-import { useEffect } from "react";
 
 class MomentumGraph extends Component {
   constructor(props) {
@@ -21,22 +22,37 @@ class MomentumGraph extends Component {
     };
   }
 
+  // extractDataToList = (arg, data) => {
+  //   const res = [];
+  //   for (let i in data) {
+  //     let item = data[i][arg];
+  //     if (arg === "time") {
+  //       let i =
+  //         "'" + item.toString().slice(2, 10);
+  //       res.push(i);
+  //     } else {
+  //       res.push(parseFloat(data[i][arg]));
+  //     }
+  //   }
+  //   return res;
+  // };
   
-
   extractDataToList = (arg, data) => {
     const res = [];
     for (let i in data) {
-      let item = data[i][arg];
-      if (arg === "time") {
-        let i =
-          "'" + item.toString().slice(2, 10);
-        res.push(i);
-      } else {
-        res.push(parseFloat(data[i][arg]));
+      let time = data[i].time.toString().replace(/-/g,'');
+      if (arg==="cum_return_ma") {
+      let value = data[i].cum_return_ma;
+        res.push([new Date(time.slice(0,4), time.slice(4,6)-1, time.slice(6,8)), value]);
+      } else if (arg==="cum_return_btc"){
+        let value = data[i].cum_return_btc;
+        res.push([new Date(time.slice(0,4), time.slice(4,6)-1, time.slice(6,8)), value]);
       }
-    }
+      }
     return res;
   };
+
+  
 
   componentDidMount = () => {
     document.title = "SOYOU CRYPTO";
@@ -45,48 +61,44 @@ class MomentumGraph extends Component {
 
   render() {
     const { momentumData } = this.props.momentumData;
-    // const { momentumIndex } = this.props.momentumIndex;
-    console.log("??2", momentumData)
-    console.log("??3", this.props.momentumData.momentumIndex.cumReturn)
-    const dates = this.extractDataToList("time", momentumData);
+    console.log("??2",momentumData)
     const momentum_algo = this.extractDataToList("cum_return_ma", momentumData);
     const btc_usdt = this.extractDataToList("cum_return_btc", momentumData);
-    let temp1 = this.props.momentumData.momentumIndex.cumReturn;
-    let temp2 = 0;
     const data = {
       tooltip: {
         trigger: "axis",
         axisPointer: {type: "cross"},
       },
-      toolbox: {
-        feature: {
-          saveAsImage:{}
-        }
-      }
-      ,
+      // toolbox: {
+      //   feature: {
+      //     saveAsImage:{},
+      //   }
+      // }
+      
       legend: {
         data: ["Momentum Algorithm", "BTC_USDT Hodl"],
+        padding:[1, 0, 10, 0,],
         textStyle: {
-          fontSize: 16
+          fontSize: 14
         },
         itemStyle: {
           borderType:"solid",
-          
         }
       },
       grid: {
         left: "1%",
         right: "4%",
         bottom: "3%",
-        top: "10%",
+        top: "15%",
         containLabel: true
       },
-      notMerge:true
+      notMerge:false
       ,
       xAxis: {
-        type: "category",
-        data: dates,
+        type: "time",
         show: true,
+        split:8,
+        axisLine:false,
         // axisPointer: {
         //     show:true,
         //     label:{
@@ -98,11 +110,15 @@ class MomentumGraph extends Component {
           // fontWeight: "bold",
           fontSize:16,
           rotate: 0,
-          interval: 60
+          interval: 200,
+          // formatter: value => "'"+value
         }
       },
       yAxis: {
         type: "value",
+        // max:2, 
+        // min: -1,
+        // splitNumber:5,
         axisLabel: {
           color: "gray",
           inside: false,
@@ -142,33 +158,23 @@ class MomentumGraph extends Component {
         
       ]
     };
-    // if(temp1 == 116){
     return (
+      
       <div>
         <ReactEcharts 
           style={{
-            height: "300%",
+            height: "300px",
+            // height: "369px",
+            // 369
             width: "95%"
+            // width: "900px"
+            
           }}
           option={data}
           />
       </div>
       
     );
-  // } else {
-  //   return (
-  //     <div>
-  //       <ReactEcharts 
-  //         style={{
-  //           height: "300%",
-  //           width: "95%"
-  //         }}
-  //         option={data}
-  //         />
-  //     </div>
-      
-  //   );
-  // }
   }
 }
 

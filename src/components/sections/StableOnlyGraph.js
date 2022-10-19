@@ -8,32 +8,45 @@ import "../../App.css";
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
+import downwardArrow from "../assets/downwardArrow.png";
+import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import { connect } from "react-redux";
 import moment from "moment";
 import Moment from "react-moment";
+import { deprecatedPropType } from "@material-ui/core";
+
 
 class StableOnlyGraph extends Component {
   constructor(props) {
     super(props);
-    
     this.state = {
       // data2: {},
     };
   }
 
-  extractDataToList = (arg, data) => {
+  // extractDataToList = (arg, data) => {
+  //   const res = [];
+  //   for (let i in data) {
+  //     let item = data[i][arg];
+  //     if (arg === "datetime") {
+  //       let i =
+  //         "'" + item.toString().slice(2, 10);
+  //       res.push(i);
+  //     } else {
+  //       res.push(parseFloat(data[i][arg]));
+  //     }
+  //   }
+  //   return res;
+  // };
+
+  extractDataToList = (data) => {
     const res = [];
     for (let i in data) {
-      let item = data[i][arg];
-      if (arg === "datetime") {
-        let i =
-          "'" + item.toString().slice(2, 10);
-        res.push(i);
-      } else {
-        res.push(parseFloat(data[i][arg]));
+      let time = data[i].datetime.toString().replace(/-/g,'');
+      let value = data[i].cum_return_ma;
+        res.push([new Date(time.slice(0,4), time.slice(4,6)-1, time.slice(6,8)), value]);
       }
-    }
     return res;
   };
 
@@ -44,10 +57,8 @@ class StableOnlyGraph extends Component {
 
   render() {
     const { stableData } = this.props.stableData;
-    console.log("??2",stableData)
-    const dates = this.extractDataToList("datetime", stableData);
-    const stableOnly = this.extractDataToList("cum_return_ma", stableData);
-    
+    // const dates = this.extractDataToList("datetime", stableData);
+    const stableOnly = this.extractDataToList(stableData);
     const data = {
       tooltip: {
         trigger: "axis",
@@ -77,10 +88,9 @@ class StableOnlyGraph extends Component {
         containLabel: true
       },
       xAxis: {
-        type: "category",
-        // type: "time",
-        data: dates,
+        type: "time",
         show: true,
+        axisLine:false,
         axisLabel: {
           // formatter: axisValue => {
           //   return moment(axisValue).format("YYYY-MM-DD 00:00");
@@ -123,12 +133,13 @@ class StableOnlyGraph extends Component {
         },
       ]
     };
+  
     return (
       
       <div>
         <ReactEcharts 
           style={{
-            height: "300%",
+            height: "300px",
             // height: "369px",
             // 369
             // width: "100%"
@@ -140,11 +151,11 @@ class StableOnlyGraph extends Component {
       </div>
       
     );
-  }
+  } 
 }
 
 const mapStateToProps = (state) => ({
   stableData : state.stableData
 });
-
+  
 export default connect(mapStateToProps)(StableOnlyGraph);

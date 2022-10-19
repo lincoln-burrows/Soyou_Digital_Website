@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import "../../App.css";
 import "../css/Contact.css";
 import hamburger from '../assets/hamburger.png';
+import upwardArrow from "../assets/upwardArrow.png";
 import { useState } from 'react'
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
@@ -11,17 +12,11 @@ import { lineHeight } from '@mui/system';
 
 const Contact = (props) => {
     const dispatch = useDispatch();
-   
-    //커밋 테스트
-  const modalNavStep1 = (targetPage) =>{
-      props.toggleNav(targetPage);
-  }
 
-    
+    // if(props.scrollIndex == 4){
     return (
         <div className="containerHG">
       <header >
-    
       </header>
       <section className="content">
           <nav>
@@ -44,8 +39,6 @@ const Contact = (props) => {
                         </div>
           </main>
           <aside>
-          {/* <img className='hamburgerContact' width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/> */}
-          <ToggleModal modalNavStep1={modalNavStep1}/>
           </aside>
           <nav>
             
@@ -55,12 +48,11 @@ const Contact = (props) => {
       </footer>
     </div>
     );
-} 
-// else {
+// } else {
 //     return (
 //         <div className="containerHG">
 //       <header >
-
+//       <img width="45.5" height="35.5" className="upwardArrow" src={upwardArrow} onClick={()=>{props.pageUp(1);}}></img>
 //       </header>
 //       <section className="content">
 //           <nav>
@@ -95,6 +87,6 @@ const Contact = (props) => {
         
 //     );
 // }
-// }
+}
 
 export default Contact;

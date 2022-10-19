@@ -7,6 +7,8 @@ import { Container, Row, Col } from 'reactstrap';
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
+import downwardArrow from "../assets/downwardArrow.png";
+import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import StableOnlyGraph from "./StableOnlyGraph";
 import hamburger from '../assets/hamburger.png';
@@ -22,11 +24,6 @@ const StableOnly = (props) => {
   const dispatch = useDispatch();
   const { stableLowerButton, stableUpperButton } = useSelector((state) => state.legacy);
   const { stableData, stableIndex } = useSelector((state) => state.stableData);
-    
-  const modalNavStep1 = (targetPage) =>{
-        props.toggleNav(targetPage);
-        console.log("sfsdf");
-    }
 
     useEffect(() => {
       dispatch(stableAction.getStableGraph("STABLEALL"));
@@ -36,7 +33,6 @@ const StableOnly = (props) => {
   return (
     <div className="containerHG">
       <header >
-      
       </header>
       <section className="content">
           <nav>
@@ -70,7 +66,7 @@ const StableOnly = (props) => {
         
         <div className={stableUpperButton == "1" ? 'hide below' : 'below'}>
 
-              <br></br><br></br><br></br><br></br>
+        <br></br><br></br><br></br><br></br>
               <div className="infoText">
               <li >To be updated</li>
               
@@ -78,21 +74,18 @@ const StableOnly = (props) => {
               
               <li >To be updated</li>          
               </div>
-              <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-              <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavStep1={modalNavStep1} targetPage="3" />   
+              <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" targetPage="3" />   
               </div>
         
           </main>
           <aside>
-          {/* <img width="100" height="100" src={hamburger} onClick={()=>dispatch({type:"SET_MODAL_ON"})}/> */}
-          <ToggleModal modalNavStep1={modalNavStep1}/>
           </aside>
           <nav>
             
           </nav>
       </section>
       <footer>
-      
       </footer>
     </div>
     

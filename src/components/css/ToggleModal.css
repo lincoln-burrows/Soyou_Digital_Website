@@ -1,4 +1,4 @@
-.modal {
+/* .modal {
   display: none;
   position: fixed;
   top: 0;
@@ -7,7 +7,8 @@
   left: 0;
   z-index: 99;
   background-color: rgba(300, 10, 0, 0.6);
-}
+  animation: modal-bg-hide 1s;
+} */
 .modal button {
   outline: none;
   cursor: pointer;
@@ -21,12 +22,29 @@
   animation: modal-bg-show 1s;
 }
 
+.togglePage2.openModal.closing {
+  animation: modal-bg-hide 0.5s;
+}
+
+.hideComponents {
+  display: none;
+}
+
 @keyframes modal-bg-show {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes modal-bg-hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -57,15 +75,13 @@
   padding-top: 20%;
   text-align: right;  */
   z-index: 99;
+  animation: modal-bg-hide 1s;
 }
 
-.close{
-  color:white;
-  background-color: white;
-}
 
 .containerHG2 {
   width: 100vw;
+  height: 100vh;
 }
 
 .content item {
