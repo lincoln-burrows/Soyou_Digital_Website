@@ -64,12 +64,12 @@ class StableOnlyGraph extends Component {
         trigger: "axis",
         axisPointer: {type: "cross"},
       },
-      toolbox: {
-        feature: {
-          saveAsImage:{}
-        }
-      }
-      ,
+      // toolbox: {
+      //   feature: {
+      //     saveAsImage:{}
+      //   }
+      // }
+      // ,
       legend: {
         data: ["Stable Only"],
         textStyle: {
@@ -136,14 +136,14 @@ class StableOnlyGraph extends Component {
   
     return (
       
-      <div>
+      <div className="graphLocation">
         <ReactEcharts 
           style={{
             height: "300px",
             // height: "369px",
             // 369
             // width: "100%"
-            width: "95%"
+            width: "98%"
             
           }}
           option={data}

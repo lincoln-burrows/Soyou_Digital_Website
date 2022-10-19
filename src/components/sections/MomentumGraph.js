@@ -166,7 +166,7 @@ class MomentumGraph extends Component {
             height: "300px",
             // height: "369px",
             // 369
-            width: "95%"
+            width: "98%"
             // width: "900px"
             
           }}

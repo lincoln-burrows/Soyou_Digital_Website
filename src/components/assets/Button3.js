@@ -8,19 +8,19 @@ const SIZES = {
     --button-font-size: 17px;
     --button-padding: 6px 0px 6px 0px;
     --button-radius: 25px;
-    margin: 6px 7px 10px 0px;
+    margin: 6px 1.8% 10px 0px;
   `,
   middle: css`
   --button-font-size: 17px;
-    --button-padding: 6px 0px 6px 0px;
+    --button-padding: 6px 1.8% 6px 1.8%;
     --button-radius: 25px;
-    margin: 6px 7px 30px 7px;
+    margin: 6px 1.8% 30px 1.8%;
   `,
   right: css`
   --button-font-size: 17px;
     --button-padding: 6px 0px 6px 0px;
     --button-radius: 25px;
-    margin: 6px 0px 10px 7px;
+    margin: 6px 0px 10px 1.8%;
   `
 };
 
@@ -78,7 +78,7 @@ const StyledButton = styled.button`
   border-radius: var(--button-radius,);
   color: var(--button-color, #ffffff);
   background: var(--button-bg-color, #0d6efd);
-  width:69.5px;
+  width:22.3%;
 
 `;
 

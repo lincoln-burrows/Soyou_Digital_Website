@@ -100,7 +100,7 @@ nav, aside {
   flex-shrink:0;
   flex-basis: 322px;
   /* width: 322px; */
-  flex-grow: 0;
+  flex-grow: 1.2;
   align-items: flex-start;
 }
 /* 공통 레이아웃 종료 */
