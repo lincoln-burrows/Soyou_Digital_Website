@@ -7,7 +7,7 @@
       url('https://cdn.jsdelivr.net/npm/@moment1/noto-sans-kr@1.0.1/fonts/NotoSansKR-Regular.otf') format('off'),
       url('https://cdn.jsdelivr.net/npm/@expo-google-fonts/noto-sans-kr@0.2.2/NotoSansKR_400Regular.ttf') format('ttf');
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
       url('https://cdn.jsdelivr.net/npm/@moment1/noto-sans-kr@1.0.1/fonts/NotoSansKR-Bold.otf') format('otf'),
       url('https://cdn.jsdelivr.net/npm/@expo-google-fonts/noto-sans-kr@0.2.2/NotoSansKR_700Bold.ttf') format('ttf');
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 
@@ -32,7 +32,7 @@
       url('https://cdn.jsdelivr.net/npm/@moment1/noto-sans-kr@1.0.1/fonts/NotoSansKR-Medium.otf') format('off'),
       url('https://cdn.jsdelivr.net/npm/@expo-google-fonts/noto-sans-kr@0.2.2/NotoSansKR_500Medium.ttf') format('ttf');
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 
@@ -45,7 +45,7 @@
       url('https://cdn.jsdelivr.net/npm/@moment1/noto-sans-kr@1.0.1/fonts/NotoSansKR-Light.otf') format('otf'),
       url('https://cdn.jsdelivr.net/npm/@expo-google-fonts/noto-sans-kr@0.2.2/NotoSansKR_300Light.ttf') format('ttf');
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 body {
