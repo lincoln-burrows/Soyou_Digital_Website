@@ -105,7 +105,7 @@
 
 @media (max-width:1023px) {
   .content item { 
-  padding-top: 30%;
+  padding-top: 20%;
   right: 0;
 }
 }
@@ -114,7 +114,7 @@
   .content item { 
   padding-top: 0px;
   right: 4%;
-  padding-right: 
+  
 }
 
 .modalHeader {
