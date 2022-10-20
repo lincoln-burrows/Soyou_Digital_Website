@@ -78,6 +78,9 @@
   animation: modal-bg-hide 1s;
 }
 
+.modalHeader {
+  height: 0px;
+}
 
 .containerHG2 {
   width: 100vw;
@@ -117,7 +120,5 @@
   
 }
 
-.modalHeader {
-  height: 0px;
-}
+
 }
