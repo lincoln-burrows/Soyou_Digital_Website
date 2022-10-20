@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div>
-        {/* <Header/> */}
+        <Header/>
         <ToggleModal moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/>
         <div ref={refMain} className="divider"></div>  
       <MainPage scrollIndex={scrollIndex} />
