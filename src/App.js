@@ -45,9 +45,9 @@ function App() {
         <div ref={refMain} className="divider"></div>  
       <MainPage scrollIndex={scrollIndex} />
       <div ref={refMomentum} className="divider"></div>
-      <Momentum  scrollIndex={scrollIndex} />
+      <Momentum  scrollIndex={scrollIndex} moveToContact={moveToContact} />
       <div ref={refStable} className="divider"></div>
-      <StableOnly scrollIndex={scrollIndex} />
+      <StableOnly scrollIndex={scrollIndex} moveToContact={moveToContact} />
       <div ref={refContact} className="divider"></div>
       <Contact scrollIndex={scrollIndex} />
     </div>

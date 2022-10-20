@@ -49,7 +49,7 @@ const InfoRFSButton = (props) =>{
       // disabled="active"
       sizeStyle={sizeStyle}
       variantStyle={variantStyle}
-      onClick={()=>{props.modalNavStep1(props.targetPage);}}
+      onClick={()=>{props.modalNavigate(props.funcName);}}
     >
       {props.children}
     </StyledButton>

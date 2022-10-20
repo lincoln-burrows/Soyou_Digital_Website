@@ -27,7 +27,8 @@ const MainPage = (props) => {
           <main className='mainpageMain'>
               <div className='mainUpper'>
           <div className="mainTitle">SOYOU CRYPTO</div>
-          <h4 className="mainSubTitle">Crypto Asset<br></br>Management Labs</h4>
+          <h4 className="mainSubTitleMobile">Crypto Asset<br></br>Management Labs</h4>
+          <h4 className="mainSubTitleWeb">Crypto Asset Management Labs</h4>
           </div>
           <br></br>
           <div className="mainDescription1">Crypto asset management for all</div>

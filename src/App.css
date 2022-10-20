@@ -73,9 +73,9 @@ footer {
   /* border:1px solid gray;   */
   /* flex: 2.435; */
   flex-shrink: 1;
-  flex-basis:8px;
-  flex-grow: 1;
-  /* width: 8px; */
+  /* flex-basis:8px; */
+  /* flex-grow: 1; */
+  width: 8px;
   /* width: 108px; */
 }
 
@@ -83,10 +83,10 @@ footer {
   /* border:1px solid gray;   */
   /* flex: 5.5; */
   flex-shrink: 1;
-  flex-basis:8px;
-  /* width: 8px; */
+  /* flex-basis:8px; */
+  width: 8px;
   /* width: 300px; */
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 nav, aside {
@@ -100,9 +100,27 @@ nav, aside {
   flex-shrink:0;
   flex-basis: 328px;
   /* width: 328px; */
-  flex-grow: 1.2;
+  flex-grow: 1;
   align-items: flex-start;
 }
 /* 공통 레이아웃 종료 */
 
+@media (min-width: 650px) {
+.content main {
+  flex-basis: 600px;
+  flex-grow: 0;
+}
+
+.content nav {
+  flex-shrink: 1;
+  flex-basis:8px;
+  flex-grow: 1;
+}
+
+.content aside {
+  flex-shrink: 1;
+  flex-basis:8px;
+  flex-grow: 1;
+}
+}
 

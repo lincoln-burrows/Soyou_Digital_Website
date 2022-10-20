@@ -25,6 +25,12 @@ const StableOnly = (props) => {
   const { stableLowerButton, stableUpperButton } = useSelector((state) => state.legacy);
   const { stableData, stableIndex } = useSelector((state) => state.stableData);
 
+  const modalNavigate = (funcName) =>{
+    if (funcName=="moveToContact") {    
+    props.moveToContact();
+    }
+    }
+
     useEffect(() => {
       dispatch(stableAction.getStableGraph("STABLEALL"));
     }, []);
@@ -75,7 +81,7 @@ const StableOnly = (props) => {
               <li >To be updated</li>          
               </div>
               <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-              <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" targetPage="3" />   
+              <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu"  modalNavigate={modalNavigate} funcName="moveToContact" />   
               </div>
         
           </main>

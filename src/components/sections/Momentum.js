@@ -25,6 +25,12 @@ const Momentum = (props) => {
   const { momentumLowerButton, momentumUpperButton, momentumAnimationConst } = useSelector((state) => state.legacy);
   const { momentumData, momentumIndex } = useSelector((state) => state.momentumData);
 
+  const modalNavigate = (funcName) =>{
+    if (funcName=="moveToContact") {    
+    props.moveToContact();
+    }
+    }
+
     useEffect(() => {
       dispatch(momentumAction.getMomentumGraph("MOMENTUMALL"));
     }, []);
@@ -149,7 +155,7 @@ const Momentum = (props) => {
               <li >To be updated</li>          
               </div>
               <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-              <InfoRFSButton size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" targetPage="3" />   
+              <InfoRFSButton size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavigate={modalNavigate} funcName="moveToContact" />   
               </div>
         
           </main>
