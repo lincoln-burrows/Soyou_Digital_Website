@@ -110,9 +110,14 @@
 }
 }
 
-/* @media (max-height:460px) {
+@media (max-height:460px) {
   .content item { 
-  padding-top: 150px;
-  right: 0;
+  padding-top: 0px;
+  right: 4%;
+  padding-right: 
 }
-} */
+
+.modalHeader {
+  height: 0px;
+}
+}

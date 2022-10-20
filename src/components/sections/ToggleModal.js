@@ -62,7 +62,7 @@ const ToggleModal = (props) => {
             <div className={isOpen ? '' : 'hideComponents'}>
             <div className={isModalOn ? 'openModal togglePage2' : 'openModal closing togglePage2'}>
                      <div className="containerHG2">
-                    <header >
+                    <header className='modalHeader'>
                     </header>
                     <section className="content">
                     <nav >
