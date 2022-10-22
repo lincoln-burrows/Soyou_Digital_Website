@@ -64,16 +64,22 @@ class MomentumGraph extends Component {
     console.log("??2",momentumData)
     const momentum_algo = this.extractDataToList("cum_return_ma", momentumData);
     const btc_usdt = this.extractDataToList("cum_return_btc", momentumData);
+    // var duration = 1500;
+    const { testData } = this.props.momentumData;
     const data = {
       tooltip: {
         trigger: "axis",
         axisPointer: {type: "cross"},
       },
-      // toolbox: {
-      //   feature: {
-      //     saveAsImage:{},
-      //   }
-      // }
+      toolbox: {
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            restore: {},
+            saveAsImage: {}
+        }
+    },
       
       legend: {
         data: ["Momentum Algorithm", "BTC_USDT Hodl"],
@@ -92,21 +98,15 @@ class MomentumGraph extends Component {
         top: "15%",
         containLabel: true
       },
-      notMerge:false
-      ,
       xAxis: {
         type: "time",
         show: true,
         split:8,
         axisLine:false,
-        // axisPointer: {
-        //     show:true,
-        //     label:{
-        //       show:false
-        //     }
+        splitNumber:5,
         // },
         axisLabel: {
-          color: "gray",
+          color: "#9396a4",
           // fontWeight: "bold",
           fontSize:16,
           rotate: 0,
@@ -120,12 +120,13 @@ class MomentumGraph extends Component {
         // min: -1,
         // splitNumber:5,
         axisLabel: {
-          color: "gray",
+          color: "#9396a4",
           inside: false,
           fontSize:16,
           formatter: value => value*100 + ' %'
         },
       },
+      notMerge:true,
       series: [
         {
           name: "Momentum Algorithm",
@@ -140,6 +141,17 @@ class MomentumGraph extends Component {
           tooltip: {
             valueFormatter: value => Math.round(value*10000)/100 +' %'
           },
+        //   animationEasing: 'linear',
+        //   animationEasingUpdate: 'linear',
+        //   animationDelay: function (i) {
+        //     if (i == null) {
+        //         return null;
+        //     }
+        //     else {
+        //         // cubicIn is x=t^3 so t=x^(1/3)
+        //         return (Math.pow((i + 0.5) / data.length, 1 / 3)) * duration;
+        //     }
+        // }
         },
         {
           name: "BTC_USDT Hodl",
@@ -154,9 +166,23 @@ class MomentumGraph extends Component {
           tooltip: {
             valueFormatter: value => Math.round(value*10000)/100 +' %'
           },
+        //   animationEasing: 'linear',
+        //   animationEasingUpdate: 'linear',
+        //   animationDelay: function (i) {
+        //     if (i == null) {
+        //         return null;
+        //     }
+        //     else {
+        //         // cubicIn is x=t^3 so t=x^(1/3)
+        //         return (Math.pow((i + 0.5) / data.length, 1 / 3)) * duration;
+        //     }
+        // },
+        // animationDelayUpdate: 1000,
         },
         
-      ]
+      ],
+      // animationDuration: duration,
+      // animationDurationUpdate: 250,
     };
     return (
       
@@ -166,11 +192,13 @@ class MomentumGraph extends Component {
             height: "300px",
             // height: "369px",
             // 369
-            width: "98%"
+            width: "98%",
             // width: "900px"
-            
           }}
-          option={data}
+          option={data} 
+          notMerge="true"
+          lazyUpdate="true"
+          
           />
       </div>
       

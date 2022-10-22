@@ -67,8 +67,9 @@ const Momentum = (props) => {
        {/* 버튼 클릭에 따라 네개 바꿔치기1 */}
        
         <div className="graphAnimation1">
+          <div className={momentumUpperButton == "2" ? 'hide test1' : 'test1'}>
         <MomentumGraph />
-        
+        </div>
         <div className="indexContainer">
         <div className="index">Cum. Return</div>
         <div className="index">Daily Avg.</div>

@@ -13,7 +13,7 @@ function getMomentumGraph(type){
             payload: { 
                 momentumData : momentumData.data, 
                 momentumIndex : momentumIndex.data, 
-            }
+            },
         })
         console.log("우리가 promiseAll 후에 받는 데이터는?", momentumIndex)
     };

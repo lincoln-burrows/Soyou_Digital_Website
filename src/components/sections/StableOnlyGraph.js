@@ -95,7 +95,7 @@ class StableOnlyGraph extends Component {
           // formatter: axisValue => {
           //   return moment(axisValue).format("YYYY-MM-DD 00:00");
           // },
-          color: "gray",
+          color: "#9396a4",
           // fontWeight: "bold",
           fontSize:16,
           rotate: 0,
@@ -105,7 +105,7 @@ class StableOnlyGraph extends Component {
       yAxis: {
         type: "value",
         axisLabel: {
-          color: "gray",
+          color: "#9396a4",
           inside: false,
           fontSize:16,
           formatter: value => value*100 + ' %'

@@ -1,6 +1,7 @@
 let initialState = {
     momentumData: {},
     momentumIndex: {},
+    testData: {},
 }
 
 function momentumReducer(state = initialState, action) {
@@ -11,7 +12,14 @@ function momentumReducer(state = initialState, action) {
                 ...state, 
                 momentumData: payload.momentumData,
                 momentumIndex: payload.momentumIndex,
+                testData: payload.testData,
             };
+            case "INITIALIZE_MOMENTUM_DATA":
+            return {
+                ...state, 
+                momentumData: {},
+            
+                };   
             default:
             return {...state};
     }

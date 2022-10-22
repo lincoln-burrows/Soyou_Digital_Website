@@ -1,8 +1,9 @@
-import React from 'react';
+import { React } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Container, Row, Col } from 'reactstrap';
 import "../css/MainPage.css";
 import "../../App.css";
+import "../css/NavBar.css";
 import downwardArrow from "../assets/downwardArrow.png";
 import upwardArrow from "../assets/upwardArrow.png";
 import { useState, useEffect, useRef } from 'react'
@@ -12,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 const MainPage = (props) => {
+
     const dispatch = useDispatch();
     // if(props.scrollIndex == 1){
         return (
@@ -25,6 +27,12 @@ const MainPage = (props) => {
           <aside>
           </aside>
           <main className='mainpageMain'>
+              <div className="navBar">
+                  <span onClick={props.moveToMain} className='navMain'>Main</span>
+                  <span onClick={props.moveToMomentum} className='navMomentum'>Momentum Algo.</span>
+                  <span onClick={props.moveToStable} className='navStable'>StableOnly</span>
+                  <span onClick={props.moveToContact} className='navContact'>Contact</span>
+              </div>
               <div className='mainUpper'>
           <div className="mainTitle">SOYOU CRYPTO</div>
           <h4 className="mainSubTitleMobile">Crypto Asset<br></br>Management Labs</h4>

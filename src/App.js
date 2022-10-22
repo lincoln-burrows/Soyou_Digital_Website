@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components';
 import ToggleModal from './components/sections/ToggleModal';
 
+
 function App() {
   // const outerDivRef = useRef();
   const [scrollIndex, setScrollIndex] = useState(1);
@@ -40,10 +41,10 @@ function App() {
 
   return (
     <div>
-        <Header/>
-        <ToggleModal moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/>
+        {/* <Header/> */}
+        {/* <ToggleModal moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/> */}
         <div ref={refMain} className="divider"></div>  
-      <MainPage scrollIndex={scrollIndex} />
+      <MainPage scrollIndex={scrollIndex} moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/>
       <div ref={refMomentum} className="divider"></div>
       <Momentum  scrollIndex={scrollIndex} moveToContact={moveToContact} />
       <div ref={refStable} className="divider"></div>
