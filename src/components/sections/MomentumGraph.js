@@ -73,7 +73,6 @@ class MomentumGraph extends Component {
           type: "cross",
           label: {
             formatter: function (params) {
-              console.log("prama?",params.value)
               return (
                 (params.seriesData.length ? params.seriesData[0].data[0].toISOString().split("T")[0] :  Math.round(params.value*10000)/100 +' %')
               )

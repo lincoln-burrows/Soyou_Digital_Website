@@ -128,7 +128,7 @@ body {
   100% { opacity: 100% }
 } */
 
-@media(max-width:900px) {
+@media(max-width:500px) {
   .mainSubTitleMobile{
     display:block;
   }
