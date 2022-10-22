@@ -55,7 +55,9 @@ const StableOnly = (props) => {
        <Button3 size="middle" variant={"default" + (stableLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="STABLE1Y"/> 
        <Button3 size="middle" variant={"default" + (stableLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="STABLE6M"/> 
        <Button3 size="right" variant={"default" + (stableLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="STABLE3M"/> 
+       <div className={stableUpperButton == "2" ? 'hide graphArea' : 'graphArea'}>
         <StableOnlyGraph />
+        </div>
         <div className="indexContainer">
         <div className="index">Cum. Return</div>
         <div className="index">Daily Avg.</div>

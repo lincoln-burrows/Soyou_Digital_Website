@@ -25,7 +25,7 @@
   display: none;
 }
 
-.test1{
+.graphArea{
 }
 
 .infoText{
@@ -76,8 +76,8 @@ padding-left: 3%;
 }
 
    @media (prefers-reduced-motion: no-preference){
-    .test1{
-      animation: momentumGraphAppear1 0.07s eas;
+    .graphArea{
+      animation: momentumGraphAppear1 0.07s ease-out;
     }
   }
 /*

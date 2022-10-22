@@ -90,7 +90,13 @@ class StableOnlyGraph extends Component {
       xAxis: {
         type: "time",
         show: true,
-        axisLine:false,
+        axisLine: {
+          onZero: false,
+          lineStyle: {
+            color: "#6E7078"
+          }
+        },
+        splitNumber:5,
         axisLabel: {
           // formatter: axisValue => {
           //   return moment(axisValue).format("YYYY-MM-DD 00:00");
@@ -99,7 +105,7 @@ class StableOnlyGraph extends Component {
           // fontWeight: "bold",
           fontSize:16,
           rotate: 0,
-          interval: 60
+          // interval: 60
         }
       },
       yAxis: {

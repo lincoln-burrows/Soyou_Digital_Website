@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
 import axios from "axios";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Label } from 'reactstrap';
 import "../../App.css";
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
@@ -69,17 +69,21 @@ class MomentumGraph extends Component {
     const data = {
       tooltip: {
         trigger: "axis",
-        axisPointer: {type: "cross"},
-      },
-      toolbox: {
-        feature: {
-            dataZoom: {
-                yAxisIndex: 'none'
-            },
-            restore: {},
-            saveAsImage: {}
-        }
-    },
+        axisPointer: {
+          type: "cross",
+          label: {
+            formatter: function (params) {
+              console.log("prama?",params.value)
+              // if(params.axisDimension==='x'){
+              return (
+                (params.seriesData.length ? params.seriesData[0].data[0].toISOString().split("T")[0] :  Math.round(params.value*10000)/100 +' %')
+              // );
+            // } else {
+              )
+            }
+            }
+          }
+        },
       
       legend: {
         data: ["Momentum Algorithm", "BTC_USDT Hodl"],
@@ -101,8 +105,13 @@ class MomentumGraph extends Component {
       xAxis: {
         type: "time",
         show: true,
-        split:8,
-        axisLine:false,
+        // axisLine:false,
+        axisLine: {
+          onZero: false,
+          lineStyle: {
+            color: "#6E7078"
+          }
+        },
         splitNumber:5,
         // },
         axisLabel: {
@@ -196,8 +205,8 @@ class MomentumGraph extends Component {
             // width: "900px"
           }}
           option={data} 
-          notMerge="true"
-          lazyUpdate="true"
+          notMerge={true}
+          lazyUpdate={true}
           
           />
       </div>
