@@ -18,12 +18,18 @@ import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { momentumAction } from "../../redux/actions/momentumAction";
+import $ from 'jquery';
 
 const Momentum = (props) => {
 
   const dispatch = useDispatch();
   const { momentumLowerButton, momentumUpperButton, momentumAnimationConst } = useSelector((state) => state.legacy);
   const { momentumData, momentumIndex } = useSelector((state) => state.momentumData);
+  // const momentumIndex = JSON.parse(localStorage.getItem("momentumIndex")) || [];
+  // const graphReload = () => {
+  //   $('#momentumReload').load(window.location.href+'#momentumReload');
+  //   console.log("리로드 됨?");
+  // }
 
   const modalNavigate = (funcName) =>{
     if (funcName=="moveToContact") {    
@@ -34,6 +40,10 @@ const Momentum = (props) => {
     useEffect(() => {
       dispatch(momentumAction.getMomentumGraph("MOMENTUMALL"));
     }, []);
+
+    // useEffect(() => {
+      
+    // }, [momentumLowerButton]);
 
     // if(props.scrollIndex == "2" && momentumAnimationConst == 1){
     //   dispatch({type:"MOMENTUMANICONSTINACTIVE"}); 
@@ -59,17 +69,21 @@ const Momentum = (props) => {
        </div>
        <span className={momentumUpperButton == "2" ? 'hide below' : 'below'}>
        <div className="lowerButtons">
+       {/* <Button3 size="left" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL" graphReload={graphReload}/> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y" graphReload={graphReload}/> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M" graphReload={graphReload}/> 
+       <Button3 size="right" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M" graphReload={graphReload}/>  */}
        <Button3 size="left" variant={"default" + (momentumLowerButton == "1" ? "Active" : "")} children="ALL" buttonIndex="1" actionName="MOMENTUMALL"/> 
-       <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y"/> 
-       <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M"/> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "2" ? "Active" : "")} children="1Y" buttonIndex="2" actionName="MOMENTUM1Y" /> 
+       <Button3 size="middle" variant={"default" + (momentumLowerButton == "3" ? "Active" : "")} children="6M" buttonIndex="3" actionName="MOMENTUM6M" /> 
        <Button3 size="right" variant={"default" + (momentumLowerButton == "4" ? "Active" : "")} children="3M" buttonIndex="4" actionName="MOMENTUM3M"/> 
        </div>
        {/* 버튼 클릭에 따라 네개 바꿔치기1 */}
        
         <div className="graphAnimation1">
-          <div className={momentumUpperButton == "2" ? 'hide graphArea' : 'graphArea'}>
+          <div className={momentumUpperButton == "2" ? 'hide graphArea' : 'graphArea'} id="momentumReload">
         <MomentumGraph />
-        </div>
+        
         <div className="indexContainer">
         <div className="index">Cum. Return</div>
         <div className="index">Daily Avg.</div>
@@ -81,70 +95,11 @@ const Momentum = (props) => {
         <div className="index">{momentumIndex && momentumIndex.dailyAvg}&nbsp;%</div>
         <div className="index">{momentumIndex && momentumIndex.dailySharp}</div>
         <div className="index">&nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;%</div>
+        </div>
         </div>
         </div>
         </span>
-
-        {/* 버튼 클릭에 따라 네개 바꿔치기2
-       <span className={momentumUpperButton == "1" && momentumLowerButton == "2" ? 'below' : 'hide below'}>
-        <div className="graphAnimation1">
-        <MomentumGraph />
-        
-        <div className="indexContainer">
-        <div className="index">Cum. Return</div>
-        <div className="index">Daily Avg.</div>
-        <div className="index">Daily Sharp</div>
-        <div className="index">MDD</div>
-        </div>
-        <div className="indexValueContainer">
-        <div className="index">{momentumIndex && momentumIndex.cumReturn}&nbsp;%</div>
-        <div className="index">{momentumIndex && momentumIndex.dailyAvg}&nbsp;%</div>
-        <div className="index">{momentumIndex && momentumIndex.dailySharp}</div>
-        <div className="index">&nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;%</div>
-        </div>
-        </div>
-        </span>
-
-        {/* 버튼 클릭에 따라 네개 바꿔치기3 */}
-       {/* <span className={momentumUpperButton == "1" && momentumLowerButton == "3" ? 'below' : 'hide below'}>
-        <div className="graphAnimation1">
-        <MomentumGraph />
-        
-        <div className="indexContainer">
-        <div className="index">Cum. Return</div>
-        <div className="index">Daily Avg.</div>
-        <div className="index">Daily Sharp</div>
-        <div className="index">MDD</div>
-        </div>
-        <div className="indexValueContainer">
-        <div className="index">{momentumIndex && momentumIndex.cumReturn}&nbsp;%</div>
-        <div className="index">{momentumIndex && momentumIndex.dailyAvg}&nbsp;%</div>
-        <div className="index">{momentumIndex && momentumIndex.dailySharp}</div>
-        <div className="index">&nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;%</div>
-        </div>
-        </div>
-        </span>
-
-        {/* 버튼 클릭에 따라 네개 바꿔치기4 */}
-       {/* <span className={momentumUpperButton == "1" && momentumLowerButton == "4" ? 'below' : 'hide below'}>
-        <div className="graphAnimation1">
-        <MomentumGraph />
-        
-        <div className="indexContainer">
-        <div className="index">Cum. Return</div>
-        <div className="index">Daily Avg.</div>
-        <div className="index">Daily Sharp</div>
-        <div className="index">MDD</div>
-        </div>
-        <div className="indexValueContainer">
-        <div className="index">{momentumIndex && momentumIndex.cumReturn}&nbsp;%</div>
-        <div className="index">{momentumIndex && momentumIndex.dailyAvg}&nbsp;%</div>
-        <div className="index">{momentumIndex && momentumIndex.dailySharp}</div>
-        <div className="index">&nbsp;{momentumIndex && momentumIndex.mdd}&nbsp;%</div>
-        </div>
-        </div>
-        </span>   */}
-        
+        {/* <button onClick={graphReload}>zz</button> */}
         <div className={momentumUpperButton == "1" ? 'hide below' : 'below'}>
 
               <br></br><br></br><br></br><br></br>

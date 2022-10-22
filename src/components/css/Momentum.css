@@ -108,9 +108,9 @@ padding-left: 3%;
     }
   }
 
-/*
-  @media (prefers-reduced-motion: no-preference){
-    .graphAnimation4{
+
+  /* @media (prefers-reduced-motion: no-preference){
+    .momentumTitle{
       animation: momentumGraphAppear4 1.1s ease-out;
     }
   } */

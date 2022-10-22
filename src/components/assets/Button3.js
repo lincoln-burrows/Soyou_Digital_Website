@@ -42,7 +42,7 @@ const VARIANTS = {
 `
 };
 
-function Button3({ disabled, size, variant, children, actionName }) {
+function Button3({ disabled, size, variant, children, actionName, graphReload }) {
   const sizeStyle = SIZES[size];
   const variantStyle = VARIANTS[variant];
   const dispatch = useDispatch();
@@ -59,6 +59,7 @@ function Button3({ disabled, size, variant, children, actionName }) {
         {actionName.includes("MOMENTUM") ? 
         dispatch(momentumAction.getMomentumGraph(actionName))
         : dispatch(stableAction.getStableGraph(actionName))}
+        graphReload();
     }}
     >
       {children}

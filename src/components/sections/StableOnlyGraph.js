@@ -42,6 +42,7 @@ class StableOnlyGraph extends Component {
 
   extractDataToList = (data) => {
     const res = [];
+    console.log("???Stable", data)
     for (let i in data) {
       let time = data[i].datetime.toString().replace(/-/g,'');
       let value = data[i].cum_return_ma;

@@ -39,8 +39,10 @@ class MomentumGraph extends Component {
   
   extractDataToList = (arg, data) => {
     const res = [];
+    console.log("???", data)
     for (let i in data) {
       let time = data[i].time.toString().replace(/-/g,'');
+      // let time = data[i].time.replace(/-/g,'');
       if (arg==="cum_return_ma") {
       let value = data[i].cum_return_ma;
         res.push([new Date(time.slice(0,4), time.slice(4,6)-1, time.slice(6,8)), value]);
@@ -61,11 +63,17 @@ class MomentumGraph extends Component {
 
   render() {
     const { momentumData } = this.props.momentumData;
+    // const momentumData = JSON.parse(localStorage.getItem("momentumData")) || [];
+    // let splitNum = 0;
+    // if(dataSize<120){
+    //   splitNum=3;
+    // } else {
+    //   splitNum = 5;
+    // }
     console.log("??2",momentumData)
     const momentum_algo = this.extractDataToList("cum_return_ma", momentumData);
     const btc_usdt = this.extractDataToList("cum_return_btc", momentumData);
     // var duration = 1500;
-    const { testData } = this.props.momentumData;
     const data = {
       tooltip: {
         trigger: "axis",
@@ -107,12 +115,27 @@ class MomentumGraph extends Component {
             color: "#6E7078"
           }
         },
-        splitNumber:5,
+        // splitNumber: value => (momentumData.length >120 ? 5 : 1),
+        splitNumber: 5,
+          // console.log("포맷밸류",value)
+          
+        
+        // maxInterval:100,
+        // splitNumber: function (params) {
+        //   console.log("splitParam", params)
+        //   return (
+        //     (params.seriesData.length ? )
+        //   )
+        // },
         axisLabel: {
           color: "#9396a4",
           fontSize:16,
           rotate: 0,
           interval: 200,
+          // formatter: function (value, index) {
+          //   console.log("포맷밸류",value)
+          //   console.log("포맷인덱스",index)
+          // }
         }
       },
       yAxis: {
