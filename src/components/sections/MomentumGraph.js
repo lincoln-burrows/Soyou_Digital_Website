@@ -74,17 +74,13 @@ class MomentumGraph extends Component {
           label: {
             formatter: function (params) {
               console.log("prama?",params.value)
-              // if(params.axisDimension==='x'){
               return (
                 (params.seriesData.length ? params.seriesData[0].data[0].toISOString().split("T")[0] :  Math.round(params.value*10000)/100 +' %')
-              // );
-            // } else {
               )
             }
             }
           }
         },
-      
       legend: {
         data: ["Momentum Algorithm", "BTC_USDT Hodl"],
         padding:[1, 0, 10, 0,],
@@ -113,21 +109,15 @@ class MomentumGraph extends Component {
           }
         },
         splitNumber:5,
-        // },
         axisLabel: {
           color: "#9396a4",
-          // fontWeight: "bold",
           fontSize:16,
           rotate: 0,
           interval: 200,
-          // formatter: value => "'"+value
         }
       },
       yAxis: {
         type: "value",
-        // max:2, 
-        // min: -1,
-        // splitNumber:5,
         axisLabel: {
           color: "#9396a4",
           inside: false,

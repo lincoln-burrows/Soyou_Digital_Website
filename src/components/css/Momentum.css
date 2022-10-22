@@ -75,24 +75,40 @@ line-height: 2;
 padding-left: 3%;
 }
 
-   @media (prefers-reduced-motion: no-preference){
+   /* @media (prefers-reduced-motion: no-preference){
     .graphArea{
       animation: momentumGraphAppear1 0.07s ease-out;
     }
+  } */
+
+  @media (prefers-reduced-motion: no-preference){
+    .infoText{
+      animation: momentumInfoAppear1 0.5s ease-out;
+    }
   }
+
+  @media (prefers-reduced-motion: no-preference){
+    .toContactButton{
+      animation: momentumInfoAppear2 1.0s ease-out;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .graphArea{
+      animation: momentumGraphAppear1 0.5s ease-out;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .indexContainer{
+      animation: momentumInfoAppear2 1.0s ease-out;
+    }
+    .indexValueContainer{
+      animation: momentumInfoAppear2 1.0s ease-out;
+    }
+  }
+
 /*
-  @media (prefers-reduced-motion: no-preference){
-    .graphAnimation2{
-      animation: momentumGraphAppear2 1.0s ease-out;
-    }
-  }
-
-  @media (prefers-reduced-motion: no-preference){
-    .graphAnimation3{
-      animation: momentumGraphAppear3 1.0s ease-out;
-    }
-  }
-
   @media (prefers-reduced-motion: no-preference){
     .graphAnimation4{
       animation: momentumGraphAppear4 1.1s ease-out;
@@ -114,17 +130,16 @@ padding-left: 3%;
   /* 기간 버튼 눌렀을 때 리프레쉬 */
   @keyframes momentumGraphAppear1 {
     0% { opacity: 0%; }
-    99% {opacity:0%}
+    20% {opacity:0%}
     100% { opacity: 100% }
   }
 
-  @keyframes momentumGraphAppear2 {
+  @keyframes momentumInfoAppear1 {
     0% { opacity: 0%; }
-    50% {opacity:0%}
     100% { opacity: 100% }
   }
 
-  @keyframes momentumGraphAppear3 {
+  @keyframes momentumInfoAppear2 {
     0% { opacity: 0%; }
     50% {opacity:0%}
     100% { opacity: 100% }
@@ -155,32 +170,10 @@ padding-left: 3%;
     100% { opacity: 100% }
   }
 
-  @media (prefers-reduced-motion: no-preference){
-    .momentumTitle{
-      animation: graphTitle 1.0s ease-out;
-    }
-  }
-
-  @keyframes graphUpperButtons {
-    0% { opacity: 0%; }
-    75% {opacity:0%}
-    100% { opacity: 100% }
-  }
-
-  @media (prefers-reduced-motion: no-preference){
-    .upperButtons{
-      animation: graphUpperButtons 1.5s ease-out;
-    }
-  }
 
   /* @keyframes graphLowerButtons {
     0% { opacity: 0%; }
     75% {opacity:0%}
     100% { opacity: 100% }
   } */
-
-  @media (prefers-reduced-motion: no-preference){
-    .lowerButtons{
-      animation: graphLowerButtons 2.0s ease-out;
-    }
-  }
+  

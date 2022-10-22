@@ -62,14 +62,17 @@ class StableOnlyGraph extends Component {
     const data = {
       tooltip: {
         trigger: "axis",
-        axisPointer: {type: "cross"},
+        axisPointer: {
+          type: "cross",
+          label: {
+            formatter: function (params) {
+              return (
+                (params.seriesData.length ? params.seriesData[0].data[0].toISOString().split("T")[0] :  Math.round(params.value*10000)/100 +' %')
+              )
+            }
+            }
+          }
       },
-      // toolbox: {
-      //   feature: {
-      //     saveAsImage:{}
-      //   }
-      // }
-      // ,
       legend: {
         data: ["Stable Only"],
         textStyle: {
@@ -98,14 +101,9 @@ class StableOnlyGraph extends Component {
         },
         splitNumber:5,
         axisLabel: {
-          // formatter: axisValue => {
-          //   return moment(axisValue).format("YYYY-MM-DD 00:00");
-          // },
           color: "#9396a4",
-          // fontWeight: "bold",
           fontSize:16,
           rotate: 0,
-          // interval: 60
         }
       },
       yAxis: {

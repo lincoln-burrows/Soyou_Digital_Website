@@ -156,7 +156,9 @@ const Momentum = (props) => {
               <li >To be updated</li>          
               </div>
               <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <div className="toContactButton" >
               <InfoRFSButton size="sm" variant={"default" + (momentumUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu" modalNavigate={modalNavigate} funcName="moveToContact" />   
+              </div>
               </div>
         
           </main>

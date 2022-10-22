@@ -83,7 +83,9 @@ const StableOnly = (props) => {
               <li >To be updated</li>          
               </div>
               <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+              <div className="toContactButton" >
               <InfoRFSButton size="sm" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Request for Service" className="toggleMenu"  modalNavigate={modalNavigate} funcName="moveToContact" />   
+              </div>
               </div>
         
           </main>
