@@ -89,7 +89,7 @@ class MomentumGraph extends Component {
           }
         },
       legend: {
-        data: ["Momentum Algorithm", "BTC_USDT Hodl"],
+        data: ["Momentum Algo.", "BTC_USDT Hodl"],
         padding:[1, 0, 10, 0,],
         textStyle: {
           fontSize: 14
@@ -150,7 +150,7 @@ class MomentumGraph extends Component {
       notMerge:true,
       series: [
         {
-          name: "Momentum Algorithm",
+          name: "Momentum Algo.",
           type: "line",
           smooth: true,
           data: momentum_algo,

@@ -82,10 +82,9 @@
   padding-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference){
+/* @media (prefers-reduced-motion: no-preference){
   .contactTitle{
     animation: contactDescriptionAppear 1.0s ease-out;
-    /* animation: bannerAppear 1.0s ease-out; */
 
   }
 }
@@ -98,7 +97,6 @@
 @media (prefers-reduced-motion: no-preference){
   .contactPassage1{
     animation: contactPassage1Appear 1.5s ease-out;
-    /* animation-delay: 2s; */
 
   }
 }
@@ -128,7 +126,7 @@
   .hamburgerContact{
     animation: contactHamburgerAppear 2.9s ease-out;
   }
-}
+} */
 
 
 @keyframes contactDescriptionAppear {

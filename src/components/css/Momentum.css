@@ -95,16 +95,16 @@ padding-left: 3%;
 
   @media (prefers-reduced-motion: no-preference){
     .graphArea{
-      animation: momentumGraphAppear1 0.5s ease-out;
+      animation: momentumGraphAppear1 1.0s ease-out;
     }
   }
 
   @media (prefers-reduced-motion: no-preference){
     .indexContainer{
-      animation: momentumInfoAppear2 1.0s ease-out;
+      animation: momentumInfoAppear2 1.5s ease-out;
     }
     .indexValueContainer{
-      animation: momentumInfoAppear2 1.0s ease-out;
+      animation: momentumInfoAppear2 1.5s ease-out;
     }
   }
 
@@ -130,7 +130,7 @@ padding-left: 3%;
   /* 기간 버튼 눌렀을 때 리프레쉬 */
   @keyframes momentumGraphAppear1 {
     0% { opacity: 0%; }
-    20% {opacity:0%}
+    30% {opacity:0%}
     100% { opacity: 100% }
   }
 
