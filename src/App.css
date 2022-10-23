@@ -1,7 +1,4 @@
-.body {
-  width: 100%;
-  overflow-x:hidden;
-}
+
 
 /* 화면에서 스크롤바 안보이게 */
 /* .outer::-webkit-scrollbar {
@@ -43,6 +40,8 @@
   display:flex;
   flex-direction: column;
   /* height:865px; */
+  width: 100%;
+  overflow-x:hidden;
 }
 
 header{
