@@ -28,7 +28,7 @@
   flex-direction: column;
   /* height:865px; */
   width: 100%;
-  /* overflow-x:hidden;  */
+  overflow-x:hidden; 
 }
 
 header{
