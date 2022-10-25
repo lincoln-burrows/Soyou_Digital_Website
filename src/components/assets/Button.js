@@ -4,13 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 const SIZES = {
   left: css`
     --button-font-size: 19px;
-    --button-padding: 4px 0px 4px 0px;
+    --button-padding: 2.5px 0px 5.5px 0px;
     --button-radius: 25px;
     margin: 7px 1.8% 6px 0px;
+    height:36.5px;
+    justify-content:center;
+    
   `,
   right: css`
     --button-font-size: 19px;
-    --button-padding: 4px 0px 4px 0px;
+    --button-padding: 2.5px 0px 5.5px 0px;
     --button-radius: 25px;
     margin: 7px 0px 6px 1.8%;
   `,
@@ -68,6 +71,7 @@ const StyledButton = styled.button`
   color: var(--button-color, #ffffff);
   background: var(--button-bg-color, #0d6efd);
   width:48.2%;
+  
 
   
 `;

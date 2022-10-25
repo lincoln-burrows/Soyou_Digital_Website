@@ -6,19 +6,19 @@ import { stableAction } from "../../redux/actions/stableAction";
 const SIZES = {
   left: css`
     --button-font-size: 17px;
-    --button-padding: 6px 0px 6px 0px;
+    --button-padding: 5px 0px 7px 0px;
     --button-radius: 25px;
     margin: 6px 1.8% 10px 0px;
   `,
   middle: css`
   --button-font-size: 17px;
-    --button-padding: 6px 1.8% 6px 1.8%;
+    --button-padding: 5px 1.8% 7px 1.8%;
     --button-radius: 25px;
     margin: 6px 1.8% 30px 1.8%;
   `,
   right: css`
   --button-font-size: 17px;
-    --button-padding: 6px 0px 6px 0px;
+    --button-padding: 5px 0px 7px 0px;
     --button-radius: 25px;
     margin: 6px 0px 10px 1.8%;
   `
