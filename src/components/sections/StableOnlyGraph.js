@@ -148,7 +148,7 @@ class StableOnlyGraph extends Component {
             // height: "369px",
             // 369
             // width: "100%"
-            width: "98%"
+            width: "97%"
             
           }}
           option={data}
