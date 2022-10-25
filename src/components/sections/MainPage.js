@@ -27,12 +27,12 @@ const MainPage = (props) => {
           <aside>
           </aside>
           <main className='mainpageMain'>
-              {/* <div className="navBar">
+              <div className="navBar">
                   <span onClick={props.moveToMain} className='navMain'>Main</span>
                   <span onClick={props.moveToMomentum} className='navMomentum'>Momentum Algo.</span>
                   <span onClick={props.moveToStable} className='navStable'>StableOnly</span>
                   <span onClick={props.moveToContact} className='navContact'>Contact</span>
-              </div> */}
+              </div>
               <div className='mainUpper'>
           <div className="mainTitle">SOYOU CRYPTO</div>
           <h4 className="mainSubTitleMobile">Crypto Asset<br></br>Management Labs</h4>
