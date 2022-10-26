@@ -8,13 +8,8 @@ import "../../App.css";
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
-import downwardArrow from "../assets/downwardArrow.png";
-import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import { connect } from "react-redux";
-import moment from "moment";
-import Moment from "react-moment";
-import { deprecatedPropType } from "@material-ui/core";
 
 
 class StableOnlyGraph extends Component {

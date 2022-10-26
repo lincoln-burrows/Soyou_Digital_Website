@@ -4,11 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import "../css/MainPage.css";
 import "../../App.css";
 import "../css/NavBar.css";
-import downwardArrow from "../assets/downwardArrow.png";
-import upwardArrow from "../assets/upwardArrow.png";
 import { useState, useEffect, useRef } from 'react'
-import hamburger from '../assets/hamburger.png';
-import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components'
 
@@ -75,7 +71,7 @@ const MainPage = (props) => {
     // else {
 
     //     return (
-    //         <div><ToggleModal modalNavStep1={modalNavStep1}/>
+    
     //         <div className="containerHG">
     //   <header >
     //   </header>

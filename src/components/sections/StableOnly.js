@@ -7,13 +7,9 @@ import { Container, Row, Col } from 'reactstrap';
 import "../css/Momentum.css";
 import Button from "../assets/Button.js";
 import Button3 from "../assets/Button3";
-import downwardArrow from "../assets/downwardArrow.png";
-import upwardArrow from "../assets/upwardArrow.png";
 import App from "../../App";
 import StableOnlyGraph from "./StableOnlyGraph";
-import hamburger from '../assets/hamburger.png';
 import { useState } from 'react'
-import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";

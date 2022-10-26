@@ -4,10 +4,8 @@ import MainPage from "./components/sections/MainPage";
 import StableOnly from "./components/sections/StableOnly";
 import Contact from "./components/sections/Contact";
 import Momentum from "./components/sections/Momentum";
-import Header from "./components/assets/Header"
 import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components';
-import ToggleModal from './components/sections/ToggleModal';
 import { Divider } from "@material-ui/core";
 
 
@@ -44,8 +42,6 @@ function App() {
 
   return (
     <div>
-        {/* <Header/> */}
-        {/* <ToggleModal moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/> */}
         <div  ref={refMain} className="divider"></div>  
       <MainPage scrollIndex={scrollIndex} moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/>
       <div className="divider"></div>

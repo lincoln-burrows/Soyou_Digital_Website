@@ -123,11 +123,7 @@ body {
   100% { opacity: 100% }
 }
 
-@keyframes descriptionHamburgerAppear {
-  0% { opacity: 0%; }
-  100% { opacity: 100% }
-} 
-
+/* crypto asset management labs 모바일 두줄 랩탑 한줄 */
 @media(max-width:500px) {
   .mainSubTitleMobile{
     display:block;

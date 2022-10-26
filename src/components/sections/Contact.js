@@ -3,10 +3,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { Container, Row, Col } from 'reactstrap';
 import "../../App.css";
 import "../css/Contact.css";
-import hamburger from '../assets/hamburger.png';
-import upwardArrow from "../assets/upwardArrow.png";
 import { useState } from 'react'
-import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
 import { lineHeight } from '@mui/system';
 import styled from 'styled-components'
