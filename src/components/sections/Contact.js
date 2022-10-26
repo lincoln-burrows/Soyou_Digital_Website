@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Container, Row, Col } from 'reactstrap';
 import "../../App.css";
@@ -9,9 +9,24 @@ import { useState } from 'react'
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
 import { lineHeight } from '@mui/system';
+import styled from 'styled-components'
 
-const Contact = (props) => {
+const Contact = forwardRef((props, ref) => {
     const dispatch = useDispatch();
+
+    let navAnchor = window.innerHeight;
+    if (navAnchor <= 640){
+      navAnchor = -70;
+    } else {
+      navAnchor = -1*((navAnchor)-570)/2;
+    }
+
+    const NavBlank = styled.div`
+    height : 1px;
+    width: 20px;
+    position:relative;
+    top: ${navAnchor}px;
+    `;
 
     // if(props.scrollIndex == 4){
     return (
@@ -25,6 +40,7 @@ const Contact = (props) => {
           <aside>
           </aside>
           <main>
+          <NavBlank ref={ref}></NavBlank>
               <div className='contactTitle'>
           <div>Requests for Service</div>
                         <div className='contactSubTitle'>soyou_crypto@gmail.com</div>
@@ -88,5 +104,5 @@ const Contact = (props) => {
 //     );
 // }
 }
-
+)
 export default Contact;

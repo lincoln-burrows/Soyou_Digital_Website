@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, forwardRef } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Container, Row, Col } from 'reactstrap';
 import "../css/MainPage.css";
@@ -22,6 +22,13 @@ const MainPage = (props) => {
     const MainPositionBox = styled.div`
     height : ${animationAnchor}px;
         width: 200px;
+        @media (max-height:500px) {
+            height: 150px;
+        }
+
+        @media all and (min-width:768px) and (max-width:1023px) {
+            height: 150px;
+        }
   `;
 //   height : ${animationAnchor}px;
         return (

@@ -62,7 +62,6 @@ body {
   font-family: 'noto-sans-kr-light';
   color: #A6A6A6;
   text-align: center;
-
 }
 
 /* .mainpageMain {
@@ -94,12 +93,9 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference){
-  .mainDownwardArrow{
+  .navBar{
     animation: description1Appear 2.9s ease-out;
   }
-  .hamburger{
-    animation: description1Appear 3.0s ease-out;
-}
 }
 
  @keyframes bannerAppear {
@@ -141,3 +137,6 @@ body {
     display:none;
   }
 }
+
+
+  

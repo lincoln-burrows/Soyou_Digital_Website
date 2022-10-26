@@ -46,15 +46,15 @@ function App() {
     <div>
         {/* <Header/> */}
         {/* <ToggleModal moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/> */}
-        <div ref={refMain} className="divider"></div>  
+        <div  ref={refMain} className="divider"></div>  
       <MainPage scrollIndex={scrollIndex} moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/>
-      <div ref={refMomentum} className="divider"></div>
-      <Momentum  scrollIndex={scrollIndex} moveToContact={moveToContact} />
+      <div className="divider"></div>
+      <Momentum ref={refMomentum} scrollIndex={scrollIndex} moveToContact={moveToContact} />
       <div  className="divider"></div>
       <StableOnly ref={refStable} scrollIndex={scrollIndex} moveToContact={moveToContact} />
-      <div ref={refContact} className="divider"></div>
-      <Contact scrollIndex={scrollIndex} />
-      <div  className="divider2"></div>
+      <div  className="divider"></div>
+      <Contact ref={refContact} scrollIndex={scrollIndex} />
+      {/* <div  className="divider2"></div> */}
     </div>
   );
 }

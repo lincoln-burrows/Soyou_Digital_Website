@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, forwardRef } from "react";
 
 import echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
@@ -18,9 +18,10 @@ import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { momentumAction } from "../../redux/actions/momentumAction";
+import styled from 'styled-components'
 import $ from 'jquery';
 
-const Momentum = (props) => {
+const Momentum = forwardRef((props, ref) => {
 
   const dispatch = useDispatch();
   const { momentumLowerButton, momentumUpperButton, momentumAnimationConst } = useSelector((state) => state.legacy);
@@ -30,6 +31,12 @@ const Momentum = (props) => {
   //   $('#momentumReload').load(window.location.href+'#momentumReload');
   //   console.log("리로드 됨?");
   // }
+  let navAnchor = window.innerHeight;
+  if (navAnchor <= 640){
+    navAnchor = -70;
+  } else {
+    navAnchor = -1*((navAnchor)-570)/2;
+  }
 
   const modalNavigate = (funcName) =>{
     if (funcName=="moveToContact") {    
@@ -40,6 +47,13 @@ const Momentum = (props) => {
     useEffect(() => {
       dispatch(momentumAction.getMomentumGraph("MOMENTUMALL"));
     }, []);
+
+    const NavBlank = styled.div`
+    height : 1px;
+    width: 20px;
+    position:relative;
+    top: ${navAnchor}px;
+    `;
 
     // useEffect(() => {
       
@@ -62,6 +76,7 @@ const Momentum = (props) => {
           <aside>
           </aside>
           <main>
+          <NavBlank ref={ref}></NavBlank>
             <div className="momentumTitle"> Momentum Algorithm</div>
             <div className="upperButtons">
         <Button size="left" variant={"default" + (momentumUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="MOMENTUM_PROFIT" />
@@ -322,6 +337,6 @@ const Momentum = (props) => {
     //     )
     //   }
     // }
-
+)
 
 export default Momentum
