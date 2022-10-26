@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, forwardRef } from "react";
 
 import echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
@@ -18,13 +18,22 @@ import { useDispatch, useSelector } from "react-redux";
 import ToggleMenu from "../assets/ToggleMenu";
 import InfoRFSButton from "../assets/InfoRFSButton";
 import { stableAction } from "../../redux/actions/stableAction";
+import styled from 'styled-components'
 
-const StableOnly = (props) => {
+
+const StableOnly = forwardRef((props, ref) => {
 
   const dispatch = useDispatch();
   const { stableLowerButton, stableUpperButton } = useSelector((state) => state.legacy);
   const { stableData, stableIndex } = useSelector((state) => state.stableData);
-
+  let navAnchor = window.innerHeight;
+  if (navAnchor <= 640){
+    navAnchor = -70;
+  } else {
+    navAnchor = -1*((navAnchor)-570)/2;
+  }
+  
+  
   const modalNavigate = (funcName) =>{
     if (funcName=="moveToContact") {    
     props.moveToContact();
@@ -34,11 +43,25 @@ const StableOnly = (props) => {
     useEffect(() => {
       dispatch(stableAction.getStableGraph("STABLEALL"));
     }, []);
+
+    // useEffect(() => {
+    //   window.addEventListener('resize', handleResize);
+    //   return () => {
+    //     window.removeEventListener('resize', handleResize);
+    //   }
+    // }, []);
     
+    const NavBlank = styled.div`
+  height : 1px;
+  width: 20px;
+  position:relative;
+  top: ${navAnchor}px;
+  `;
 
   return (
     <div className="containerHG">
       <header >
+        
       </header>
       <section className="content">
           <nav>
@@ -47,6 +70,7 @@ const StableOnly = (props) => {
           <aside>
           </aside>
           <main>
+          <NavBlank ref={ref}></NavBlank>
             <div className="momentumTitle">Stablecoin Only</div>
         <Button size="left" variant={"default" + (stableUpperButton == "1" ? "Active" : "")} children="Profit" buttonIndex="1" actionName="STABLE_PROFIT" />
        <Button size="right" variant={"default" + (stableUpperButton == "2" ? "Active" : "")} children="Information" buttonIndex="2" actionName="STABLE_INFO" />
@@ -101,5 +125,6 @@ const StableOnly = (props) => {
     
   )
 }
+)
 
 export default StableOnly

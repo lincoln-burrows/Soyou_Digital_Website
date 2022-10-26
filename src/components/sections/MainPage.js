@@ -10,16 +10,26 @@ import { useState, useEffect, useRef } from 'react'
 import hamburger from '../assets/hamburger.png';
 import ToggleModal from './ToggleModal';
 import { useDispatch, useSelector } from "react-redux";
+import styled from 'styled-components'
 
 
 const MainPage = (props) => {
 
     const dispatch = useDispatch();
-    // if(props.scrollIndex == 1){
+
+    let animationAnchor = (window.innerHeight/2)-90-20-22.5-20-53;
+    console.log("앵커", animationAnchor)
+    const MainPositionBox = styled.div`
+    height : ${animationAnchor}px;
+        width: 200px;
+  `;
+//   height : ${animationAnchor}px;
         return (
             <div>
             <div className="containerHG">
       <header >
+          <div></div>
+          <div></div>
       </header>
       <section className="content">
           <nav >
@@ -34,6 +44,7 @@ const MainPage = (props) => {
                   <span onClick={props.moveToContact} className='navContact'>Contact</span>
               </div>
               <div className='mainUpper'>
+              <MainPositionBox></MainPositionBox>
           <div className="mainTitle">SOYOU CRYPTO</div>
           <h4 className="mainSubTitleMobile">Crypto Asset<br></br>Management Labs</h4>
           <h4 className="mainSubTitleWeb">Crypto Asset Management Labs</h4>

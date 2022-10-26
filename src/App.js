@@ -8,6 +8,7 @@ import Header from "./components/assets/Header"
 import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components';
 import ToggleModal from './components/sections/ToggleModal';
+import { Divider } from "@material-ui/core";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
   const moveToMomentum = () => {
     refMomentum.current?.scrollIntoView({behavior: 'smooth'});
+    console.log("얘네 원리가?", refMomentum.current)
   };
 
   const moveToStable = () => {
@@ -48,10 +50,11 @@ function App() {
       <MainPage scrollIndex={scrollIndex} moveToContact={moveToContact} moveToMain={moveToMain} moveToMomentum={moveToMomentum} moveToStable={moveToStable}/>
       <div ref={refMomentum} className="divider"></div>
       <Momentum  scrollIndex={scrollIndex} moveToContact={moveToContact} />
-      <div ref={refStable} className="divider"></div>
-      <StableOnly scrollIndex={scrollIndex} moveToContact={moveToContact} />
+      <div  className="divider"></div>
+      <StableOnly ref={refStable} scrollIndex={scrollIndex} moveToContact={moveToContact} />
       <div ref={refContact} className="divider"></div>
       <Contact scrollIndex={scrollIndex} />
+      <div  className="divider2"></div>
     </div>
   );
 }
