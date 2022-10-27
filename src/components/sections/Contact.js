@@ -40,7 +40,7 @@ const Contact = forwardRef((props, ref) => {
           <NavBlank ref={ref}></NavBlank>
               <div className='contactTitle'>
           <div>Requests for Service</div>
-                        <div className='contactSubTitle'>soyou_crypto@gmail.com</div>
+                        <div className='contactSubTitle'>soyou.crypto@gmail.com</div>
                         </div>
                         
                         <div className='contactPassage'>
