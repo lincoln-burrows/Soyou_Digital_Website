@@ -22,6 +22,7 @@ const StableOnly = forwardRef((props, ref) => {
   const dispatch = useDispatch();
   const { stableLowerButton, stableUpperButton } = useSelector((state) => state.legacy);
   const { stableData, stableIndex } = useSelector((state) => state.stableData);
+  console.log("stableIndex?", stableIndex)
   let navAnchor = window.innerHeight;
   if (navAnchor <= 640){
     navAnchor = -70;

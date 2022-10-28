@@ -3,7 +3,7 @@ import api from "../api";
 function getStableGraph(type){
     return async (dispatch) => {
         const stableDataApi = api.get(`stable/graph?type=${type}`)
-        const stableIndexApi = api.get(`momentum/index?type=${type}`)
+        const stableIndexApi = api.get(`stable/index?type=${type}`)
 
         let [stableData, stableIndex,] = await Promise.all([
             stableDataApi, stableIndexApi]);
