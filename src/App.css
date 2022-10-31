@@ -41,7 +41,7 @@
 }
 
 header{
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   /* height: 13.16vh; */
   height: 90px;
   align-self: center;
@@ -49,9 +49,9 @@ header{
 }
 
 footer {
-  border:1px solid gray;
+  /* border:1px solid gray; */
   /* height: 13.16vh; */
-  height: 150px;
+  height: 190px;
   align-self: center;
 }
 
@@ -68,7 +68,7 @@ footer {
 }
 
 .content nav {
-  border:1px solid gray;  
+  /* border:1px solid gray;   */
   /* flex: 2.435; */
   flex-shrink: 1;
   /* flex-basis:8px; */
@@ -78,7 +78,7 @@ footer {
 }
 
 .content aside {
-  border:1px solid gray;  
+  /* border:1px solid gray;   */
   /* flex: 5.5; */
   flex-shrink: 1;
   /* flex-basis:8px; */
@@ -93,7 +93,7 @@ nav, aside {
 }
 
 .content main {
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   /* flex: 18; */
   flex-shrink:0;
   flex-basis: 328px;
