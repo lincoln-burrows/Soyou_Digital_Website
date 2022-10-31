@@ -215,9 +215,6 @@ class MomentumGraph extends Component {
             // width: "900px"
           }}
           option={data} 
-          notMerge={true}
-          lazyUpdate={true}
-          
           />
       </div>
       
